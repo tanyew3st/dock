@@ -1,16 +1,17 @@
 # class variables for each ligand that need to be changed
-receptor = None
-ligand = None
 
-center_x = None
-center_y = None
-center_z = None
+properties = {
+    "receptor":None,
+    "ligand":None,
+    "center_x":None,
+    "center_y":None,
+    "center_z":None,
+    "size_x":None,
+    "size_y":None,
+    "size_z":None,
+    "exhaustiveness":None
+}
 
-size_x = None
-size_y = None
-size_z = None
-
-exhaustiveness = None
 
 
 
