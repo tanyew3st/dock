@@ -17,3 +17,8 @@ properties = {
 
 def __init__(self):
     print("something")
+
+def openFile:
+
+
+def readFile:
