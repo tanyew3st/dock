@@ -18,16 +18,16 @@ properties = {
 def __init__(self):
     print("something")
 
-    
-propertyUO = {}
 
-def openFile(file):
-    o = open("conf.txt")
+def openFile(name):
+    propertyUO = {}
+    o = open(name)
     opened = o.readlines()
     for i in opened:
         propertyUO[i.split()[0]] = i.split()[-1]
 
+    return propertyUO
 # Take in a file object and return a new Ligand object
-def readFile():
+def readFile(propertyUO):
     for i in propertyUO:
         properties[i] = propertyUO[i]
