@@ -1,0 +1,13 @@
+receptor = 4I23-modeller.pdbqt
+
+center_x = -0.289
+center_y = -53.363
+center_z = -23.099
+
+size_x = 28
+size_y = 28
+size_z = 28
+
+exhaustiveness = 8
+
+

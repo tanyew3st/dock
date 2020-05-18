@@ -1,0 +1,13 @@
+receptor = 4RIW-modeller.pdbqt
+
+center_x = 9.723
+center_y = -0.012
+center_z = 7.992
+
+size_x = 28
+size_y = 28
+size_z = 28
+
+exhaustiveness = 8
+
+

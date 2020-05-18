@@ -1,0 +1,13 @@
+receptor = 4LL0-modeller.pdbqt
+
+center_x = -11.137
+center_y = -23.289
+center_z = 29.985
+
+size_x = 28
+size_y = 28
+size_z = 28
+
+exhaustiveness = 8
+
+

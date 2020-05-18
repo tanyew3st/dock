@@ -1,0 +1,13 @@
+receptor = 4LRM-modeller.pdbqt
+
+center_x = 48.744
+center_y = 360.493
+center_z = 33.101
+
+size_x = 28
+size_y = 28
+size_z = 28
+
+exhaustiveness = 8
+
+

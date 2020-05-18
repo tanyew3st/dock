@@ -1,0 +1,13 @@
+receptor = 5FEE-modeller.pdbqt
+
+center_x = -52.408
+center_y = 0.362
+center_z = -23.195
+
+size_x = 28
+size_y = 28
+size_z = 28
+
+exhaustiveness = 8
+
+

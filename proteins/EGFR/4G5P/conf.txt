@@ -1,0 +1,13 @@
+receptor = 4G5P-modeller.pdbqt
+
+center_x = -9.492
+center_y = 19.203
+center_z = 31.432
+
+size_x = 28
+size_y = 28
+size_z = 28
+
+exhaustiveness = 8
+
+

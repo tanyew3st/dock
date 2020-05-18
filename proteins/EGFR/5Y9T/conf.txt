@@ -1,0 +1,13 @@
+receptor = 5Y9T-modeller.pdbqt
+
+center_x = 0.237 
+center_y = 49.891
+center_z = -21.159
+
+size_x = 28
+size_y = 28
+size_z = 28
+
+exhaustiveness = 8
+
+

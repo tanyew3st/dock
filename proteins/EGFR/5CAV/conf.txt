@@ -1,0 +1,13 @@
+receptor = 5CAV-modeller.pdbqt
+
+center_x = -54.952
+center_y = 0.826
+center_z = -24.228
+
+size_x = 25
+size_y = 25
+size_z = 25
+
+exhaustiveness = 8
+
+

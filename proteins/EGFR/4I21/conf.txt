@@ -1,0 +1,13 @@
+receptor = 4I21-modeller.pdbqt
+
+center_x = 1.654
+center_y = 18.830
+center_z = -18.189
+
+size_x = 28
+size_y = 28
+size_z = 28
+
+exhaustiveness = 8
+
+

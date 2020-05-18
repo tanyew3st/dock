@@ -1,0 +1,13 @@
+receptor = 4ZJV-modeller.pdbqt
+
+center_x = 5.116
+center_y = -15.337
+center_z = 48.351
+
+size_x = 28
+size_y = 28
+size_z = 28
+
+exhaustiveness = 8
+
+

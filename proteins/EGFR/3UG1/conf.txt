@@ -1,0 +1,13 @@
+receptor = 3UG1-modeller.pdbqt
+
+center_x = -48.985
+center_y = -0.99
+center_z = 16.6
+
+size_x = 28
+size_y = 28
+size_z = 28
+
+exhaustiveness = 8
+
+

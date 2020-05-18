@@ -1,0 +1,13 @@
+receptor = 4JQ7-modeller.pdbqt
+
+center_x = -52.921
+center_y = 0.031
+center_z = -23.433
+
+size_x = 26
+size_y = 28
+size_z = 28
+
+exhaustiveness = 8
+
+

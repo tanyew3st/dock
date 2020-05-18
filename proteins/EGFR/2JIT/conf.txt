@@ -1,0 +1,13 @@
+receptor = 2JIT-modeller.pdbqt
+
+center_x = -11.768
+center_y = 18.372
+center_z = 30.313
+
+size_x = 28
+size_y = 28
+size_z = 28
+
+exhaustiveness = 8
+
+

@@ -1,0 +1,13 @@
+receptor = 3VJO-modeller.pdbqt
+
+center_x = 49.758
+center_y = 0.297
+center_z = -20.923
+
+size_x = 22
+size_y = 22
+size_z = 28
+
+exhaustiveness = 8
+
+

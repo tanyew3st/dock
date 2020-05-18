@@ -1,0 +1,13 @@
+receptor = 4G5J-modeller.pdbqt
+
+center_x = 52.03
+center_y = 0.428
+center_z = -22.238
+
+size_x = 22
+size_y = 26
+size_z = 28
+
+exhaustiveness = 8
+
+
