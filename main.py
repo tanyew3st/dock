@@ -14,7 +14,7 @@ def main():
     print ligand.properties
 
     # choose name
-
+    #change 2
 
 
 
