@@ -11,7 +11,7 @@ def main():
     property = ligand.openFile("conf.txt")
     ligand.readFile(property)
 
-    print ligand.properties
+    print(ligand.properties)
 
     # choose name
     #change 2
