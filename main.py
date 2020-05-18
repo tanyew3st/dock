@@ -1,7 +1,8 @@
-import subprocess
-import os;
-import subprocess;
-print("hello wolrd and armaan and tanay")
+import os
+import ligand
 
-command = "./vina";
-os.system(command)
+def main():
+    command = "./vina"
+    os.system(command)
+    l1 = ligand
+main()
