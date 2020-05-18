@@ -1,5 +1,6 @@
 import os
 import ligand
+import os;
 
 def main():
     command = "./vina"
