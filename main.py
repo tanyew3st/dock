@@ -1,7 +1,7 @@
 import subprocess
 import os;
 import subprocess;
-print("hello wolrd")
+print("hello wolrd and armaan")
 
 command = "./vina";
 os.system(command)
