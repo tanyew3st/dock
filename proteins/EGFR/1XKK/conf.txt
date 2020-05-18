@@ -1,0 +1,13 @@
+receptor = 1XKK-modeller.pdbqt
+
+center_x = 15.053
+center_y = 32.959
+center_z = 37.349
+
+size_x = 28
+size_y = 28
+size_z = 28
+
+exhaustiveness = 8
+
+

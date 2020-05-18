@@ -1,0 +1,13 @@
+receptor = 1M14-modeller.pdbqt
+
+center_x = 20.777
+center_y = -0.076
+center_z = 51.272
+
+size_x = 28
+size_y = 28
+size_z = 28
+
+exhaustiveness = 8
+
+

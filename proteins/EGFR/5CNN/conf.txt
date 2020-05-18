@@ -1,0 +1,13 @@
+receptor = 5CNN-modeller.pdbqt
+
+center_x = 31.919
+center_y = 0.069
+center_z = -13.654
+
+size_x = 28
+size_y = 28
+size_z = 28
+
+exhaustiveness = 8
+
+

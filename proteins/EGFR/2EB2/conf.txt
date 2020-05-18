@@ -1,0 +1,13 @@
+receptor = 2EB2-modeller.pdbqt
+
+center_x = -0.456
+center_y = 52.628
+center_z = 21.001
+
+size_x = 28
+size_y = 28
+size_z = 28
+
+exhaustiveness = 8
+
+

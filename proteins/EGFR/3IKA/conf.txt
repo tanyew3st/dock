@@ -1,0 +1,13 @@
+receptor = 3IKA-modeller.pdbqt
+
+center_x = -9.697
+center_y = 18.264
+center_z = 30.677
+
+size_x = 28
+size_y = 28
+size_z = 28
+
+exhaustiveness = 8
+
+

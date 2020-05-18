@@ -1,0 +1,13 @@
+receptor = 2GS7-modeller.pdbqt
+
+center_x = 4.983
+center_y = 3.946
+center_z = 24.382
+
+size_x = 28
+size_y = 28
+size_z = 28
+
+exhaustiveness = 8
+
+

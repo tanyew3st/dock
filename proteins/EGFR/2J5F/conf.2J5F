@@ -1,0 +1,13 @@
+receptor = 2J5F_modeller.pdbqt
+
+center_x = -53.209
+center_y = -0.353
+center_z = -22.497
+
+size_x = 25
+size_y = 25
+size_z = 25
+
+exhaustiveness = 8
+
+

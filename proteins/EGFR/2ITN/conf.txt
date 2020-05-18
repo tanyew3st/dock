@@ -1,0 +1,13 @@
+receptor = 2ITN-modeller.pdbqt
+
+center_x = -51.228
+center_y = -0.789
+center_z = -22.861
+
+size_x = 28
+size_y = 28
+size_z = 28
+
+exhaustiveness = 8
+
+

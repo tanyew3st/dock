@@ -1,0 +1,13 @@
+receptor = 3BEL-modeller.pdbqt
+
+center_x = 16.318
+center_y = 33.718
+center_z = 90.69
+
+size_x = 28
+size_y = 28
+size_z = 28
+
+exhaustiveness = 8
+
+
