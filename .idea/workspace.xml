@@ -2,12 +2,45 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="53f2f5b8-52dd-4cf4-8ea5-9ed9271db4fe" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/dictionaries/tchandak.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ml.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Actives/1M14.GetTopActives" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Actives/1XKK.GetTopActives" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Actives/2EB2.GetTopActives" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Actives/2EB3.GetTopActives" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Actives/2GS2.GetTopActives" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Actives/2GS7.GetTopActives" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Actives/2ITN.GetTopActives" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Actives/2ITT.GetTopActives" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Actives/2J5F.GetTopActives" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Actives/2JIT.GetTopActives" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Actives/2JIU.GetTopActives" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Actives/2rgp.GetTopActives" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Actives/3BEL.GetTopActives" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Actives/3IKA.GetTopActives" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Actives/3UG1.GetTopActives" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Actives/3VJO.GetTopActives" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Actives/4G5J.GetTopActives" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Actives/4G5P.GetTopActives" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Actives/4I23.GetTopActives" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Actives/4I24.GetTopActives" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Actives/4JQ7.GetTopActives" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Actives/4LI5.GetTopActives" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Actives/4LL0.GetTopActives" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Actives/4LQM.GetTopActives" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Actives/4LRM.GetTopActives" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Actives/4RIW.GetTopActives" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Actives/4TKS.GetTopActives" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Actives/4ZJV.GetTopActives" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Actives/5CAV.GetTopActives" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Actives/5CNN.GetTopActives" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Actives/5FED.GetTopActives" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Actives/5FEE.GetTopActives" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Actives/5XDL.GetTopActives" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Actives/5Y9T.GetTopActives" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Actives/activeFirstThird.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Actives/active_thirds.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Actives/firstThird.xlsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/actives_final_1_out.pdbqt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/protein.py" beforeDir="false" afterPath="$PROJECT_DIR$/protein.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ml.py" beforeDir="false" afterPath="$PROJECT_DIR$/ml.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,6 +74,11 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration name="hello" type="PythonConfigurationType" factoryName="Python" temporary="true">
@@ -81,7 +119,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1589770029985</updated>
-      <workItem from="1589907424663" duration="1964000" />
+      <workItem from="1589907424663" duration="2560000" />
     </task>
     <servers />
   </component>
