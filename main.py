@@ -1,11 +1,12 @@
 from __future__ import print_function
 import os
+from ml import MachineLearning
 from protein import Protein
-from subprocess import Popen, PIPE
-
+import numpy as np
+import pandas as pd
 
 # selected by the user upon initial interaction with the API
-protein = "EGFR"
+proteinToUse = "EFRR"
 
 # needs to be added by user
 ligand = "actives_final_1.pdbqt"
@@ -15,6 +16,11 @@ affinityScores = {}
 directory = None
 
 proteins = []
+
+affinityScoresTest = {
+
+}
+
 
 def dock(protein):
     print(protein.structure)
@@ -31,7 +37,6 @@ def dock(protein):
     newArray = []
 
     for i in console:
-
         try:
             newArray.append(float(i))
             newArray.append(int(i))
@@ -43,18 +48,40 @@ def dock(protein):
     obj = {protein.structure: min(newArray)}
     affinityScores.update(obj)
 
+
+# Main method
 if __name__ == "__main__":
 
-    # list_of_ls = os.popen("./vina --config conf.txt").read().split(' ')
+    ml = MachineLearning(affinityScoresTest)
 
-    # os.system("./vina")
-    # command = "./vina"
-    # os.system(command)
 
+
+
+
+
+
+
+
+
+
+
+
+    # this will be done in the front end just taking user input to find the protein they want to use
+    proteinToUse = str.upper(raw_input("Protein to dock to: "))
+
+    # searching through the proteins directory to find the protein the user wants to dock to
     for i in os.listdir("proteins"):
-        directory = "proteins/" + i
+        if i == proteinToUse:
+            directory = "proteins/" + i
+    if directory is None:
+        print("Couldn't find directory")
 
+        # should return to the API with null or something if the protein files don't exist
+        exit(0)
+
+    # now searching through and creating protein array
     for i in os.listdir(directory):
+
         # directory for the conf.txt
         prtdir = directory + "/" + i + "/conf.txt"
 
@@ -63,7 +90,19 @@ if __name__ == "__main__":
             p1 = Protein(prtdir, directory + "/" + i + "/", i)
             proteins.append(p1)
 
-    print(*proteins,sep='\n')
+    print(*proteins, sep='\n')
 
+
+    # docking. this could be part of the earlier file
     for i in proteins:
         dock(i)
+
+    # now I am ready to run the machine learning model
+    """
+     docking example {
+        "1M14": -4.5
+        "1XKK": -8.9
+        "2EB2": -9.3
+        etc.
+    """
+

@@ -12,7 +12,6 @@ class Protein:
         "size_z": None,
         "exhaustiveness": None
     }
-
     def __repr__(self):
         return str(self.structure)
         # return str(self.properties)
