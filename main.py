@@ -61,10 +61,11 @@ def dock(protein):
 # Main method
 if __name__ == "__main__":
     # app.run()
+    print('hello')
 
     ml = MachineLearning(affinityScoresTest)
-    MachineLearning.createDirectory("Actives", None, None)
-
+    MachineLearning.createDirectory("Actives", "proteins/EGFR", True)
+    exit(0)
 
     # this will be done in the front end just taking user input to find the protein they want to use
     proteinToUse = str.upper(raw_input("Protein to dock to: "))
@@ -90,7 +91,7 @@ if __name__ == "__main__":
             p1 = Protein(prtdir, directory + "/" + i + "/", i)
             proteins.append(p1)
 
-    print(*proteins, sep='\n')
+    # print(*proteins, sep='\n')
 
     # docking. this could be part of the earlier file
     for i in proteins:

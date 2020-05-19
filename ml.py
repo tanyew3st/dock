@@ -1,12 +1,15 @@
 import pandas as pd
 import numpy as np
 import os
+from sklearn.linear_model import LogisticRegression;
+
 
 class MachineLearning:
     affinity = None
+    prob = {}
 
-    def __init__(self, affinity):
-        self.affinity = affinity
+    def __init__(self, testaffinity):
+        self.affinity = testaffinity
 
     # input is the location of the folder of the pdbqt files
     # output is where it will be printed to
@@ -15,7 +18,6 @@ class MachineLearning:
     def createDirectory(inputdir, outputdir, active):
         columns = []
         for i in os.listdir(inputdir):
-            print(i[0:4])
             columns.append(i[0:4])
         beginning = True
         maximum = 0
@@ -42,16 +44,52 @@ class MachineLearning:
                         maximum = int(num)
                 dictionary[int(num)] = float(items.split()[0])
             if beginning:
-                df = pd.DataFrame(index=np.arange(1,maximum + 1), columns=columns)
+                df = pd.DataFrame(index=np.arange(1, maximum + 1), columns=columns)
 
             for k in range(1, maximum + 1):
                 if k in dictionary:
                     df.at[k, i[0:4]] = float(dictionary[k])
                 else:
-                    missingData.append([k,i[0:4]])
-            
+                    missingData.append([k, i[0:4]])
+
             beginning = False
         df.dropna()
-        print(df)
+
+        # drop columns that we dont need
+        # missing data is extremely weird and fix it
+        df = df.reindex(sorted(df.columns), axis=1)
+
         print(missingData)
+
+
+        # if active:
+        #     df.to_excel(outputdir + "/active.xlsx")
+        # else:
+        #     df.to_excel(outputdir + "/decoy.xlsx")
+        print("finished")
         # end product to create a new excel spreadsheet .xlsx in the output location
+
+    def getProbability(self, activePath, decoyPath):
+        actives = pd.read_excel(activePath, index=False)
+        actives.drop("Unnamed: 0", axis=1, inplace=True)
+        active_ticker = np.ones(len(actives))
+        print 'ACTIVES'
+
+        decoys = pd.read_excel(decoyPath, index=False)
+        decoys.drop("Unnamed: 0", axis=1, inplace=True)
+        decoy_ticker = np.zeros(len(decoys))
+        print 'DECOYS'
+
+        all_vals = pd.concat([actives, decoys], ignore_index=True)
+        all_ticker = np.concatenate([active_ticker, decoy_ticker])
+
+        print all_vals
+        print all_ticker
+
+        # X_train, X_test, y_train, y_test = train_test_split(all_vals, all_ticker, test_size=0.33, random_state=50)
+
+        logModel = LogisticRegression()
+        logModel.fit(all_vals, all_ticker)
+
+        predictions = logModel.predict(self.affinity)
+        print predictions
