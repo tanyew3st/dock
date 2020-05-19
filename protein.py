@@ -24,11 +24,12 @@ class Protein:
                 propertyUO[i.split()[0]] = i.split()[-1]
         return propertyUO
 
-    def __init__(self, name):
+    def __init__(self, name, directory):
         self.x = name
         propertyUO = self.openFile(name)
         self.properties = propertyUO
         # self.readFile(propertyUO)
+        self.properties["receptor"] = directory + self.properties["receptor"]
 
 
     # Take in a file object and return a new Protein object
