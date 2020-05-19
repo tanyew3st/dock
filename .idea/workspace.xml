@@ -3,79 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="53f2f5b8-52dd-4cf4-8ea5-9ed9271db4fe" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Actives/2rgp.GetTopActives" beforeDir="false" afterPath="$PROJECT_DIR$/Actives/2RGP.GetTopActives" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Actives/activeFirstThird.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Actives/active_thirds.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Actives/firstThird.xlsx" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proteins/EGFR/1M14/1M14-modeller.pdbqt" beforeDir="false" afterPath="$PROJECT_DIR$/proteins/EGFR/Structures/1M14/1M14-modeller.pdbqt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proteins/EGFR/1M14/conf.txt" beforeDir="false" afterPath="$PROJECT_DIR$/proteins/EGFR/Structures/1M14/conf.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proteins/EGFR/1XKK/1XKK-modeller.pdbqt" beforeDir="false" afterPath="$PROJECT_DIR$/proteins/EGFR/Structures/1XKK/1XKK-modeller.pdbqt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proteins/EGFR/1XKK/conf.txt" beforeDir="false" afterPath="$PROJECT_DIR$/proteins/EGFR/Structures/1XKK/conf.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proteins/EGFR/2EB2/2EB2-modeller.pdbqt" beforeDir="false" afterPath="$PROJECT_DIR$/proteins/EGFR/Structures/2EB2/2EB2-modeller.pdbqt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proteins/EGFR/2EB2/conf.txt" beforeDir="false" afterPath="$PROJECT_DIR$/proteins/EGFR/Structures/2EB2/conf.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proteins/EGFR/2EB3/2EB3-modeller.pdbqt" beforeDir="false" afterPath="$PROJECT_DIR$/proteins/EGFR/Structures/2EB3/2EB3-modeller.pdbqt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proteins/EGFR/2EB3/conf.txt" beforeDir="false" afterPath="$PROJECT_DIR$/proteins/EGFR/Structures/2EB3/conf.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proteins/EGFR/2GS2/2GS2-modeller.pdbqt" beforeDir="false" afterPath="$PROJECT_DIR$/proteins/EGFR/Structures/2GS2/2GS2-modeller.pdbqt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proteins/EGFR/2GS2/conf.txt" beforeDir="false" afterPath="$PROJECT_DIR$/proteins/EGFR/Structures/2GS2/conf.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proteins/EGFR/2GS7/2GS7-modeller.pdbqt" beforeDir="false" afterPath="$PROJECT_DIR$/proteins/EGFR/Structures/2GS7/2GS7-modeller.pdbqt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proteins/EGFR/2GS7/conf.txt" beforeDir="false" afterPath="$PROJECT_DIR$/proteins/EGFR/Structures/2GS7/conf.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proteins/EGFR/2ITN/2ITN-modeller.pdbqt" beforeDir="false" afterPath="$PROJECT_DIR$/proteins/EGFR/Structures/2ITN/2ITN-modeller.pdbqt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proteins/EGFR/2ITN/conf.txt" beforeDir="false" afterPath="$PROJECT_DIR$/proteins/EGFR/Structures/2ITN/conf.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proteins/EGFR/2ITT/2ITT-modeller.pdbqt" beforeDir="false" afterPath="$PROJECT_DIR$/proteins/EGFR/Structures/2ITT/2ITT-modeller.pdbqt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proteins/EGFR/2ITT/conf.txt" beforeDir="false" afterPath="$PROJECT_DIR$/proteins/EGFR/Structures/2ITT/conf.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proteins/EGFR/2J5F/2J5F_modeller.pdbqt" beforeDir="false" afterPath="$PROJECT_DIR$/proteins/EGFR/Structures/2J5F/2J5F_modeller.pdbqt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proteins/EGFR/2J5F/conf.txt" beforeDir="false" afterPath="$PROJECT_DIR$/proteins/EGFR/Structures/2J5F/conf.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proteins/EGFR/2JIT/2JIT-modeller.pdbqt" beforeDir="false" afterPath="$PROJECT_DIR$/proteins/EGFR/Structures/2JIT/2JIT-modeller.pdbqt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proteins/EGFR/2JIT/conf.txt" beforeDir="false" afterPath="$PROJECT_DIR$/proteins/EGFR/Structures/2JIT/conf.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proteins/EGFR/2JIU/2JIU-modeller.pdbqt" beforeDir="false" afterPath="$PROJECT_DIR$/proteins/EGFR/Structures/2JIU/2JIU-modeller.pdbqt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proteins/EGFR/2JIU/conf.txt" beforeDir="false" afterPath="$PROJECT_DIR$/proteins/EGFR/Structures/2JIU/conf.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proteins/EGFR/2RGP/2RGP_modeller.pdbqt" beforeDir="false" afterPath="$PROJECT_DIR$/proteins/EGFR/Structures/2RGP/2RGP_modeller.pdbqt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proteins/EGFR/2RGP/conf.2rgp" beforeDir="false" afterPath="$PROJECT_DIR$/proteins/EGFR/Structures/2RGP/conf.2rgp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proteins/EGFR/2RGP/conf.txt" beforeDir="false" afterPath="$PROJECT_DIR$/proteins/EGFR/Structures/2RGP/conf.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proteins/EGFR/2RGP/receptor.pdbqt" beforeDir="false" afterPath="$PROJECT_DIR$/proteins/EGFR/Structures/2RGP/receptor.pdbqt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proteins/EGFR/3BEL/3BEL-modeller.pdbqt" beforeDir="false" afterPath="$PROJECT_DIR$/proteins/EGFR/Structures/3BEL/3BEL-modeller.pdbqt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proteins/EGFR/3BEL/conf.txt" beforeDir="false" afterPath="$PROJECT_DIR$/proteins/EGFR/Structures/3BEL/conf.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proteins/EGFR/3IKA/3IKA-modeller.pdbqt" beforeDir="false" afterPath="$PROJECT_DIR$/proteins/EGFR/Structures/3IKA/3IKA-modeller.pdbqt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proteins/EGFR/3IKA/conf.txt" beforeDir="false" afterPath="$PROJECT_DIR$/proteins/EGFR/Structures/3IKA/conf.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proteins/EGFR/3UG1/3UG1-modeller.pdbqt" beforeDir="false" afterPath="$PROJECT_DIR$/proteins/EGFR/Structures/3UG1/3UG1-modeller.pdbqt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proteins/EGFR/3UG1/conf.txt" beforeDir="false" afterPath="$PROJECT_DIR$/proteins/EGFR/Structures/3UG1/conf.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proteins/EGFR/3VJO/3VJO-modeller.pdbqt" beforeDir="false" afterPath="$PROJECT_DIR$/proteins/EGFR/Structures/3VJO/3VJO-modeller.pdbqt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proteins/EGFR/3VJO/conf.txt" beforeDir="false" afterPath="$PROJECT_DIR$/proteins/EGFR/Structures/3VJO/conf.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proteins/EGFR/4G5J/4G5J-modeller.pdbqt" beforeDir="false" afterPath="$PROJECT_DIR$/proteins/EGFR/Structures/4G5J/4G5J-modeller.pdbqt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proteins/EGFR/4G5J/conf.txt" beforeDir="false" afterPath="$PROJECT_DIR$/proteins/EGFR/Structures/4G5J/conf.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proteins/EGFR/4G5P/4G5P-modeller.pdbqt" beforeDir="false" afterPath="$PROJECT_DIR$/proteins/EGFR/Structures/4G5P/4G5P-modeller.pdbqt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proteins/EGFR/4G5P/conf.txt" beforeDir="false" afterPath="$PROJECT_DIR$/proteins/EGFR/Structures/4G5P/conf.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proteins/EGFR/4I21/4I21-modeller.pdbqt" beforeDir="false" afterPath="$PROJECT_DIR$/proteins/EGFR/Structures/4I21/4I21-modeller.pdbqt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proteins/EGFR/4I21/conf.txt" beforeDir="false" afterPath="$PROJECT_DIR$/proteins/EGFR/Structures/4I21/conf.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proteins/EGFR/4I23/4I23-modeller.pdbqt" beforeDir="false" afterPath="$PROJECT_DIR$/proteins/EGFR/Structures/4I23/4I23-modeller.pdbqt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proteins/EGFR/4I23/conf.txt" beforeDir="false" afterPath="$PROJECT_DIR$/proteins/EGFR/Structures/4I23/conf.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proteins/EGFR/4I24/4I24-modeller.pdbqt" beforeDir="false" afterPath="$PROJECT_DIR$/proteins/EGFR/Structures/4I24/4I24-modeller.pdbqt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proteins/EGFR/4I24/conf.txt" beforeDir="false" afterPath="$PROJECT_DIR$/proteins/EGFR/Structures/4I24/conf.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proteins/EGFR/4JQ7/4JQ7-modeller.pdbqt" beforeDir="false" afterPath="$PROJECT_DIR$/proteins/EGFR/Structures/4JQ7/4JQ7-modeller.pdbqt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proteins/EGFR/4JQ7/conf.txt" beforeDir="false" afterPath="$PROJECT_DIR$/proteins/EGFR/Structures/4JQ7/conf.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proteins/EGFR/4LI5/4LI5-modeller.pdbqt" beforeDir="false" afterPath="$PROJECT_DIR$/proteins/EGFR/Structures/4LI5/4LI5-modeller.pdbqt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proteins/EGFR/4LI5/conf.txt" beforeDir="false" afterPath="$PROJECT_DIR$/proteins/EGFR/Structures/4LI5/conf.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proteins/EGFR/4LL0/4LL0-modeller.pdbqt" beforeDir="false" afterPath="$PROJECT_DIR$/proteins/EGFR/Structures/4LL0/4LL0-modeller.pdbqt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proteins/EGFR/4LL0/conf.txt" beforeDir="false" afterPath="$PROJECT_DIR$/proteins/EGFR/Structures/4LL0/conf.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proteins/EGFR/4LQM/4LQM-modeller.pdbqt" beforeDir="false" afterPath="$PROJECT_DIR$/proteins/EGFR/Structures/4LQM/4LQM-modeller.pdbqt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proteins/EGFR/4LQM/conf.txt" beforeDir="false" afterPath="$PROJECT_DIR$/proteins/EGFR/Structures/4LQM/conf.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proteins/EGFR/4LRM/4LRM-modeller.pdbqt" beforeDir="false" afterPath="$PROJECT_DIR$/proteins/EGFR/Structures/4LRM/4LRM-modeller.pdbqt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proteins/EGFR/4LRM/conf.txt" beforeDir="false" afterPath="$PROJECT_DIR$/proteins/EGFR/Structures/4LRM/conf.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proteins/EGFR/4RIW/4RIW-modeller.pdbqt" beforeDir="false" afterPath="$PROJECT_DIR$/proteins/EGFR/Structures/4RIW/4RIW-modeller.pdbqt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proteins/EGFR/4RIW/conf.txt" beforeDir="false" afterPath="$PROJECT_DIR$/proteins/EGFR/Structures/4RIW/conf.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proteins/EGFR/4TKS/4TKS-modeller.pdbqt" beforeDir="false" afterPath="$PROJECT_DIR$/proteins/EGFR/Structures/4TKS/4TKS-modeller.pdbqt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proteins/EGFR/4TKS/conf.txt" beforeDir="false" afterPath="$PROJECT_DIR$/proteins/EGFR/Structures/4TKS/conf.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proteins/EGFR/4ZJV/4ZJV-modeller.pdbqt" beforeDir="false" afterPath="$PROJECT_DIR$/proteins/EGFR/Structures/4ZJV/4ZJV-modeller.pdbqt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proteins/EGFR/4ZJV/conf.txt" beforeDir="false" afterPath="$PROJECT_DIR$/proteins/EGFR/Structures/4ZJV/conf.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proteins/EGFR/5CAV/5CAV-modeller.pdbqt" beforeDir="false" afterPath="$PROJECT_DIR$/proteins/EGFR/Structures/5CAV/5CAV-modeller.pdbqt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proteins/EGFR/5CAV/conf.txt" beforeDir="false" afterPath="$PROJECT_DIR$/proteins/EGFR/Structures/5CAV/conf.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proteins/EGFR/5CNN/5CNN-modeller.pdbqt" beforeDir="false" afterPath="$PROJECT_DIR$/proteins/EGFR/Structures/5CNN/5CNN-modeller.pdbqt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proteins/EGFR/5CNN/conf.txt" beforeDir="false" afterPath="$PROJECT_DIR$/proteins/EGFR/Structures/5CNN/conf.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proteins/EGFR/5FED/5FED-modeller.pdbqt" beforeDir="false" afterPath="$PROJECT_DIR$/proteins/EGFR/Structures/5FED/5FED-modeller.pdbqt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proteins/EGFR/5FED/conf.txt" beforeDir="false" afterPath="$PROJECT_DIR$/proteins/EGFR/Structures/5FED/conf.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proteins/EGFR/5FEE/5FEE-modeller.pdbqt" beforeDir="false" afterPath="$PROJECT_DIR$/proteins/EGFR/Structures/5FEE/5FEE-modeller.pdbqt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proteins/EGFR/5FEE/conf.txt" beforeDir="false" afterPath="$PROJECT_DIR$/proteins/EGFR/Structures/5FEE/conf.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proteins/EGFR/5XDL/5XDL-modeller.pdbqt" beforeDir="false" afterPath="$PROJECT_DIR$/proteins/EGFR/Structures/5XDL/5XDL-modeller.pdbqt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proteins/EGFR/5XDL/conf.txt" beforeDir="false" afterPath="$PROJECT_DIR$/proteins/EGFR/Structures/5XDL/conf.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proteins/EGFR/5Y9T/5Y9T-modeller.pdbqt" beforeDir="false" afterPath="$PROJECT_DIR$/proteins/EGFR/Structures/5Y9T/5Y9T-modeller.pdbqt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proteins/EGFR/5Y9T/conf.txt" beforeDir="false" afterPath="$PROJECT_DIR$/proteins/EGFR/Structures/5Y9T/conf.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ml.py" beforeDir="false" afterPath="$PROJECT_DIR$/ml.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -157,7 +90,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1589770029985</updated>
-      <workItem from="1589907424663" duration="3018000" />
+      <workItem from="1589907424663" duration="4367000" />
     </task>
     <servers />
   </component>
@@ -165,30 +98,50 @@
     <option name="version" value="2" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1398" height="261" key="GridCell.Tab.0.bottom" timestamp="1589922252434">
+    <state width="1398" height="261" key="GridCell.Tab.0.bottom" timestamp="1589923694690">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state width="1398" height="261" key="GridCell.Tab.0.bottom/0.0.1440.818/-1920.-113.1920.1057@0.0.1440.818" timestamp="1589908528490" />
-    <state width="1398" height="261" key="GridCell.Tab.0.bottom/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1589909425073" />
-    <state width="1398" height="261" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1589922252434" />
-    <state width="1398" height="261" key="GridCell.Tab.0.center" timestamp="1589922252432">
+    <state width="1398" height="261" key="GridCell.Tab.0.bottom/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1589923694690" />
+    <state width="1398" height="302" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1589922876182" />
+    <state width="1398" height="261" key="GridCell.Tab.0.center" timestamp="1589923694689">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state width="1398" height="261" key="GridCell.Tab.0.center/0.0.1440.818/-1920.-113.1920.1057@0.0.1440.818" timestamp="1589908528488" />
-    <state width="1398" height="261" key="GridCell.Tab.0.center/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1589909425070" />
-    <state width="1398" height="261" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1589922252432" />
-    <state width="1398" height="261" key="GridCell.Tab.0.left" timestamp="1589922252431">
+    <state width="1398" height="261" key="GridCell.Tab.0.center/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1589923694689" />
+    <state width="1398" height="302" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1589922876181" />
+    <state width="1398" height="261" key="GridCell.Tab.0.left" timestamp="1589923694688">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state width="1398" height="261" key="GridCell.Tab.0.left/0.0.1440.818/-1920.-113.1920.1057@0.0.1440.818" timestamp="1589908528487" />
-    <state width="1398" height="261" key="GridCell.Tab.0.left/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1589909425069" />
-    <state width="1398" height="261" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1589922252431" />
-    <state width="1398" height="261" key="GridCell.Tab.0.right" timestamp="1589922252433">
+    <state width="1398" height="261" key="GridCell.Tab.0.left/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1589923694688" />
+    <state width="1398" height="302" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1589922876181" />
+    <state width="1398" height="261" key="GridCell.Tab.0.right" timestamp="1589923694690">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state width="1398" height="261" key="GridCell.Tab.0.right/0.0.1440.818/-1920.-113.1920.1057@0.0.1440.818" timestamp="1589908528489" />
-    <state width="1398" height="261" key="GridCell.Tab.0.right/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1589909425071" />
-    <state width="1398" height="261" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1589922252433" />
+    <state width="1398" height="261" key="GridCell.Tab.0.right/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1589923694690" />
+    <state width="1398" height="302" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1589922876182" />
+    <state width="1398" height="302" key="GridCell.Tab.1.bottom" timestamp="1589923625235">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1398" height="302" key="GridCell.Tab.1.bottom/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1589923625235" />
+    <state width="1398" height="302" key="GridCell.Tab.1.bottom/0.0.1440.900@0.0.1440.900" timestamp="1589922876184" />
+    <state width="1398" height="302" key="GridCell.Tab.1.center" timestamp="1589923625233">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1398" height="302" key="GridCell.Tab.1.center/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1589923625233" />
+    <state width="1398" height="302" key="GridCell.Tab.1.center/0.0.1440.900@0.0.1440.900" timestamp="1589922876183" />
+    <state width="1398" height="302" key="GridCell.Tab.1.left" timestamp="1589923625231">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1398" height="302" key="GridCell.Tab.1.left/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1589923625231" />
+    <state width="1398" height="302" key="GridCell.Tab.1.left/0.0.1440.900@0.0.1440.900" timestamp="1589922876183" />
+    <state width="1398" height="302" key="GridCell.Tab.1.right" timestamp="1589923625234">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1398" height="302" key="GridCell.Tab.1.right/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1589923625234" />
+    <state width="1398" height="302" key="GridCell.Tab.1.right/0.0.1440.900@0.0.1440.900" timestamp="1589922876184" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -202,6 +155,6 @@
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/dock$hello.coverage" NAME="hello Coverage Results" MODIFIED="1589922228494" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/dock$hello.coverage" NAME="hello Coverage Results" MODIFIED="1589923694681" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
