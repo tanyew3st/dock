@@ -20,6 +20,7 @@ class MachineLearning:
         beginning = True
         maximum = 0
 
+        missingData = []
         for i in os.listdir(inputdir):
             dictionary = {}
 
@@ -29,7 +30,8 @@ class MachineLearning:
                 if items.__contains__("Found"):
                     continue
                 num = ''
-
+                if items[0] != '-':
+                    break
                 for j in items.split()[1].split('_')[2]:
                     if j != '/':
                         num += j
@@ -40,10 +42,16 @@ class MachineLearning:
                         maximum = int(num)
                 dictionary[int(num)] = float(items.split()[0])
             if beginning:
-                df = pd.dataFrame(index=np.arange(maximum + 1), columns=columns)
+                df = pd.DataFrame(index=np.arange(1,maximum + 1), columns=columns)
 
             for k in range(1, maximum + 1):
-                df.set_value(k, i, dictionary[k])
+                if k in dictionary:
+                    df.at[k, i] = dictionary[k]
+                else:
+                    missingData.append([k,i])
+            
             beginning = False
+        df.dropna()
         print(df)
+        print(missingData)
         # end product to create a new excel spreadsheet .xlsx in the output location
