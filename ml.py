@@ -26,7 +26,7 @@ class MachineLearning:
         for i in os.listdir(inputdir):
             dictionary = {}
 
-            opened = open(inputdir + "/" + i).readlines()
+            opened = open(inputdir + "/" + i, encoding="unicode_escape").readlines()
 
             for items in opened:
                 if items.__contains__("Found"):
@@ -47,17 +47,32 @@ class MachineLearning:
                 df = pd.DataFrame(index=np.arange(1, maximum + 1), columns=columns)
 
             for k in range(1, maximum + 1):
+                try:
+                    int(i[0])
+                    str(i[1])
+                except ValueError:
+                    continue
                 if k in dictionary:
                     df.at[k, i[0:4]] = float(dictionary[k])
                 else:
                     missingData.append([k, i[0:4]])
-
             beginning = False
         df.dropna()
 
-        # drop columns that we dont need
+
+        # drop columns that we dont need`
         # missing data is extremely weird and fix it
         df = df.reindex(sorted(df.columns), axis=1)
+
+        for i in df.columns:
+            try:
+                int(i[0])
+                str(i[1])
+            except ValueError:
+                del df[i]
+
+            
+        print(df)
 
         print(missingData)
 
@@ -73,18 +88,18 @@ class MachineLearning:
         actives = pd.read_excel(activePath, index=False)
         actives.drop("Unnamed: 0", axis=1, inplace=True)
         active_ticker = np.ones(len(actives))
-        print 'ACTIVES'
+        print('ACTIVES')
 
         decoys = pd.read_excel(decoyPath, index=False)
         decoys.drop("Unnamed: 0", axis=1, inplace=True)
         decoy_ticker = np.zeros(len(decoys))
-        print 'DECOYS'
+        print('DECOYS')
 
         all_vals = pd.concat([actives, decoys], ignore_index=True)
         all_ticker = np.concatenate([active_ticker, decoy_ticker])
 
-        print all_vals
-        print all_ticker
+        print(all_vals)
+        print(all_ticker)
 
         # X_train, X_test, y_train, y_test = train_test_split(all_vals, all_ticker, test_size=0.33, random_state=50)
 
@@ -92,4 +107,4 @@ class MachineLearning:
         logModel.fit(all_vals, all_ticker)
 
         predictions = logModel.predict(self.affinity)
-        print predictions
+        print(predictions)
