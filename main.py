@@ -9,6 +9,10 @@ import pandas as pd
 # selected by the user upon initial interaction with the API
 proteinToUse = "EFRR"
 
+# Configurations for Flask
+app = flask.Flask(__name__)
+app.config["DEBUG"] = True
+
 # needs to be added by user
 ligand = "actives_final_1.pdbqt"
 
@@ -22,6 +26,9 @@ affinityScoresTest = {
 
 }
 
+# @app.route('/', methods=['GET'])
+# def sayHello():
+#     return "Hello World!!"
 
 def dock(protein):
     print(protein.structure)
@@ -51,9 +58,10 @@ def dock(protein):
 
 # Main method
 if __name__ == "__main__":
+    # app.run()
 
-    ml = MachineLearning(affinityScoresTest)
-    MachineLearning.createDirectory("/Users/tchandak/Desktop/Dock/dock/Actives", None, None)
+    # ml = MachineLearning(affinityScoresTest)
+    # MachineLearning.createDirectory("/Users/tchandak/Desktop/Dock/dock/Actives", None, None)
 
 
 
