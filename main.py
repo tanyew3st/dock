@@ -60,8 +60,9 @@ def dock(protein):
 if __name__ == "__main__":
     # app.run()
 
-    # ml = MachineLearning(affinityScoresTest)
-    # MachineLearning.createDirectory("/Users/tchandak/Desktop/Dock/dock/Actives", None, None)
+    ml = MachineLearning(affinityScoresTest)
+    MachineLearning.createDirectory("Actives", None, None)
+
 
 
 

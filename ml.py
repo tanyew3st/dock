@@ -16,7 +16,7 @@ class MachineLearning:
     def createDirectory(inputdir, outputdir, active):
         columns = []
         for i in os.listdir(inputdir):
-            print i
+            print(i)
             columns.append(i)
         beginning = True
         maximum = 0
@@ -36,8 +36,9 @@ class MachineLearning:
                         num += j
                     else:
                         break
-                if int(num) > maximum:
-                    maximum = num
+                if beginning:
+                    if int(num) > maximum:
+                        maximum = int(num)
                 dictionary[int(num)] = float(items.split()[0])
             if beginning:
                 df = pd.dataFrame(index=np.arange(maximum + 1), columns=columns)
@@ -45,5 +46,5 @@ class MachineLearning:
             for k in range(1, maximum + 1):
                 df.set_value(k, i, dictionary[k])
             beginning = False
-
+        print(df)
         # end product to create a new excel spreadsheet .xlsx in the output location
