@@ -7,7 +7,7 @@ import numpy as np
 import pandas as pd
 
 # selected by the user upon initial interaction with the API
-proteinToUse = "EFRR"
+proteinToUse = "EGFR"
 
 # Configurations for Flask
 app = flask.Flask(__name__)
@@ -25,6 +25,7 @@ proteins = []
 affinityScoresTest = {
 
 }
+
 
 # @app.route('/', methods=['GET'])
 # def sayHello():
@@ -56,23 +57,13 @@ def dock(protein):
     obj = {protein.structure: min(newArray)}
     affinityScores.update(obj)
 
+
 # Main method
 if __name__ == "__main__":
     # app.run()
 
     ml = MachineLearning(affinityScoresTest)
     MachineLearning.createDirectory("Actives", None, None)
-
-
-
-
-
-
-
-
-
-
-
 
 
     # this will be done in the front end just taking user input to find the protein they want to use
@@ -101,7 +92,6 @@ if __name__ == "__main__":
 
     print(*proteins, sep='\n')
 
-
     # docking. this could be part of the earlier file
     for i in proteins:
         dock(i)
@@ -114,4 +104,3 @@ if __name__ == "__main__":
         "2EB2": -9.3
         etc.
     """
-
