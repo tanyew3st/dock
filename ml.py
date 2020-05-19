@@ -15,8 +15,8 @@ class MachineLearning:
     def createDirectory(inputdir, outputdir, active):
         columns = []
         for i in os.listdir(inputdir):
-            print(i)
-            columns.append(i)
+            print(i[0:4])
+            columns.append(i[0:4])
         beginning = True
         maximum = 0
 
@@ -46,9 +46,9 @@ class MachineLearning:
 
             for k in range(1, maximum + 1):
                 if k in dictionary:
-                    df.at[k, i] = dictionary[k]
+                    df.at[k, i[0:4]] = float(dictionary[k])
                 else:
-                    missingData.append([k,i])
+                    missingData.append([k,i[0:4]])
             
             beginning = False
         df.dropna()
