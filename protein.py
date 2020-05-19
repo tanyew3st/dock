@@ -1,5 +1,7 @@
 # class variables for each Protein that need to be changed
 class Protein:
+    structure = None
+
     properties = {
         "receptor": None,
         "center_x": None,
@@ -12,7 +14,8 @@ class Protein:
     }
 
     def __repr__(self):
-        return str(self.properties)
+        return str(self.structure)
+        # return str(self.properties)
         # return str(self.x)
 
     def openFile(self, name):
@@ -24,8 +27,8 @@ class Protein:
                 propertyUO[i.split()[0]] = i.split()[-1]
         return propertyUO
 
-    def __init__(self, name, directory):
-        self.x = name
+    def __init__(self, name, directory, structure):
+        self.structure = structure
         propertyUO = self.openFile(name)
         self.properties = propertyUO
         # self.readFile(propertyUO)
