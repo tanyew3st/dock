@@ -1,5 +1,6 @@
 from __future__ import print_function
 import os
+import flask
 from ml import MachineLearning
 from protein import Protein
 import numpy as np
@@ -48,12 +49,10 @@ def dock(protein):
     obj = {protein.structure: min(newArray)}
     affinityScores.update(obj)
 
-
 # Main method
 if __name__ == "__main__":
 
     ml = MachineLearning(affinityScoresTest)
-
 
 
 
@@ -72,7 +71,7 @@ if __name__ == "__main__":
     # searching through the proteins directory to find the protein the user wants to dock to
     for i in os.listdir("proteins"):
         if i == proteinToUse:
-            directory = "proteins/" + i
+            directory = "proteins/" + i + "/Structures"
     if directory is None:
         print("Couldn't find directory")
 
