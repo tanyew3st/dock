@@ -1,7 +1,11 @@
 import pandas as pd
 import numpy as np
 import os
-from sklearn.linear_model import LogisticRegression;
+from sklearn.linear_model import LogisticRegression
+from sklearn.neighbors import KNeighborsClassifier
+from sklearn.tree import DecisionTreeClassifier;
+from sklearn.ensemble import RandomForestClassifier;
+from sklearn.svm import SVC
 
 
 class MachineLearning:
@@ -26,7 +30,8 @@ class MachineLearning:
         for i in os.listdir(inputdir):
             dictionary = {}
 
-            opened = open(inputdir + "/" + i, encoding="unicode_escape").readlines()
+            # opened = open(inputdir + "/" + i, encoding="unicode_escape").readlines()
+            opened = open(inputdir + "/" + i).readlines()
 
             for items in opened:
                 if items.__contains__("Found"):
@@ -57,12 +62,6 @@ class MachineLearning:
                 else:
                     missingData.append([k, i[0:4]])
             beginning = False
-        df.dropna()
-
-
-        # drop columns that we dont need`
-        # missing data is extremely weird and fix it
-        df = df.reindex(sorted(df.columns), axis=1)
 
         for i in df.columns:
             try:
@@ -71,16 +70,13 @@ class MachineLearning:
             except ValueError:
                 del df[i]
 
-            
+        df.dropna(inplace=True)
         print(df)
 
-        print(missingData)
-
-
-        # if active:
-        #     df.to_excel(outputdir + "/active.xlsx")
-        # else:
-        #     df.to_excel(outputdir + "/decoy.xlsx")
+        if active:
+            df.to_excel(outputdir + "/active.xlsx")
+        else:
+            df.to_excel(outputdir + "/decoy.xlsx")
         print("finished")
         # end product to create a new excel spreadsheet .xlsx in the output location
 
@@ -101,10 +97,44 @@ class MachineLearning:
         print(all_vals)
         print(all_ticker)
 
+        print(all_vals)
         # X_train, X_test, y_train, y_test = train_test_split(all_vals, all_ticker, test_size=0.33, random_state=50)
+        if all_vals.isnull().values.any():
+            print(pd.isnull(all_vals).any(1).nonzero()[0])
+            exit(4)
 
+        y = pd.DataFrame(self.affinity, index=[0])
+
+        # Logistic Regression
+        print "Doing Logistic Regression"
         logModel = LogisticRegression()
         logModel.fit(all_vals, all_ticker)
+        plr = logModel.predict_proba(y)
+        self.prob["lr"] = plr
 
-        predictions = logModel.predict(self.affinity)
-        print(predictions)
+        # K Nearest Neighbors
+        print "Doing KNN"
+        knn = KNeighborsClassifier(n_neighbors=100)
+        knn.fit(all_vals, all_ticker)
+        pknn = knn.predict_proba(y)
+        self.prob["knn"] = pknn
+
+        # Support Vector Machines
+        print "Doing Support Vector Machines"
+        svc = SVC(C=100, gamma=0.2, probability=True)
+        svc.fit(all_vals, all_ticker)
+        psvc = svc.predict_proba(y)
+        self.prob["svc"] = psvc
+
+        # Random Forest
+        print "Doing Random Forest Classifier"
+        rf = RandomForestClassifier(n_estimators=750)
+        rf.fit(all_vals, all_ticker)
+        prf = rf.predict_proba(y)
+        self.prob["rf"] = prf
+
+        print(self.prob)
+
+        
+
+
