@@ -7,11 +7,19 @@ from sklearn.tree import DecisionTreeClassifier;
 from sklearn.ensemble import RandomForestClassifier;
 from sklearn.svm import SVC
 
-
+# class to provide Machine Learning and create a model
 class MachineLearning:
+    # results should contain prob object
+    # and affinity object
+    results = {}
+
+    # affinity scores made in the constructor
     affinity = None
+
+    # probability object that contains all the probabilities for the various models
     prob = {}
 
+    # on init set the affinity array equal to the affinity scores provided by vina
     def __init__(self, testaffinity):
         self.affinity = testaffinity
 
@@ -80,22 +88,25 @@ class MachineLearning:
         print("finished")
         # end product to create a new excel spreadsheet .xlsx in the output location
 
+    # gets the probability using various machine learning models and sets
     def getProbability(self, activePath, decoyPath):
+        # reading the active files from the excel spreadsheet
         actives = pd.read_excel(activePath, index=False)
         actives.drop("Unnamed: 0", axis=1, inplace=True)
         active_ticker = np.ones(len(actives))
         print('ACTIVES')
 
+        # reading the decoy files from the excel spreadsheet
         decoys = pd.read_excel(decoyPath, index=False)
         decoys.drop("Unnamed: 0", axis=1, inplace=True)
         decoy_ticker = np.zeros(len(decoys))
         print('DECOYS')
 
+        # creating all the values
         all_vals = pd.concat([actives, decoys], ignore_index=True)
-        all_ticker = np.concatenate([active_ticker, decoy_ticker])
 
-        print(all_vals)
-        print(all_ticker)
+        # assigning 0 or 1 if it is active (1) or decoy (0)
+        all_ticker = np.concatenate([active_ticker, decoy_ticker])
 
         print(all_vals)
         # X_train, X_test, y_train, y_test = train_test_split(all_vals, all_ticker, test_size=0.33, random_state=50)
