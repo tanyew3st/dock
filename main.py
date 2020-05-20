@@ -49,9 +49,12 @@ def getPredWithAffinity(protein, affinity):
 def makeFolders(path):
     os.mkdir(path + "/Actives")
     os.mkdir(path + "/Decoy")
-    for folder in os.listdir(path):
-        if folder.__contains__("active"):
-            shutil.move(folder, folder + "/Actives")
+    for file in os.listdir(path):
+        if file != "Actives" and file != "Decoy":
+            if file.lower().__contains__("active"):
+                shutil.move(path + "/" + file, path + "/Actives/" + file)
+            if file.lower().__contains__("decoy"):
+                shutil.move(path + "/" + file, path + "/Decoy/" + file)
 
 def dock(protein):
     print(protein.structure)
@@ -76,14 +79,23 @@ def dock(protein):
 
     print(protein.structure)
 
-    obj = {protein.structure: min(newArray)}
-    affinityScores.update(obj)
-
+    # obj = {protein.structure: min(newArray)}
+    # affinityScores.update(obj)
+    affinityScores[protein.structure] =  min(newArray)
 
 # Main method
 if __name__ == "__main__":
-    # app.run()
+    dire = "C:/Users/Armaan Chandak/Desktop/vina_top_Actives_Decoys_DUDE_kinase_output"
+    for file in os.listdir(dire):
+        # print(file)
+        os.mkdir(r"C:/Users/Armaan Chandak/Documents/GitHub/dock/proteins/" + file)
 
+    exit(0)
+
+
+    makeFolders(r"C:\Users\Armaan Chandak\Desktop\\abl1")
+    exit(0)
+    # app.run()
     # ml = MachineLearning(affinityScoresTest)
     # MachineLearning.createDirectory("/Users/tchandak/Desktop/STARS Data/Decoys", "proteins/EGFR", False)
     # exit(52)
