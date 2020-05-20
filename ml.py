@@ -31,6 +31,7 @@ class MachineLearning:
         columns = []
         for i in os.listdir(inputdir):
             columns.append(i[0:4])
+        columns = sorted(columns)
         beginning = True
         maximum = 0
 
@@ -117,28 +118,28 @@ class MachineLearning:
         y = pd.DataFrame(self.affinity, index=[0])
 
         # Logistic Regression
-        print "Doing Logistic Regression"
+        print("Doing Logistic Regression")
         logModel = LogisticRegression()
         logModel.fit(all_vals, all_ticker)
         plr = logModel.predict_proba(y)
         self.prob["lr"] = plr
 
         # K Nearest Neighbors
-        print "Doing KNN"
+        print("Doing KNN")
         knn = KNeighborsClassifier(n_neighbors=100)
         knn.fit(all_vals, all_ticker)
         pknn = knn.predict_proba(y)
         self.prob["knn"] = pknn
 
         # Support Vector Machines
-        print "Doing Support Vector Machines"
+        print("Doing Support Vector Machines")
         svc = SVC(C=100, gamma=0.2, probability=True)
         svc.fit(all_vals, all_ticker)
         psvc = svc.predict_proba(y)
         self.prob["svc"] = psvc
 
         # Random Forest
-        print "Doing Random Forest Classifier"
+        print("Doing Random Forest Classifier")
         rf = RandomForestClassifier(n_estimators=750)
         rf.fit(all_vals, all_ticker)
         prf = rf.predict_proba(y)
