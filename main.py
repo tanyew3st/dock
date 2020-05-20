@@ -76,7 +76,7 @@ if __name__ == "__main__":
     # MachineLearning.createDirectory("/Users/tchandak/Desktop/STARS Data/Decoys", "proteins/EGFR", False)
     # exit(52)
     # this will be done in the front end just taking user input to find the protein they want to use
-    proteinToUse = str.upper(raw_input("Protein to dock to: "))
+    proteinToUse = str.upper(input("Protein to dock to: "))
 
     # searching through the proteins directory to find the protein the user wants to dock to
     for i in os.listdir("proteins"):
