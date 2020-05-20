@@ -1,5 +1,7 @@
 from __future__ import print_function
 import os
+import shutil
+
 import flask
 from ml import MachineLearning
 from protein import Protein
@@ -21,6 +23,7 @@ affinityScores = ["1M14", "1XKK", "2EB2", "2EB3",    "2GS2",    "2GS7",    "2ITN
                   "3IKA",    "3UG1",    "3VJO",    "4G5J",    "4G5P",    "4I23",    "4I24",    "4JQ7",    "4LI5",    "4LL0",    "4LQM",    "4LRM",   "4RIW",
                   "4TKS",    "4ZJV",    "5CAV",    "5CNN",    "5FED",    "5FEE",    "5XDL",    "5Y9T",    "outp"]
 ascores = [-6.8,-8.2,-7.1,-7.6,-7.0,-8.4,-7.1,-7.3,-7.5,-8.2,-8.0,-8.1,-9.1,-7.5,-6.9,-7.1,-7.8,-8.1,-7.4,-9.1,-7.8,-8.1,-8.9,-8.1,-8.6,-7.6,-7.4,-8.4,-7.6,-8.0,-7.1,-7.6,-6.9,-7.7]
+
 directory = None
 
 proteins = []
@@ -35,11 +38,20 @@ affinityScoresTest = {'1M14': -6.8, '1XKK': -8.2, '2EB2': -7.1, '2EB3': -7.6,
      '5CAV': -7.6, '5CNN': -8.0, '5FED': -7.1, '5FEE': -7.6,
      '5XDL': -6.9, '5Y9T': -7.7}
 
-
+# provide prediction object with predictions given only affinity numbers
+def getPredWithAffinity(protein, affinity):
+    print("getting predictions with affinity numbers")
 
 # @app.route('/', methods=['GET'])
 # def sayHello():
 #     return "Hello World!!"
+
+def makeFolders(path):
+    os.mkdir(path + "/Actives")
+    os.mkdir(path + "/Decoy")
+    for folder in os.listdir(path):
+        if folder.__contains__("active"):
+            shutil.move(folder, folder + "/Actives")
 
 def dock(protein):
     print(protein.structure)
