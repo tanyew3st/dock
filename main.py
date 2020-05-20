@@ -85,14 +85,6 @@ def dock(protein):
 
 # Main method
 if __name__ == "__main__":
-    dire = "C:/Users/Armaan Chandak/Desktop/vina_top_Actives_Decoys_DUDE_kinase_output"
-    for file in os.listdir(dire):
-        # print(file)
-        os.mkdir(r"C:/Users/Armaan Chandak/Documents/GitHub/dock/proteins/" + file)
-
-    exit(0)
-
-
     makeFolders(r"C:\Users\Armaan Chandak\Desktop\\abl1")
     exit(0)
     # app.run()
