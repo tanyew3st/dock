@@ -30,7 +30,9 @@ class MachineLearning:
     def createDirectory(inputdir, outputdir, active):
         columns = []
         for i in os.listdir(inputdir):
-            columns.append(i[0:4])
+            j = i.find(".")
+            columns.append(i[0:j])
+            print(columns)
         columns = sorted(columns)
         beginning = True
         maximum = 0
@@ -67,9 +69,9 @@ class MachineLearning:
                 except ValueError:
                     continue
                 if k in dictionary:
-                    df.at[k, i[0:4]] = float(dictionary[k])
+                    df.at[k, i[0:i.find('.')]] = float(dictionary[k])
                 else:
-                    missingData.append([k, i[0:4]])
+                    missingData.append([k, i[0:i.find('.')]])
             beginning = False
 
         for i in df.columns:

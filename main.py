@@ -85,6 +85,23 @@ def dock(protein):
 
 # Main method
 if __name__ == "__main__":
+    # for i in os.listdir("proteins"):
+    for i in os.listdir("proteins"):
+        if i != "EGFR" and i != ".DS_Store":
+            MachineLearning.createDirectory(r"C:/Users\Armaan Chandak\Desktop/vina_top_Actives_Decoys_DUDE_kinase_output/" + i + "/Actives", r"C:/Users\Armaan Chandak\Documents/GitHub\dock/proteins/" + i, True)
+            MachineLearning.createDirectory(r"C:/Users\Armaan Chandak\Desktop/vina_top_Actives_Decoys_DUDE_kinase_output/" + i + "/Decoy", r"C:/Users\Armaan Chandak\Documents/GitHub\dock/proteins/" + i, False)
+
+    exit(4)
+
+    for  i in os.listdir("proteins"):
+        for j in range(1,3):
+            if i == ".DS_Store":
+                continue
+            if j ==1:
+                MachineLearning.createDirectory("proteins/" + i + "/Structures", "proteins/" + i, True)
+            else:
+                MachineLearning.createDirectory("proteins/" + i + "/Structures", "proteins/" + i, False)
+
     makeFolders(r"C:\Users\Armaan Chandak\Desktop\\abl1")
     exit(0)
     # app.run()
