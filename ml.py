@@ -30,9 +30,9 @@ class MachineLearning:
     def createDirectory(inputdir, outputdir, active):
         columns = []
         for i in os.listdir(inputdir):
-            j = i.find(".")
-            columns.append(i[0:j])
-            print(columns)
+            if i.__contains__("GetTop"):
+                j = i.find(".")
+                columns.append(i[0:j])
         columns = sorted(columns)
         beginning = True
         maximum = 0
@@ -92,15 +92,16 @@ class MachineLearning:
         # end product to create a new excel spreadsheet .xlsx in the output location
 
     # gets the probability using various machine learning models and sets
-    def getProbability(self, activePath, decoyPath):
+    def getProbability(self, protein):
+
         # reading the active files from the excel spreadsheet
-        actives = pd.read_excel(activePath, index=False)
+        actives = pd.read_excel("proteins/" + protein + "/active.xlsx", index=False)
         actives.drop("Unnamed: 0", axis=1, inplace=True)
         active_ticker = np.ones(len(actives))
         print('ACTIVES')
 
         # reading the decoy files from the excel spreadsheet
-        decoys = pd.read_excel(decoyPath, index=False)
+        decoys = pd.read_excel("proteins/" + protein + "/decoy.xlsx", index=False)
         decoys.drop("Unnamed: 0", axis=1, inplace=True)
         decoy_ticker = np.zeros(len(decoys))
         print('DECOYS')

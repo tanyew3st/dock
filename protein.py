@@ -13,9 +13,9 @@ class Protein:
         "exhaustiveness": None
     }
     def __repr__(self):
+        # return str(self.structure)
+        return str(self.properties)
         return str(self.structure)
-        # return str(self.properties)
-        # return str(self.x)
 
     def openFile(self, name):
         propertyUO = {}

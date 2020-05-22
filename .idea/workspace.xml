@@ -2,150 +2,52 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="53f2f5b8-52dd-4cf4-8ea5-9ed9271db4fe" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/proteins/Braf/Structures/1uwh_A/1uwh_A.conf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/proteins/Braf/Structures/1uwh_A/1uwh_A.pdbqt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/proteins/Braf/Structures/1uwj_A_E599V/1uwj_A_E599V.conf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/proteins/Braf/Structures/1uwj_A_E599V/1uwj_A_E599V.pdbqt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/proteins/Braf/Structures/3c4c_A/3c4c_A.conf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/proteins/Braf/Structures/3c4c_A/3c4c_A.pdbqt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/proteins/Braf/Structures/3d4q_A/3d4q_A.conf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/proteins/Braf/Structures/3d4q_A/3d4q_A.pdbqt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/proteins/Braf/Structures/3idp_A/3idp_A.conf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/proteins/Braf/Structures/3idp_A/3idp_A.pdbqt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/proteins/Braf/Structures/3ppj_A/3ppj_A.conf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/proteins/Braf/Structures/3ppj_A/3ppj_A.pdbqt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/proteins/Braf/Structures/3ppk_A/3ppk_A.conf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/proteins/Braf/Structures/3ppk_A/3ppk_A.pdbqt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/proteins/Braf/Structures/3prf_A/3prf_A.conf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/proteins/Braf/Structures/3prf_A/3prf_A.pdbqt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/proteins/Braf/Structures/3pri_A/3pri_A.conf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/proteins/Braf/Structures/3pri_A/3pri_A.pdbqt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/proteins/Braf/Structures/3psb_A/3psb_A.conf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/proteins/Braf/Structures/3psb_A/3psb_A.pdbqt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/proteins/Braf/Structures/4fk3/4fk3_A.conf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/proteins/Braf/Structures/4fk3/4fk3_A.pdbqt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/proteins/FAK_A/2ETM_A/2ETM_A.conf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/proteins/FAK_A/2ETM_A/2ETM_A.pdbqt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/proteins/FAK_A/3PXK_A/3PXK_A.conf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/proteins/FAK_A/3PXK_A/3PXK_A.pdbqt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/proteins/FAK_A/4GU9_A/4GU9_A.conf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/proteins/FAK_A/4GU9_A/4GU9_A.pdbqt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/proteins/FAK_B/2ETM_B/2ETM_B.conf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/proteins/FAK_B/2ETM_B/2ETM_B.pdbqt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/proteins/FAK_B/4GU9_B/4GU9_B.conf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/proteins/FAK_B/4GU9_B/4GU9_B.pdbqt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/proteins/abl1/Structures/2g1t_A/2g1t_A.conf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/proteins/abl1/Structures/2g1t_A/2g1t_A.receptor.pdbqt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/proteins/abl1/Structures/2hiw_A/2hiw_A.conf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/proteins/abl1/Structures/2hiw_A/2hiw_A.receptor.pdbqt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/proteins/abl1/Structures/2hyy_A/2hyy_A.conf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/proteins/abl1/Structures/2hyy_A/2hyy_A.receptor.pdbqt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/proteins/abl1/Structures/2hz0_A/2hz0_A.conf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/proteins/abl1/Structures/2hz0_A/2hz0_A.receptor.pdbqt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/proteins/abl1/Structures/2hz4_A/2hz4_A.conf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/proteins/abl1/Structures/2hz4_A/2hz4_A.receptor.pdbqt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/proteins/abl1/Structures/2hzi_A/2hzi_A.conf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/proteins/abl1/Structures/2hzi_A/2hzi_A.receptor.pdbqt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/proteins/abl1/Structures/3cs9_A/3cs9_A.conf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/proteins/abl1/Structures/3cs9_A/3cs9_A.receptor.pdbqt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/proteins/abl1/Structures/4zog_A/4zog_A.conf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/proteins/abl1/Structures/4zog_A/4zog_A.receptor.pdbqt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/proteins/abl1/Structures/6npe_A/6npe_A.conf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/proteins/abl1/Structures/6npe_A/6npe_A.receptor.pdbqt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/proteins/abl1/Structures/6npu_A/6npu_A.conf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/proteins/abl1/Structures/6npu_A/6npu_A.receptor.pdbqt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/proteins/abl1/Structures/6npv_A/6npv_A.conf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/proteins/abl1/Structures/6npv_A/6npv_A.receptor.pdbqt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/proteins/akt1/Structures/3cqu_A/3cqu_A.conf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/proteins/akt1/Structures/3cqu_A/3cqu_A.receptor.pdbqt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/proteins/akt1/Structures/3cqw_A/3cqw_A.conf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/proteins/akt1/Structures/3cqw_A/3cqw_A.receptor.pdbqt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/proteins/akt1/Structures/3mv5_A/3mv5_A.conf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/proteins/akt1/Structures/3mv5_A/3mv5_A.receptor.pdbqt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/proteins/akt1/Structures/3o96_A/3o96_A.conf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/proteins/akt1/Structures/3o96_A/3o96_A.receptor.pdbqt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/proteins/akt1/Structures/3ocb_A/3ocb_A.conf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/proteins/akt1/Structures/3ocb_A/3ocb_A.receptor.pdbqt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/proteins/akt1/Structures/3ow4_A/3ow4_A.conf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/proteins/akt1/Structures/3ow4_A/3ow4_A.receptor.pdbqt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/proteins/akt1/Structures/6buu_A/6buu_A.conf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/proteins/akt1/Structures/6buu_A/6buu_A.receptor.pdbqt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/proteins/akt1/Structures/6ccy_A/6ccy_A.conf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/proteins/akt1/Structures/6ccy_A/6ccy_A.receptor.pdbqt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/proteins/akt1/Structures/6hff_A/6hff_A.conf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/proteins/akt1/Structures/6hff_A/6hff_A.receptor.pdbqt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/proteins/akt1/Structures/6npz_A/6npz_A.conf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/proteins/akt1/Structures/6npz_A/6npz_A.receptor.pdbqt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/proteins/akt1/Structures/6s9w_A/6s9w_A.conf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/proteins/akt1/Structures/6s9w_A/6s9w_A.receptor.pdbqt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/proteins/akt2/Structures/1gzk_A/1gzk_A.conf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/proteins/akt2/Structures/1gzk_A/1gzk_A.receptor.pdbqt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/proteins/akt2/Structures/1gzn_A/1gzn_A.conf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/proteins/akt2/Structures/1gzn_A/1gzn_A.receptor.pdbqt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/proteins/akt2/Structures/1gzo_A/1gzo_A.conf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/proteins/akt2/Structures/1gzo_A/1gzo_A.receptor.pdbqt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/proteins/akt2/Structures/1mrv_A/1mrv_A.conf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/proteins/akt2/Structures/1mrv_A/1mrv_A.receptor.pdbqt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/proteins/akt2/Structures/1mry_A/1mry_A.conf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/proteins/akt2/Structures/1mry_A/1mry_A.receptor.pdbqt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/proteins/akt2/Structures/1o6l_A/1o6l_A.conf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/proteins/akt2/Structures/1o6l_A/1o6l_A.receptor.pdbqt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/proteins/akt2/Structures/2jdo_A/2jdo_A.conf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/proteins/akt2/Structures/2jdo_A/2jdo_A.receptor.pdbqt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/proteins/akt2/Structures/2jdr_A/2jdr_A.conf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/proteins/akt2/Structures/2jdr_A/2jdr_A.receptor.pdbqt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/proteins/akt2/Structures/2uw9_A/2uw9_A.conf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/proteins/akt2/Structures/2uw9_A/2uw9_A.receptor.pdbqt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/proteins/akt2/Structures/2x39_A/2x39_A.conf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/proteins/akt2/Structures/2x39_A/2x39_A.receptor.pdbqt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/proteins/akt2/Structures/3d0e_A/3d0e_A.conf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/proteins/akt2/Structures/3d0e_A/3d0e_A.receptor.pdbqt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/proteins/cdk2/Structures/1fvv_A/1fvv_A.conf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/proteins/cdk2/Structures/1fvv_A/1fvv_A.receptor.pdbqt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/proteins/cdk2/Structures/1h00_A/1h00_A.conf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/proteins/cdk2/Structures/1h00_A/1h00_A.receptor.pdbqt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/proteins/cdk2/Structures/1h01_A/1h01_A.conf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/proteins/cdk2/Structures/1h01_A/1h01_A.receptor.pdbqt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/proteins/cdk2/Structures/1ke7_A/1ke7_A.conf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/proteins/cdk2/Structures/1ke7_A/1ke7_A.receptor.pdbqt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/proteins/cdk2/Structures/1oyi_A/1oy1_A.conf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/proteins/cdk2/Structures/1oyi_A/1oy1_A.receptor.pdbqt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/proteins/cdk2/Structures/2g9x_A/2g9x_A.conf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/proteins/cdk2/Structures/2g9x_A/2g9x_A.receptor.pdbqt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/proteins/cdk2/Structures/2x1n_A/2xn1_A.conf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/proteins/cdk2/Structures/2x1n_A/2xn1_A.receptor.pdbqt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/proteins/cdk2/Structures/3ddq_A/3ddq_A.conf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/proteins/cdk2/Structures/3ddq_A/3ddq_A.receptor.pdbqt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/proteins/cdk2/Structures/3eoc_A/3eoc_A.conf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/proteins/cdk2/Structures/3eoc_A/3eoc_A.receptor.pdbqt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/proteins/cdk2/Structures/3lfs_A/3lfs_A.conf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/proteins/cdk2/Structures/3lfs_A/3lfs_A.receptor.pdbqt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/proteins/cdk2/Structures/3py1_A/3py1_A.conf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/proteins/cdk2/Structures/3py1_A/3py1_A.receptor.pdbqt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/proteins/csf1r/Structures/2i0v_A/2i0v_A.conf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/proteins/csf1r/Structures/2i0v_A/2i0v_A.receptor.pdbqt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/proteins/csf1r/Structures/2i0v_A/vina_screen_local_multiple_receptors.sh" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/proteins/csf1r/Structures/2i0y_A/2i0y_A.conf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/proteins/csf1r/Structures/2i0y_A/2i0y_A.receptor.pdbqt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/proteins/csf1r/Structures/2i1m_A/2i1m_A.conf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/proteins/csf1r/Structures/2i1m_A/2i1m_A.receptor.pdbqt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/proteins/csf1r/Structures/2ogv_A/2ogv_A.conf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/proteins/csf1r/Structures/2ogv_A/2ogv_A.receptor.pdbqt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/proteins/csf1r/Structures/3bea_A/3bea_A.conf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/proteins/csf1r/Structures/3bea_A/3bea_A.receptor.pdbqt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/proteins/csf1r/Structures/3dpk_A/3dpk_A.conf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/proteins/csf1r/Structures/3dpk_A/3dpk_A.receptor.pdbqt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/proteins/csf1r/Structures/3krj_A/3krj_A.conf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/proteins/csf1r/Structures/3krj_A/3krj_A.receptor.pdbqt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/proteins/csf1r/Structures/3krl_A/3krl_A.conf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/proteins/csf1r/Structures/3krl_A/3krl_A.receptor.pdbqt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/proteins/csf1r/Structures/3lcd_A/3lcd_A.conf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/proteins/csf1r/Structures/3lcd_A/3lcd_A.receptor.pdbqt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/proteins/csf1r/Structures/3lco_A/3lco_A.conf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/proteins/csf1r/Structures/3lco_A/3lco_A.receptor.pdbqt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/proteins/csf1r/Structures/6t2w_A/6t2w_A.conf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/proteins/csf1r/Structures/6t2w_A/6t2w_A.receptor.pdbqt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/actives_final_1_out.pdbqt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/about.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/models.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Actives/1M14.GetTopActives" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Actives/1XKK.GetTopActives" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Actives/2EB2.GetTopActives" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Actives/2EB3.GetTopActives" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Actives/2GS2.GetTopActives" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Actives/2GS7.GetTopActives" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Actives/2ITN.GetTopActives" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Actives/2ITT.GetTopActives" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Actives/2J5F.GetTopActives" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Actives/2JIT.GetTopActives" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Actives/2JIU.GetTopActives" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Actives/2RGP.GetTopActives" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Actives/3BEL.GetTopActives" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Actives/3IKA.GetTopActives" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Actives/3UG1.GetTopActives" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Actives/3VJO.GetTopActives" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Actives/4G5J.GetTopActives" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Actives/4G5P.GetTopActives" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Actives/4I23.GetTopActives" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Actives/4I24.GetTopActives" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Actives/4JQ7.GetTopActives" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Actives/4LI5.GetTopActives" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Actives/4LL0.GetTopActives" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Actives/4LQM.GetTopActives" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Actives/4LRM.GetTopActives" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Actives/4RIW.GetTopActives" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Actives/4TKS.GetTopActives" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Actives/4ZJV.GetTopActives" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Actives/5CAV.GetTopActives" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Actives/5CNN.GetTopActives" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Actives/5FED.GetTopActives" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Actives/5FEE.GetTopActives" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Actives/5XDL.GetTopActives" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Actives/5Y9T.GetTopActives" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Actives/output.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ml.py" beforeDir="false" afterPath="$PROJECT_DIR$/ml.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/protein.py" beforeDir="false" afterPath="$PROJECT_DIR$/protein.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proteins/EGFR/active.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/proteins/EGFR/active.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proteins/EGFR/decoy.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/proteins/EGFR/decoy.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proteins/csf1r/Structures/2i0v_A/vina_screen_local_multiple_receptors.sh" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -156,6 +58,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Python Script" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -172,18 +75,21 @@
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/proteins" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/templates" />
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/proteins/EGFR/Structures" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/proteins" />
       <recent name="$PROJECT_DIR$" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/proteins/EGFR/Structures" />
     </key>
   </component>
   <component name="RunManager">
@@ -252,7 +158,11 @@
       <workItem from="1589936862278" duration="1057000" />
       <workItem from="1589938099852" duration="2095000" />
       <workItem from="1589990117514" duration="5253000" />
-      <workItem from="1590014667216" duration="429000" />
+      <workItem from="1590014667216" duration="5481000" />
+      <workItem from="1590027914788" duration="3454000" />
+      <workItem from="1590115120695" duration="2765000" />
+      <workItem from="1590118405812" duration="2491000" />
+      <workItem from="1590164705425" duration="600000" />
     </task>
     <servers />
   </component>
@@ -267,58 +177,62 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="184" y="112" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1440.900@0.0.1440.900" timestamp="1589926493333" />
-    <state width="1398" height="261" key="GridCell.Tab.0.bottom" timestamp="1590011523722">
+    <state width="1398" height="268" key="GridCell.Tab.0.bottom" timestamp="1590164738084">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state width="1398" height="261" key="GridCell.Tab.0.bottom/0.0.1440.818/-1920.-113.1920.1057@0.0.1440.818" timestamp="1589908528490" />
-    <state width="1398" height="261" key="GridCell.Tab.0.bottom/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1589991040979" />
+    <state width="1398" height="268" key="GridCell.Tab.0.bottom/0.0.1440.900/-1920.-113.1920.1057@0.0.1440.900" timestamp="1590119213572" />
+    <state width="1398" height="268" key="GridCell.Tab.0.bottom/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1590164738084" />
     <state width="1398" height="261" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1590011523722" />
-    <state width="1398" height="261" key="GridCell.Tab.0.center" timestamp="1590011523721">
+    <state width="1398" height="268" key="GridCell.Tab.0.center" timestamp="1590164738078">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state width="1398" height="261" key="GridCell.Tab.0.center/0.0.1440.818/-1920.-113.1920.1057@0.0.1440.818" timestamp="1589908528488" />
-    <state width="1398" height="261" key="GridCell.Tab.0.center/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1589991040978" />
+    <state width="1398" height="268" key="GridCell.Tab.0.center/0.0.1440.900/-1920.-113.1920.1057@0.0.1440.900" timestamp="1590119213570" />
+    <state width="1398" height="268" key="GridCell.Tab.0.center/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1590164738078" />
     <state width="1398" height="261" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1590011523721" />
-    <state width="1398" height="261" key="GridCell.Tab.0.left" timestamp="1590011523720">
+    <state width="1398" height="268" key="GridCell.Tab.0.left" timestamp="1590164738076">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state width="1398" height="261" key="GridCell.Tab.0.left/0.0.1440.818/-1920.-113.1920.1057@0.0.1440.818" timestamp="1589908528487" />
-    <state width="1398" height="261" key="GridCell.Tab.0.left/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1589991040977" />
+    <state width="1398" height="268" key="GridCell.Tab.0.left/0.0.1440.900/-1920.-113.1920.1057@0.0.1440.900" timestamp="1590119213569" />
+    <state width="1398" height="268" key="GridCell.Tab.0.left/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1590164738076" />
     <state width="1398" height="261" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1590011523720" />
-    <state width="1398" height="261" key="GridCell.Tab.0.right" timestamp="1590011523722">
+    <state width="1398" height="268" key="GridCell.Tab.0.right" timestamp="1590164738083">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state width="1398" height="261" key="GridCell.Tab.0.right/0.0.1440.818/-1920.-113.1920.1057@0.0.1440.818" timestamp="1589908528489" />
-    <state width="1398" height="261" key="GridCell.Tab.0.right/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1589991040979" />
+    <state width="1398" height="268" key="GridCell.Tab.0.right/0.0.1440.900/-1920.-113.1920.1057@0.0.1440.900" timestamp="1590119213571" />
+    <state width="1398" height="268" key="GridCell.Tab.0.right/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1590164738083" />
     <state width="1398" height="261" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1590011523722" />
-    <state width="1398" height="240" key="GridCell.Tab.1.bottom" timestamp="1589938141225">
+    <state width="1398" height="240" key="GridCell.Tab.1.bottom" timestamp="1590025753313">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="240" key="GridCell.Tab.1.bottom/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1589938141225" />
+    <state width="1398" height="240" key="GridCell.Tab.1.bottom/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1590025753313" />
     <state width="1398" height="240" key="GridCell.Tab.1.bottom/0.0.1440.900@0.0.1440.900" timestamp="1589927257073" />
-    <state width="1398" height="240" key="GridCell.Tab.1.center" timestamp="1589938141223">
+    <state width="1398" height="240" key="GridCell.Tab.1.center" timestamp="1590025753312">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="240" key="GridCell.Tab.1.center/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1589938141223" />
+    <state width="1398" height="240" key="GridCell.Tab.1.center/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1590025753312" />
     <state width="1398" height="240" key="GridCell.Tab.1.center/0.0.1440.900@0.0.1440.900" timestamp="1589927257071" />
-    <state width="1398" height="240" key="GridCell.Tab.1.left" timestamp="1589938141222">
+    <state width="1398" height="240" key="GridCell.Tab.1.left" timestamp="1590025753311">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="240" key="GridCell.Tab.1.left/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1589938141222" />
+    <state width="1398" height="240" key="GridCell.Tab.1.left/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1590025753311" />
     <state width="1398" height="240" key="GridCell.Tab.1.left/0.0.1440.900@0.0.1440.900" timestamp="1589927257071" />
-    <state width="1398" height="240" key="GridCell.Tab.1.right" timestamp="1589938141224">
+    <state width="1398" height="240" key="GridCell.Tab.1.right" timestamp="1590025753312">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="240" key="GridCell.Tab.1.right/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1589938141224" />
+    <state width="1398" height="240" key="GridCell.Tab.1.right/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1590025753312" />
     <state width="1398" height="240" key="GridCell.Tab.1.right/0.0.1440.900@0.0.1440.900" timestamp="1589927257072" />
     <state width="720" height="450" key="XDebugger.FullValuePopup" timestamp="1589937516859">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state width="720" height="450" key="XDebugger.FullValuePopup/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1589937516859" />
-    <state x="385" y="196" width="670" height="676" key="search.everywhere.popup" timestamp="1589933075981">
+    <state x="385" y="196" width="670" height="676" key="search.everywhere.popup" timestamp="1590115543211">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="385" y="196" width="670" height="676" key="search.everywhere.popup/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1589933075981" />
+    <state x="385" y="196" width="670" height="676" key="search.everywhere.popup/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1590115543211" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -332,6 +246,6 @@
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/dock$hello.coverage" NAME="hello Coverage Results" MODIFIED="1590011523707" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/dock$hello.coverage" NAME="hello Coverage Results" MODIFIED="1590164738052" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

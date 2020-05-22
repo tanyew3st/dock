@@ -3,6 +3,9 @@ import os
 import shutil
 
 import flask
+from flask import render_template, request
+from flask_bootstrap import Bootstrap
+
 from ml import MachineLearning
 from protein import Protein
 import numpy as np
@@ -24,6 +27,8 @@ affinityScores = ["1M14", "1XKK", "2EB2", "2EB3",    "2GS2",    "2GS7",    "2ITN
                   "4TKS",    "4ZJV",    "5CAV",    "5CNN",    "5FED",    "5FEE",    "5XDL",    "5Y9T",    "outp"]
 ascores = [-6.8,-8.2,-7.1,-7.6,-7.0,-8.4,-7.1,-7.3,-7.5,-8.2,-8.0,-8.1,-9.1,-7.5,-6.9,-7.1,-7.8,-8.1,-7.4,-9.1,-7.8,-8.1,-8.9,-8.1,-8.6,-7.6,-7.4,-8.4,-7.6,-8.0,-7.1,-7.6,-6.9,-7.7]
 
+affsco = {}
+
 directory = None
 
 proteins = []
@@ -42,10 +47,26 @@ affinityScoresTest = {'1M14': -6.8, '1XKK': -8.2, '2EB2': -7.1, '2EB3': -7.6,
 def getPredWithAffinity(protein, affinity):
     print("getting predictions with affinity numbers")
 
-# @app.route('/', methods=['GET'])
-# def sayHello():
-#     return "Hello World!!"
+@app.route('/', methods=['GET'])
+def index():
+    proteins = getProteinNames()
+    return render_template('index.html', proteins=proteins)
 
+@app.route('/about', methods=['GET'])
+def about():
+    return render_template('about.html')
+
+@app.route('/predictions', methods=['POST'])
+def file(protein, pdbqt):
+    # print(protein)
+    # print(pdbqt)
+    if request.method == 'POST':
+        file_obj = request.files
+        for f in file_obj:
+            file = request.files.get(f)
+            print (file.filename)
+    return ""
+# obsolete method
 def makeFolders(path):
     os.mkdir(path + "/Actives")
     os.mkdir(path + "/Decoy")
@@ -56,9 +77,15 @@ def makeFolders(path):
             if file.lower().__contains__("decoy"):
                 shutil.move(path + "/" + file, path + "/Decoy/" + file)
 
+def getProteinNames():
+    p = []
+    for k in os.listdir("proteins"):
+        p.append(str.upper(k))
+    p.remove(".DS_STORE")
+    return p
+
+# docking the proteins and returning affinity scores
 def dock(protein):
-    print(protein.structure)
-    affinityScores[protein.structure] = -7.3
     command = "./vina "
     command += "--ligand " + ligand + " "
 
@@ -73,48 +100,27 @@ def dock(protein):
     for i in console:
         try:
             newArray.append(float(i))
-            newArray.append(int(i))
         except:
-            print(i + " is not an int")
-
+            continue
     print(protein.structure)
 
     # obj = {protein.structure: min(newArray)}
     # affinityScores.update(obj)
-    affinityScores[protein.structure] =  min(newArray)
+    affsco[protein.structure] = min(newArray)
+    print(min(newArray))
 
 # Main method
 if __name__ == "__main__":
-    # for i in os.listdir("proteins"):
-    for i in os.listdir("proteins"):
-        if i != "EGFR" and i != ".DS_Store":
-            MachineLearning.createDirectory(r"C:/Users\Armaan Chandak\Desktop/vina_top_Actives_Decoys_DUDE_kinase_output/" + i + "/Actives", r"C:/Users\Armaan Chandak\Documents/GitHub\dock/proteins/" + i, True)
-            MachineLearning.createDirectory(r"C:/Users\Armaan Chandak\Desktop/vina_top_Actives_Decoys_DUDE_kinase_output/" + i + "/Decoy", r"C:/Users\Armaan Chandak\Documents/GitHub\dock/proteins/" + i, False)
+    app.run()
 
-    exit(4)
-
-    for  i in os.listdir("proteins"):
-        for j in range(1,3):
-            if i == ".DS_Store":
-                continue
-            if j ==1:
-                MachineLearning.createDirectory("proteins/" + i + "/Structures", "proteins/" + i, True)
-            else:
-                MachineLearning.createDirectory("proteins/" + i + "/Structures", "proteins/" + i, False)
-
-    makeFolders(r"C:\Users\Armaan Chandak\Desktop\\abl1")
-    exit(0)
-    # app.run()
-    # ml = MachineLearning(affinityScoresTest)
-    # MachineLearning.createDirectory("/Users/tchandak/Desktop/STARS Data/Decoys", "proteins/EGFR", False)
-    # exit(52)
     # this will be done in the front end just taking user input to find the protein they want to use
-    proteinToUse = str.upper(input("Protein to dock to: "))
+    proteinToUse = raw_input("Protein to dock to: ")
 
     # searching through the proteins directory to find the protein the user wants to dock to
     for i in os.listdir("proteins"):
-        if i == proteinToUse:
+        if i.lower() == proteinToUse.lower():
             directory = "proteins/" + i + "/Structures"
+            print("We have found the directory and it is for the protein --> " + i)
     if directory is None:
         print("Couldn't find directory")
 
@@ -123,20 +129,24 @@ if __name__ == "__main__":
 
     # now searching through and creating protein array
     for i in os.listdir(directory):
-
+        extension = None
+        loc = os.listdir(directory + "/" + i)
+        for el in loc:
+            if el.__contains__('.txt') or el.__contains__('.conf'):
+                extension = el
         # directory for the conf.txt
-        prtdir = directory + "/" + i + "/conf.txt"
+        prtdir = directory + "/" + i + "/" + str(extension)
 
         # if to get rid of .ds-store and other weird files
-        if len(i) <= 4:
+        if extension is not None:
             p1 = Protein(prtdir, directory + "/" + i + "/", i)
             proteins.append(p1)
 
-    # print(*proteins, sep='\n')
+    print(*proteins, sep='\n')
 
-    # docking. this could be part of the earlier file
-    # for i in proteins:
-    #     dock(i)
+    # This is the docking piece this could be part of the earlier file
+    for i in proteins:
+        dock(i)
 
     # now I am ready to run the machine learning model
     """
@@ -146,5 +156,9 @@ if __name__ == "__main__":
         "2EB2": -9.3
         etc.
     """
+
+    # creating a new Machine Learning Object
     driver = MachineLearning(affinityScoresTest)
-    driver.getProbability("/Users/tchandak/Desktop/Dock/dock/proteins/EGFR/active.xlsx", "/Users/tchandak/Desktop/Dock/dock/proteins/EGFR/decoy.xlsx")
+
+    # Getting the Probabilities
+    driver.getProbability(proteinToUse)
