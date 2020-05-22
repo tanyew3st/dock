@@ -1,0 +1,32 @@
+.jumbotron {
+    min-height: 600px;
+    padding: 10rem !important;
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
+.models-text{
+    text-align: center;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+
+.card {
+    margin-left: 2rem;
+    margin-right: 2rem;
+}
+
+.border-s {
+    border-left: thick solid #ff0000;
+}
+.article-link{
+    color: black;
+    border-bottom: 2px dotted #000;
+
+}
+.article-link:hover{
+    color:cornflowerblue;
+    border-bottom: 2px dotted cornflowerblue;
+    text-decoration: none;
+
+
+}

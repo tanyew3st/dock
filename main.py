@@ -4,8 +4,6 @@ import shutil
 
 import flask
 from flask import render_template, request
-from flask_bootstrap import Bootstrap
-
 from ml import MachineLearning
 from protein import Protein
 import numpy as np
