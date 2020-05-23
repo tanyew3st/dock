@@ -16,21 +16,37 @@
           <a class="nav-link {{ 'active' if option == 'ml' }}" style="margin-left: 2rem; margin-top: 2rem;" href="#">Machine Learning</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" style="margin-top: 2rem;" href="#">Link</a>
+          <a class="nav-link {{ 'active' if option == 'docking' }}" style="margin-top: 2rem;" href="#">Docking</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" style="margin-top: 2rem;" href="#">Link</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" style="margin-top: 2rem;" href="#">Link</a>
+          <a class="nav-link {{ 'active' if option == 'mldocking' }}" style="margin-top: 2rem;" href="#">ML and Docking</a>
         </li>
       </ul>
     {% if option == "ml" %}
-        Machine Learning
+    <hr>
+    <form method="post" style="padding: 2rem">
+      <div class="form-group">
+        <select id="protein" class="custom-select" required>
+          <option selected="true" disabled="disabled">Proteins</option>
+          {% for item in proteins %}
+              <option  value="{{item}}">{{ item }}</option>
+           {% endfor %}
+        </select>
+      <div class="invalid-feedback">Example invalid custom select feedback</div>
+      </div>
+    <div class="custom-file">
+      <input type="file" class="custom-file-input" id="ligand_file">
+      <label class="custom-file-label" for="ligand_file">Choose Ligand File...</label>
+    </div>
+      <button style="margin-top: 1%; margin-left: 1.5%;" id="submit1" class="btn btn-primary" type="submit">Submit</button>
+    </form>
     {% endif %}
 
     {% if option == "docking" %}
         Docking
+    {% endif %}
+    {% if option == 'mldocking' %}
+
     {% endif %}
 </body>
 </html>
