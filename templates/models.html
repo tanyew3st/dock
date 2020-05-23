@@ -13,16 +13,16 @@
 
     <ul class="nav nav-pills">
         <li class="nav-item">
-          <a class="nav-link active" href="#">Active</a>
+          <a class="nav-link {{ 'active' if option == 'ml' }}" style="margin-left: 2rem; margin-top: 2rem;" href="#">Machine Learning</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
+          <a class="nav-link" style="margin-top: 2rem;" href="#">Link</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
+          <a class="nav-link" style="margin-top: 2rem;" href="#">Link</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+          <a class="nav-link" style="margin-top: 2rem;" href="#">Link</a>
         </li>
       </ul>
     {% if option == "ml" %}
