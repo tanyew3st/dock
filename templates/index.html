@@ -23,8 +23,9 @@
           Run Models
         </button>
         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-          <a class="dropdown-item" href="#">Another action</a>
-          <a class="dropdown-item" href="#">Something else here</a>
+          <a class="dropdown-item" href="{{ url_for('switcher', option='ml') }}">Machine Learning</a>
+          <a class="dropdown-item" href="{{ url_for('switcher', option='docking') }}">Docking</a>
+          <a class="dropdown-item" href="{{ url_for('switcher', option='docking+ml') }}">Machine Learning and Docking</a>
         </div>
       </div>
 </div>
