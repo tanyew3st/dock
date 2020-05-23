@@ -45,6 +45,11 @@ affinityScoresTest = {'1M14': -6.8, '1XKK': -8.2, '2EB2': -7.1, '2EB3': -7.6,
 def getPredWithAffinity(protein, affinity):
     print("getting predictions with affinity numbers")
 
+@app.route('/run', methods=['GET', 'POST'])
+def switcher():
+    # print(option)
+    return render_template('models.html')
+
 @app.route('/', methods=['GET'])
 def index():
     proteins = getProteinNames()

@@ -2,52 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="53f2f5b8-52dd-4cf4-8ea5-9ed9271db4fe" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/actives_final_1_out.pdbqt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/about.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/models.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Actives/1M14.GetTopActives" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Actives/1XKK.GetTopActives" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Actives/2EB2.GetTopActives" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Actives/2EB3.GetTopActives" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Actives/2GS2.GetTopActives" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Actives/2GS7.GetTopActives" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Actives/2ITN.GetTopActives" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Actives/2ITT.GetTopActives" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Actives/2J5F.GetTopActives" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Actives/2JIT.GetTopActives" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Actives/2JIU.GetTopActives" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Actives/2RGP.GetTopActives" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Actives/3BEL.GetTopActives" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Actives/3IKA.GetTopActives" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Actives/3UG1.GetTopActives" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Actives/3VJO.GetTopActives" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Actives/4G5J.GetTopActives" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Actives/4G5P.GetTopActives" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Actives/4I23.GetTopActives" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Actives/4I24.GetTopActives" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Actives/4JQ7.GetTopActives" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Actives/4LI5.GetTopActives" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Actives/4LL0.GetTopActives" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Actives/4LQM.GetTopActives" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Actives/4LRM.GetTopActives" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Actives/4RIW.GetTopActives" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Actives/4TKS.GetTopActives" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Actives/4ZJV.GetTopActives" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Actives/5CAV.GetTopActives" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Actives/5CNN.GetTopActives" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Actives/5FED.GetTopActives" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Actives/5FEE.GetTopActives" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Actives/5XDL.GetTopActives" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Actives/5Y9T.GetTopActives" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Actives/output.xlsx" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ml.py" beforeDir="false" afterPath="$PROJECT_DIR$/ml.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/protein.py" beforeDir="false" afterPath="$PROJECT_DIR$/protein.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proteins/EGFR/active.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/proteins/EGFR/active.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proteins/EGFR/decoy.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/proteins/EGFR/decoy.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proteins/csf1r/Structures/2i0v_A/vina_screen_local_multiple_receptors.sh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/about.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/about.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -162,7 +120,7 @@
       <workItem from="1590027914788" duration="3454000" />
       <workItem from="1590115120695" duration="2765000" />
       <workItem from="1590118405812" duration="2491000" />
-      <workItem from="1590164705425" duration="600000" />
+      <workItem from="1590164705425" duration="1984000" />
     </task>
     <servers />
   </component>
@@ -177,33 +135,33 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="184" y="112" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1440.900@0.0.1440.900" timestamp="1589926493333" />
-    <state width="1398" height="268" key="GridCell.Tab.0.bottom" timestamp="1590164738084">
+    <state width="1398" height="268" key="GridCell.Tab.0.bottom" timestamp="1590196510223">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state width="1398" height="261" key="GridCell.Tab.0.bottom/0.0.1440.818/-1920.-113.1920.1057@0.0.1440.818" timestamp="1589908528490" />
     <state width="1398" height="268" key="GridCell.Tab.0.bottom/0.0.1440.900/-1920.-113.1920.1057@0.0.1440.900" timestamp="1590119213572" />
-    <state width="1398" height="268" key="GridCell.Tab.0.bottom/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1590164738084" />
+    <state width="1398" height="268" key="GridCell.Tab.0.bottom/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1590196510223" />
     <state width="1398" height="261" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1590011523722" />
-    <state width="1398" height="268" key="GridCell.Tab.0.center" timestamp="1590164738078">
+    <state width="1398" height="268" key="GridCell.Tab.0.center" timestamp="1590196510221">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state width="1398" height="261" key="GridCell.Tab.0.center/0.0.1440.818/-1920.-113.1920.1057@0.0.1440.818" timestamp="1589908528488" />
     <state width="1398" height="268" key="GridCell.Tab.0.center/0.0.1440.900/-1920.-113.1920.1057@0.0.1440.900" timestamp="1590119213570" />
-    <state width="1398" height="268" key="GridCell.Tab.0.center/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1590164738078" />
+    <state width="1398" height="268" key="GridCell.Tab.0.center/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1590196510221" />
     <state width="1398" height="261" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1590011523721" />
-    <state width="1398" height="268" key="GridCell.Tab.0.left" timestamp="1590164738076">
+    <state width="1398" height="268" key="GridCell.Tab.0.left" timestamp="1590196510220">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state width="1398" height="261" key="GridCell.Tab.0.left/0.0.1440.818/-1920.-113.1920.1057@0.0.1440.818" timestamp="1589908528487" />
     <state width="1398" height="268" key="GridCell.Tab.0.left/0.0.1440.900/-1920.-113.1920.1057@0.0.1440.900" timestamp="1590119213569" />
-    <state width="1398" height="268" key="GridCell.Tab.0.left/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1590164738076" />
+    <state width="1398" height="268" key="GridCell.Tab.0.left/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1590196510220" />
     <state width="1398" height="261" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1590011523720" />
-    <state width="1398" height="268" key="GridCell.Tab.0.right" timestamp="1590164738083">
+    <state width="1398" height="268" key="GridCell.Tab.0.right" timestamp="1590196510222">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state width="1398" height="261" key="GridCell.Tab.0.right/0.0.1440.818/-1920.-113.1920.1057@0.0.1440.818" timestamp="1589908528489" />
     <state width="1398" height="268" key="GridCell.Tab.0.right/0.0.1440.900/-1920.-113.1920.1057@0.0.1440.900" timestamp="1590119213571" />
-    <state width="1398" height="268" key="GridCell.Tab.0.right/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1590164738083" />
+    <state width="1398" height="268" key="GridCell.Tab.0.right/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1590196510222" />
     <state width="1398" height="261" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1590011523722" />
     <state width="1398" height="240" key="GridCell.Tab.1.bottom" timestamp="1590025753313">
       <screen x="0" y="0" width="1440" height="900" />
@@ -246,6 +204,6 @@
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/dock$hello.coverage" NAME="hello Coverage Results" MODIFIED="1590164738052" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/dock$hello.coverage" NAME="hello Coverage Results" MODIFIED="1590197265362" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
