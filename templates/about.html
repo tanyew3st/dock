@@ -7,6 +7,10 @@
 
     <script type=text/javascript> $(function() { $("#submit1").click(function (event) { $.getJSON('/predictions', { },
     function(data) { }); return false; }); }); </script>
+
+    <script id="myGeeks" type="text/javascript">
+        document.write("Hello from GeeksforGeeks");
+    </script>
 </head>
 <body>
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -55,4 +59,11 @@
     <button id="submit1" class="btn btn-primary" type="submit">Submit</button>
   </form>
 </body>
+
+<div class="progress">
+  <div class="progress-bar progress-bar-striped active" role="progressbar"
+  aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:40%">
+    40%
+  </div>
+</div>
 </html>
