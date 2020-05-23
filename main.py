@@ -49,10 +49,10 @@ def getPredWithAffinity(protein, affinity):
 def models():
     return render_template('models.html')
 
-@app.route('/run/<option>', methods=['GET', 'POST'])
-def switcher(option):
-    print(option)
-    return render_template('models.html', version=option)
+# @app.route('/run', methods=['GET', 'POST'])
+# def switcher():
+#     print(option)
+    # return render_template('models.html')
 
 @app.route('/', methods=['GET'])
 def index():
