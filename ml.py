@@ -21,7 +21,9 @@ class MachineLearning:
 
     # on init set the affinity array equal to the affinity scores provided by vina
     def __init__(self, testaffinity):
-        self.affinity = testaffinity
+        self.affinity = sorted(testaffinity)
+        print(self.affinity)
+
 
     # input is the location of the folder of the pdbqt files
     # output is where it will be printed to
