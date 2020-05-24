@@ -33,8 +33,8 @@
                     currentstr = 0
                     structures = json
                     max = structures.length
-                    this.affinity = new Array(max)
                     createTable(structures)
+                    affinity = new Map()
                     getAffinity()
                 })
         }
@@ -55,11 +55,13 @@
                     body: JSON.stringify(obj)
                 }).then(response => response.json())
                 .then(res => {
-                    updateTable()
+                    updateTable(this.structures[currentstr], res['affinity'])
                     console.log(this.affinity)
                     console.log(res)
                     keepgoing = true
-                    this.affinity[currentstr] = res['affinity']
+                    // this.affinity[currentstr] = res['affinity']
+                    this.affinity.set(structures[currentstr], res['affinity'])
+                    // this.affinity[structures[currentstr]] = res['affinity']
                     currentstr++
                     if (currentstr === max) {
                         finished = true
@@ -73,9 +75,9 @@
         }
 
         function createTable(names) {
-            document.getElementById("progress").style.width = "99%"
-            document.getElementById("progress").innerHTML = "99%"
 
+            document.getElementById("progress").style.width = '0%' 
+            document.getElementById("progress").innerHTML = '0%'
             for (let i = 0; i < names.length; i++) {
                 let el = document.createElement("th");
                 el.innerHTML = names[i]
@@ -89,7 +91,11 @@
             console.log(document.getElementById("strtable"));
         }
 
-        function updateTable() {
+        function updateTable(structureInput, num) {
+            document.getElementById(structureInput).innerHTML = num
+            
+            document.getElementById("progress").style.width = str((structureInput/max)*100).slice(0,5) + '%' 
+            document.getElementById("progress").innerHTML = str((structureInput/max)*100).slice(0,5) + '%'
 
         }
 
