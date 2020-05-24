@@ -9,4 +9,4 @@ class Ligand:
         num = Ligand.number
         ligand.save(os.path.join(instance_path, 'ligand', secure_filename(str(Ligand.number) + '.pdbqt')))
         Ligand.number += 1
-        return os.path.join('/ligand', str(num) + '.pdbqt')
+        return '/ligand/' + str(num) + '.pdbqt'

@@ -51,7 +51,8 @@ def runModels():
 @app.route('/dock', methods=['POST'])
 def dock():
     data = json.loads(request.data)
-    directory = "proteins/" + data['protein'].encode('utf-8') + "/Structures/" + data['structure'].encode('utf-8')
+    print(data)
+    directory = "proteins/" + str(data['protein']) + "/Structures/" + str(data['structure'])
     p1 = None
     for el in os.listdir(directory):
         extension = None
@@ -83,7 +84,7 @@ def run():
 
     print(ligand)
     word = Ligand.save(ligand, app.instance_path)
-
+    print("Word: " + word)
     return render_template("results.html", ligand=word, protein = protein)
 
 @app.route('/', methods=['GET'])
