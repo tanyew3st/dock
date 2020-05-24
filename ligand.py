@@ -1,9 +1,12 @@
-{'1M14', -6.8, '1XKK', -8.2, '2EB2', -7.1, '2EB3', -7.6,
-     '2GS2', -7.0, '2GS7', -8.4, '2ITN', -7.1, '2ITT', -7.3,
-     '2J5F', -7.5, '2JIT', -8.2, '2JIU', -8.0, '2RGP', -8.1,
-     '3BEL', -9.1, '3IKA', -7.5, '3UG1', -6.9, '3VJO', -7.1,
-     '4G5J', -7.8, '4G5P', -8.1, '4I23', -7.4, '4I24', -9.1,
-     '4JQ7', -7.8, '4LI5', -8.1, '4LL0', -8.9, '4LQM', -8.1,
-     '4LRM', -8.6, '4RIW', -7.6, '4TKS', -7.4, '4ZJV', -8.4,
-     '5CAV', -7.6, '5CNN', -8.0, '5FED', -7.1, '5FEE', -7.6,
-     '5XDL', -6.9, '5Y9T', -7.7}
+import os
+from werkzeug.utils import secure_filename
+
+class Ligand:
+     number = 0
+
+     @staticmethod
+     def save(ligand, instance_path):
+        num = Ligand.number
+        ligand.save(os.path.join(instance_path, 'ligand', secure_filename(str(Ligand.number) + '.pdbqt')))
+        Ligand.number += 1
+        return os.path.join('/ligand', str(num) + '.pdbqt')

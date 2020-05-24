@@ -72,7 +72,9 @@ class Setup:
 
     # docking the proteins and returning affinity scores
     @staticmethod
-    def dock(protein, ligand, affsco):
+    def dock(protein, ligand):
+        print("docking to " + str(protein) + " with " + str(ligand))
+
         command = "./vina "
         command += "--ligand " + ligand + " "
 
@@ -93,14 +95,10 @@ class Setup:
 
         # obj = {protein.structure: min(newArray)}
         # affinityScores.update(obj)
-        affsco[protein.structure] = min(newArray)
-        print(min(newArray))
+        return (min(newArray))
 
     @staticmethod
-    def previousMain(proteins):
-        # this will be done in the front end just taking user input to find the protein they want to use
-        proteinToUse = raw_input("Protein to dock to: ")
-
+    def setupProtein(proteinToUse, structure):
         # searching through the proteins directory to find the protein the user wants to dock to
         for i in os.listdir("proteins"):
             if i.lower() == proteinToUse.lower():
@@ -108,7 +106,6 @@ class Setup:
                 print("We have found the directory and it is for the protein --> " + i)
         if directory is None:
             print("Couldn't find directory")
-
             # should return to the API with null or something if the protein files don't exist
             exit(0)
 
@@ -125,7 +122,13 @@ class Setup:
             # if to get rid of .ds-store and other weird files
             if extension is not None:
                 p1 = Protein(prtdir, directory + "/" + i + "/", i)
-                proteins.append(p1)
+                # proteins.append(p1)
+
+
+    @staticmethod
+    def previousMain(proteins):
+        # this will be done in the front end just taking user input to find the protein they want to use
+        proteinToUse = raw_input("Protein to dock to: ")
 
         print(*proteins, sep='\n')
 

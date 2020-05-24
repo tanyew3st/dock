@@ -1,4 +1,7 @@
 # class variables for each Protein that need to be changed
+import os
+
+
 class Protein:
     structure = None
 
@@ -12,6 +15,12 @@ class Protein:
         "size_z": None,
         "exhaustiveness": None
     }
+
+    @staticmethod
+    def getStructures(name):
+        structures = os.listdir('proteins/' + name + '/Structures')
+        return structures
+
     def __repr__(self):
         # return str(self.structure)
         return str(self.properties)
@@ -26,9 +35,10 @@ class Protein:
                 propertyUO[i.split()[0]] = i.split()[-1]
         return propertyUO
 
-    def __init__(self, name, directory, structure):
-        self.structure = structure
-        propertyUO = self.openFile(name)
+    # configuration is the location of the .conf or .txt file
+    def __init__(self, configuration):
+        directory = configuration.rsplit('/', 1)[0] + "/"
+        propertyUO = self.openFile(configuration)
         self.properties = propertyUO
         # self.readFile(propertyUO)
         self.properties["receptor"] = directory + self.properties["receptor"]

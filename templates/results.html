@@ -1,0 +1,96 @@
+{% extends 'base.html' %}
+{% block title %}Results{% endblock %}
+
+{% block content %}
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script language="javascript">
+        var max = 0
+        var finished = false
+        var currentstr = 0
+        var structures
+        var protein
+        var ligand
+        var base
+        var max
+        var affinity
+        function func1(ligand, protein) {
+            var url = window.location.href
+            base = url.substr(0, url.indexOf('/run'));
+            console.log(base);
+            var o = {
+                "bod": "hello world"
+            }
+            this.protein = protein
+            this.ligand = ligand
+            fetch(base + '/structures/get/' + protein)
+                .then(response => response.json())
+                .then(json => {
+                    console.log(json)
+                    finished = false
+                    currentstr = 0
+                    structures = json
+                    max = structures.length
+                    this.affinity = new Array(max)
+                    createTable()
+                    getAffinity()
+                })
+        }
+
+        function getAffinity() {
+                if (structures[currentstr] == ".DS_Store") {
+                    currentstr++
+                }
+                console.log("working... testing structure " + structures[currentstr])
+                // need to dock every structure with every protein
+                let obj = {
+                    "protein": protein,
+                    "structure": structures[currentstr],
+                    "ligand": ligand
+                }
+                fetch(base + '/dock', {
+                    method: "POST",
+                    body: JSON.stringify(obj)
+                }).then(response => response.json())
+                .then(res => {
+                    updateTable()
+                    console.log(this.affinity)
+                    console.log(res)
+                    keepgoing = true
+                    this.affinity[currentstr] = res['affinity']
+                    currentstr++
+                    if (currentstr === max) {
+                        finished = true
+                        console.log(this.affinity)
+                    } else {
+                        getAffinity()
+                    }
+
+                })
+                console.log(obj)
+        }
+
+        function createTable() {
+            
+        }
+
+        function updateTable() {
+
+        }
+
+        function machinelearning(array) {
+            fetch(base + '/run/ml/array', {
+                method: "POST",
+                body: JSON.stringify({"affinity": this.affinity})
+            }).then(response => response.json())
+            .then(res => {
+                console.log(res)
+            })
+        }
+
+    </script>
+
+    <button class="btn btn-primary" onclick="func1('{{ ligand }}', '{{ protein }}')">Button</button>
+
+{% endblock %}
