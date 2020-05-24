@@ -40,11 +40,11 @@ def sayHello():
 
 @app.route('/run/ml/array', methods=['POST'])
 def runModels():
+    print('running')
+    print(json.loads(request.data))
     data = json.loads(request.data)
-    print(data)
-    print(data['array'])
-
     ml = MachineLearning(data['array'])
+    ml.getProbability(data['protein'])
 
     return make_response(jsonify(data))
 
