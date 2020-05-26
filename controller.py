@@ -116,6 +116,13 @@ def file(protein, pdbqt):
             print (file.filename)
     return ""
 
+@app.route('/pdf')
+def pdf():
+    ligand = {"EGFR": 1, "EGFE": 2}
+    ml = {"Support Vector Machines": [0.5, 0.5], "KNN": [0.4, 0.6]}
+    Ligand.makePDF(ligand, ml)
+    return send_file()
+
 
 # Main method
 if __name__ == "__main__":
