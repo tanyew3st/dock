@@ -15,6 +15,10 @@ class Ligand:
 
      @staticmethod
      def makePDF(affinity, ml):
+         pdf.add_page()
+         pdf.set_font('Times','',10.0) 
+         
+
          return ""
 
 

@@ -127,7 +127,7 @@ def pdf():
 # Main method
 if __name__ == "__main__":
     if os.path.isdir(os.path.join(app.instance_path, 'ligand')):
-        os.rmdir(os.path.join(app.instance_path, 'ligand'))
+        shutil.rmtree(os.path.join(app.instance_path, 'ligand'))
     os.makedirs(os.path.join(app.instance_path, 'ligand'))
     app.run()
 
