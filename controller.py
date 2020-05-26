@@ -121,7 +121,7 @@ def pdf():
     ligand = {"EGFR": 1, "EGFE": 2}
     ml = {"Support Vector Machines": [0.5, 0.5], "KNN": [0.4, 0.6]}
     pdf = Ligand.makePDF(ligand, ml)
-    return send_file(pdf)
+    return app.send_static_file(pdf)
 
 
 # Main method
