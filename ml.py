@@ -129,14 +129,14 @@ class MachineLearning:
         logModel = LogisticRegression(solver='lbfgs')
         logModel.fit(all_vals, all_ticker)
         plr = logModel.predict_proba(y)
-        self.prob["lr"] = plr[0][0:]
+        self.prob["lr"] = plr[0][0:].tolist()
 
         # K Nearest Neighbors
         print("Doing KNN")
         knn = KNeighborsClassifier(n_neighbors=100)
         knn.fit(all_vals, all_ticker)
         pknn = knn.predict_proba(y)
-        self.prob["knn"] = pknn[0][0:]
+        self.prob["knn"] = pknn[0][0:].tolist()
         #
         # # Support Vector Machines
         # print("Doing Support Vector Machines")
