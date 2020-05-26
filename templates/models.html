@@ -4,7 +4,7 @@
 {% block content %}
     <ul class="nav nav-pills">
         <li class="nav-item">
-          <a class="nav-link {{ 'active' if option == 'ml' }}" style="margin-left: 2rem; margin-top: 2rem;" href="#">Machine Learning</a>
+          <a class="nav-link {{ 'active' if option == 'ml' }}" style="margin-left: 2rem; margin-top: 2rem;" href="">Machine Learning</a>
         </li>
         <li class="nav-item">
           <a class="nav-link {{ 'active' if option == 'docking' }}" style="margin-top: 2rem;" href="#">Docking</a>
@@ -13,9 +13,9 @@
           <a class="nav-link {{ 'active' if option == 'mldocking' }}" style="margin-top: 2rem;" href="#">ML and Docking</a>
         </li>
       </ul>
-    {% if option == "ml" %}
+    {% if option == "mldocking" %}
     <hr>
-    <form method="POST" style="padding: 2rem" action="{{ url_for('run') }}", enctype="multipart/form-data">
+    <form method="POST" style="padding: 2rem" action="{{ url_for('run') }}" enctype="multipart/form-data">
         <div class="form-group">
         <select name="protein" id="protein" class="custom-select" required>
           <option selected="true" disabled="disabled">Select Protein...</option>
@@ -30,10 +30,7 @@
                 <label class="custom-file-label" for="ligand">Choose file...</label>
             </div>
             <script>
-                $(".custom-file-input").on("change", function() {
-                  var fileName = $(this).val().split("\\").pop();
-                  $(this).siblings(".custom-file-label").addClass("selected").html(fileName);
-                });
+
             </script>
         </div>
     <button style="margin-top: 1%; margin-left: 1.5%;" id="submit1" class="btn btn-primary" type="submit">Submit</button>
@@ -43,7 +40,27 @@
     {% if option == "docking" %}
         Docking
     {% endif %}
-    {% if option == 'mldocking' %}
+    {% if option == 'ml' %}
+        <form style="padding: 2rem">
+            <div class="form-group">
+            <select name="protein2" id="protein2" class="custom-select" required>
+              <option selected="true" disabled="disabled">Select Protein...</option>
+                {% for item in proteins %}
+                  <option value="{{item}}">{{ item }}</option>
+                {% endfor %}
+            </select>
+            </div>
+        <button type="button" onclick="getStructures(document.getElementById('protein2').value)" id="submit2" class="btn btn-primary">Find Structures</button>
+        </form>
+        <form enctype="multipart/form-data" method="POST" style="padding: 2rem" disabled="true">
+            <div class="form-group">
+                <label for="textarea">Structure Object - Create a JSON Object in the Correct Order</label>
+                <textarea class="form-control" id="textarea" rows="3"></textarea>
+            </div>
+            <div id="smalltextbox" class="row">
 
+            </div>
+            <button type="button" id="submit3" class="btn btn-primary" onclick="submitAffinity(document.getElementById('textarea').value)">Submit</button>
+        </form>
     {% endif %}
 {% endblock %}

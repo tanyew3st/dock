@@ -69,6 +69,17 @@ def dock():
     print(obj)
     return make_response(jsonify(obj))
 
+@app.route('/ml/render/page', methods=['POST'])
+def renderml():
+    affinity = request.form['textarea']
+    print(affinity)
+    # affinity = eval(affinity)
+    return render_template("results.html", option="ml", affinity=affinity)
+
+@app.route('/results')
+def resultspage():
+    return render_template("results.html")
+
 @app.route('/run/ml/results', methods=['POST'])
 def run():
     ligand = None
