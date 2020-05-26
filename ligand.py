@@ -15,10 +15,26 @@ class Ligand:
 
      @staticmethod
      def makePDF(affinity, ml):
-         pdf.add_page()
-         pdf.set_font('Times','',10.0) 
-         
+      pdf = FPDF()
+      pdf.add_page()
+      pdf.set_font('Times','',10.0) 
+      
 
-         return ""
+
+      objects = affinity.keys()
+      y_pos = np.arange(len(objects))
+      value = []
+      for i in affinity:
+      value.append(affinity[i])
+
+      plt.bar(y_pos, value, align='center', alpha=0.5)
+      plt.xticks(y_pos, objects)
+      plt.ylabel('Values')
+      plt.title('Affinity Scores')
+
+      plt.savefig('image.png')
+      
+
+      return ""
 
 
