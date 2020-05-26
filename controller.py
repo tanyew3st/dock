@@ -121,7 +121,7 @@ def file(protein, pdbqt):
 
 # Main method
 if __name__ == "__main__":
-    shutil.rmtree(os.path.join(app.instance_path, 'ligand'))
+    os.rmdir(os.path.join(app.instance_path, 'ligand'))
     os.makedirs(os.path.join(app.instance_path, 'ligand'))
     app.run()
 
