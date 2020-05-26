@@ -43,10 +43,10 @@ def runModels():
     print('running')
     print(json.loads(request.data))
     data = json.loads(request.data)
-    ml = MachineLearning(data['array'])
+    ml = MachineLearning(data['affinity'])
     ml.getProbability(data['protein'])
 
-    return make_response(jsonify(data))
+    return make_response(jsonify(ml.prob))
 
 @app.route('/dock', methods=['POST'])
 def dock():

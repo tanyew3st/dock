@@ -1,3 +1,5 @@
+import collections
+
 import pandas as pd
 import numpy as np
 import os
@@ -21,7 +23,7 @@ class MachineLearning:
 
     # on init set the affinity array equal to the affinity scores provided by vina
     def __init__(self, testaffinity):
-        self.affinity = sorted(testaffinity)
+        self.affinity = collections.OrderedDict(sorted(testaffinity.items()))
         print(self.affinity)
 
 

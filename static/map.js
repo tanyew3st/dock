@@ -120,10 +120,14 @@ function updateTable(structureInput, num) {
     this.percentage = ((structureInput/max)*100).toString().substring(0,5)
 }
 
-function machinelearning(array) {
+function machinelearning() {
+    console.log("Machine learning");
+    if (this.protein === undefined) {
+        this.protein = localStorage.getItem("protein")
+    }
     fetch(base + '/run/ml/array', {
         method: "POST",
-        body: JSON.stringify({"affinity": this.affinity})
+        body: JSON.stringify({"affinity": this.affinity, "protein": this.protein})
     }).then(response => response.json())
     .then(res => {
         console.log(res)
@@ -143,6 +147,7 @@ function getStructures(protein) {
     fetch(base + '/structures/get/' + protein)
     .then(response => response.json())
     .then(json => {
+        localStorage.setItem("protein", protein)
         console.log(json)
         for (structure of json) {
             if (structure !== ".DS_Store") {
@@ -188,6 +193,8 @@ function machineLearn() {
     console.log(this.affinity)
     if (this.affinity === undefined) {
         this.affinity = JSON.parse(JSON.parse(localStorage.getItem("affinity")))
+        var url = window.location.href
+        base = url.substr(0, url.indexOf('/results'));
 
         let unordered = this.affinity
         const ordered = {};
@@ -204,5 +211,7 @@ function machineLearn() {
         }
         document.getElementById("progress").style.width = "100%"
         document.getElementById("progress").innerHTML = "100%"
+
+        machinelearning()
     }
 }
