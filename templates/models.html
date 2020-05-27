@@ -2,6 +2,62 @@
 {% block title %}Models{% endblock %}
 
 {% block content %}
+    <script>
+        function validateProtein(id) {
+            protein = document.getElementById(id)
+            if (protein.value == "Select Protein...") {
+                protein.classList.add("is-invalid")
+            } else {
+                if (protein.classList.contains("is-invalid")) {
+                    protein.classList.replace("is-invalid", "is-valid")
+                } else {
+                    protein.classList.add("is-valid")
+                }
+            }
+        }
+
+        function validateLigand(id) {
+            let ligand = document.getElementById(id)
+            if (ligand.value.toString().indexOf(".pdbqt") == -1) {
+                if (ligand.classList.contains("is-valid")) {
+                    ligand.classList.remove("is-valid")
+                }
+                ligand.classList.add("is-invalid")
+                document.getElementById("file-valid1").style.visibility = "visible"
+                document.getElementById("filediv").style.marginBottom = "2rem"
+            } else {
+                document.getElementById("filediv").style.marginBottom = "1rem"
+                console.log(ligand.classList.contains("is-invalid"))
+                if (ligand.classList.contains("is-invalid")) {
+                    ligand.classList.remove("is-invalid")
+                }
+
+                ligand.classList.add("is-valid")
+
+                document.getElementById("file-valid1").style.visibility = "hidden"
+
+            }
+
+        }
+        function validate1() {
+            if (document.getElementById("protein").classList.contains("is-valid")
+                && document.getElementById("ligand").classList.contains("is-valid")) {
+                document.getElementById("submit1").disabled = false
+            } else {
+                document.getElementById("submit1").disabled = true
+            }
+        }
+
+        $('body').on('change', "#ligand", function(){
+                console.log("activated...!")
+                //get the file name
+                var fileName = $(this).val();
+                //replace the "Choose a file" label
+                fileName = fileName.replace('C:\\fakepath\\', " ");
+                $(this).next('.custom-file-label').html(fileName);
+        })
+
+    </script>
     <ul class="nav nav-pills">
         <li class="nav-item">
           <a class="nav-link {{ 'active' if option == 'ml' }}" style="margin-left: 2rem; margin-top: 2rem;" href="{{ url_for('switcher', option='ml') }}">Machine Learning</a>
@@ -15,25 +71,21 @@
       </ul>
     {% if option == "mldocking" %}
     <hr>
-    <form method="POST" style="padding: 2rem" action="{{ url_for('run') }}" enctype="multipart/form-data">
+    <form method="POST" onchange="validate1()" name="mldocking" style="padding: 2rem" action="{{ url_for('run') }}" enctype="multipart/form-data">
         <div class="form-group">
-        <select name="protein" id="protein" class="custom-select" required>
+        <select onchange="validateProtein('protein')" name="protein" id="protein" class="custom-select">
           <option selected="true" disabled="disabled">Select Protein...</option>
             {% for item in proteins %}
               <option value="{{item}}">{{ item }}</option>
             {% endfor %}
         </select>
         </div>
-        <div class="form-group">
-            <div class="data-bv-file-type	custom-file">
-                <input name="ligand" type="file" class="custom-file-input" id="ligand">
-                <label class="custom-file-label" for="ligand">Choose file...</label>
-            </div>
-            <script>
-
-            </script>
+        <div class="data-bv-file-type custom-file" id="filediv" style="margin-bottom: 1rem">
+            <input onchange="validateLigand('ligand')" name="ligand" type="file" class="custom-file-input" id="ligand"/>
+            <label class="custom-file-label" for="ligand">Choose file...</label>
+            <div id="file-valid1" style="visibility: hidden" class="text-danger">Must be of File Type .pdbqt</div>
         </div>
-    <button style="margin-top: 1%; margin-left: 1.5%;" id="submit1" class="btn btn-primary" type="submit">Submit</button>
+    <button id="submit1" disabled="disabled" class="btn btn-primary" type="submit">Submit</button>
     </form>
     {% endif %}
 
