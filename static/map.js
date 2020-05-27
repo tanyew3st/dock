@@ -23,27 +23,84 @@ function saveToPDF() {
 }
 
 function makeGraph() {
+    var ctx = document.getElementById("myChart").getContext("2d");
+
+    var data = {
+    datasets: []
+    };
     console.log(this.mlarray);
+    let counter = 0
+    for (let [key, value] of Object.entries(this.mlarray)) {
+        datasets.push({})
+        datasets[counter][label] = key
+        datasets[counter][data] = value
+        counter++
+    }
+    var myBarChart = new Chart(ctx, {
+    type: 'bar',
+    data: data,
+    options: {
+        barValueSpacing: 20,
+        scales: {
+        yAxes: [{
+            ticks: {
+            min: 0,
+            }
+        }]
+        }
+    }
+});
 
-    var ctx = document.getElementById('myChart').getContext('2d');
-    var chart = new Chart(ctx, {
-        // The type of chart we want to create
-        type: 'line',
+    // let graphData = []
+    // let graphKeys = []
 
-        // The data for our dataset
-        data: {
-            labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
-            datasets: [{
-                label: 'My First dataset',
-                backgroundColor: 'rgb(255, 99, 132)',
-                borderColor: 'rgb(255, 99, 132)',
-                data: [0, 10, 5, 2, 20, 30, 45]
-            }]
-        },
 
-        // Configuration options go here
-        options: {}
-    });
+    // var ctx = document.getElementById("myChart").getContext("2d");
+
+    // var data = {
+    //     labels: graphKeys,
+    //     datasets: [
+    //         {
+    //             label: "Blue",
+    //             backgroundColor: "blue",
+    //             data: [3,7,4]
+    //         },
+    //         {
+    //             label: "Red",
+    //             backgroundColor: "red",
+    //             data: [4,3,5]
+    //         },
+    //         {
+    //             label: "Green",
+    //             backgroundColor: "green",
+    //             data: [7,2,6]
+    //         }
+    //     ]
+    // };
+    // console.log(this.mlarray);
+    // let counter = 0
+    // for (let [key, value] of Object.entries(this.mlarray)) {
+    //     datasets[counter][label] = key
+    //     datasets[counter][data] = value
+    //     counter++
+    // }
+    
+    
+    // var myBarChart = new Chart(ctx, {
+    //     type: 'bar',
+    //     data: data,
+    //     options: {
+    //         barValueSpacing: 20,
+    //         scales: {
+    //             yAxes: [{
+    //                 ticks: {
+    //                     min: 0,
+    //                 }
+    //             }]
+    //         }
+    //     }
+    // });
+    
 }
 
 function pdf() {
