@@ -18,23 +18,22 @@ class Ligand:
       pdf = FPDF()
       pdf.add_page()
       pdf.set_font('Times','',10.0) 
-      
 
 
-      objects = affinity.keys()
-      y_pos = np.arange(len(objects))
-      value = []
-      for i in affinity:
-      value.append(affinity[i])
+      # objects = affinity.keys()
+      # y_pos = np.arange(len(objects))
+      # value = []
+      # for i in affinity:
+      # value.append(affinity[i])
+      #
+      # plt.bar(y_pos, value, align='center', alpha=0.5)
+      # plt.xticks(y_pos, objects)
+      # plt.ylabel('Values')
+      # plt.title('Affinity Scores')
+      #
+      # plt.savefig('image.png')
 
-      plt.bar(y_pos, value, align='center', alpha=0.5)
-      plt.xticks(y_pos, objects)
-      plt.ylabel('Values')
-      plt.title('Affinity Scores')
 
-      plt.savefig('image.png')
-      
-
-      return ""
+      return pdf.pdf_version
 
 

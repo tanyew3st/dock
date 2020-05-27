@@ -8,6 +8,7 @@ var base
 var max
 var affinity
 let initialTime
+let mlarray
 
 // time it takes between structures
 let interval1
@@ -15,6 +16,47 @@ let interval
 let esttime
 
 let something = "hello"
+
+function saveToPDF() {
+
+
+}
+
+function makeGraph() {
+    console.log(this.mlarray);
+
+    var ctx = document.getElementById('myChart').getContext('2d');
+    var chart = new Chart(ctx, {
+        // The type of chart we want to create
+        type: 'line',
+
+        // The data for our dataset
+        data: {
+            labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+            datasets: [{
+                label: 'My First dataset',
+                backgroundColor: 'rgb(255, 99, 132)',
+                borderColor: 'rgb(255, 99, 132)',
+                data: [0, 10, 5, 2, 20, 30, 45]
+            }]
+        },
+
+        // Configuration options go here
+        options: {}
+    });
+}
+
+function pdf() {
+    html2canvas(document.getElementById("frame"),
+        {
+        onrendered:function(canvas) {
+            let a = document.createElement("a")
+            a.href = canvas.toDataURL("image/png")
+            a.download = "image.png"
+            a.click()
+        }
+    })
+}
 
 function printSomething() {
     console.log(something)
@@ -130,7 +172,8 @@ function machinelearning() {
         body: JSON.stringify({"affinity": this.affinity, "protein": this.protein})
     }).then(response => response.json())
     .then(res => {
-        console.log(res)
+        this.mlarray = res
+        makeGraph()
     })
 }
 

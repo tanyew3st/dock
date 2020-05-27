@@ -2,6 +2,7 @@
 {% block title %}Results{% endblock %}
 
 {% block content %}
+<div id="frame">
     <button class="btn btn-primary" onclick="func1('{{ ligand }}', '{{ protein }}')">Button</button>
     <button class="btn btn-primary" onclick="machineLearn()">Machine Learn</button>
 
@@ -20,5 +21,9 @@
         </tr>
       </tbody>
     </table>
+    <canvas id="myChart"></canvas>
+</div>
+    <button type="button" onclick="makeGraph()">Make the Graph</button>
+    <button type="button" onclick="pdf()">Click me</button>
     <p>Estimated Time Remaining: <span id="time">Please wait until the first structure is docked.</span></p>
 {% endblock %}
