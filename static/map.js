@@ -23,83 +23,64 @@ function saveToPDF() {
 }
 
 function makeGraph() {
+    let namesArray = {
+        "knn": "K Nearest Neighbor",
+        "lr": "Logistic Regression",
+        "svm": "Support Vector Machines",
+        "rf": "Random Forest"
+    }
     var ctx = document.getElementById("myChart").getContext("2d");
+    map = this.mlarray
+    var data = {}
+
+    let datasets = []
+    let labels = []
+
+    let percActive = {
+        label: "% Chance Active",
+        fill: true,
+        backgroundColor: "rgba(75, 192, 192, 0.2)",
+        borderColor: "rgba(30, 144, 255 , 1)",
+        borderWidth: 2,
+        data: new Array()
+    }
+
+    let percDecoy = {
+        label: "% Chance Decoy",
+        fill: true,
+        backgroundColor: "rgba(255,99,132,0.2)",
+        borderColor: "rgba(255,99,132,1)",
+        borderWidth: 2,
+        data: new Array()
+
+    }
+
+    for (let key in map) {
+
+        labels.push(namesArray[key])
+        percActive.data.push(map[key][0].toString().substring(0, 7))
+        percDecoy.data.push(map[key][1].toString().substring(0, 7))
+    }
 
     var data = {
-    datasets: []
+        labels: labels,
+        datasets: [percActive, percDecoy]
     };
-    console.log(this.mlarray);
-    let counter = 0
-    for (let [key, value] of Object.entries(this.mlarray)) {
-        datasets.push({})
-        datasets[counter][label] = key
-        datasets[counter][data] = value
-        counter++
-    }
-    var myBarChart = new Chart(ctx, {
-    type: 'bar',
-    data: data,
-    options: {
-        barValueSpacing: 20,
-        scales: {
-        yAxes: [{
-            ticks: {
-            min: 0,
+    
+    new Chart(ctx, {
+        type: 'bar',
+        data: data,
+        options: {
+            barValueSpacing: 20,
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        min: 0,
+                    }
+                }]
             }
-        }]
         }
-    }
-});
-
-    // let graphData = []
-    // let graphKeys = []
-
-
-    // var ctx = document.getElementById("myChart").getContext("2d");
-
-    // var data = {
-    //     labels: graphKeys,
-    //     datasets: [
-    //         {
-    //             label: "Blue",
-    //             backgroundColor: "blue",
-    //             data: [3,7,4]
-    //         },
-    //         {
-    //             label: "Red",
-    //             backgroundColor: "red",
-    //             data: [4,3,5]
-    //         },
-    //         {
-    //             label: "Green",
-    //             backgroundColor: "green",
-    //             data: [7,2,6]
-    //         }
-    //     ]
-    // };
-    // console.log(this.mlarray);
-    // let counter = 0
-    // for (let [key, value] of Object.entries(this.mlarray)) {
-    //     datasets[counter][label] = key
-    //     datasets[counter][data] = value
-    //     counter++
-    // }
-    
-    
-    // var myBarChart = new Chart(ctx, {
-    //     type: 'bar',
-    //     data: data,
-    //     options: {
-    //         barValueSpacing: 20,
-    //         scales: {
-    //             yAxes: [{
-    //                 ticks: {
-    //                     min: 0,
-    //                 }
-    //             }]
-    //         }
-    //     }
-    // });
+    });
     
 }
 
@@ -231,7 +212,12 @@ function machinelearning() {
     .then(res => {
         this.mlarray = res
         makeGraph()
+        makeMLTable
     })
+}
+
+function makeMLTable() {
+
 }
 
 $(".custom-file-input").on("change", function() {
