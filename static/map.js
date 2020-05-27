@@ -212,18 +212,32 @@ function machinelearning() {
     .then(res => {
         this.mlarray = res
         makeGraph()
-        makeMLTable
+        makeMLTable()
     })
 }
 
 function makeMLTable() {
+    console.log(this.mlarray)
+    for (let [key, value] of Object.entries(this.mlarray)) {
+        console.log(key)
+        console.log(value[0])
 
+
+        let el = document.createElement("th");
+        
+        el.innerHTML = key
+        document.getElementById("mlModel").appendChild(el)
+
+        let tw = document.createElement("td")
+        tw.id = value[0]
+        document.getElementById("mlActive").appendChild(tw)
+    
+        let tw2 = document.createElement("td")
+        tw2.id = value[1]
+        document.getElementById("mlDecoy").appendChild(tw2)
+    }
 }
 
-$(".custom-file-input").on("change", function() {
-  var fileName = $(this).val().split("\\").pop();
-  $(this).siblings(".custom-file-label").addClass("selected").html(fileName);
-});
 
 
 function getStructures(protein) {
