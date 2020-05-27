@@ -33,9 +33,9 @@
                     Run
                   </a>
                   <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="#">Docking</a>
-                    <a class="dropdown-item" href="#">Machine Learning</a>
-                    <a class="dropdown-item" href="#">Docking + Machine Learning</a>
+                    <a class="dropdown-item" href="{{ url_for('switcher', option='ml') }}">Machine Learning</a>
+                    <a class="dropdown-item" href="{{ url_for('switcher', option='docking') }}">Docking</a>
+                    <a class="dropdown-item" href="{{ url_for('switcher', option='mldocking') }}">Docking + Machine Learning</a>
                   </div>
                 </li>
               </ul>

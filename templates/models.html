@@ -4,13 +4,13 @@
 {% block content %}
     <ul class="nav nav-pills">
         <li class="nav-item">
-          <a class="nav-link {{ 'active' if option == 'ml' }}" style="margin-left: 2rem; margin-top: 2rem;" href="">Machine Learning</a>
+          <a class="nav-link {{ 'active' if option == 'ml' }}" style="margin-left: 2rem; margin-top: 2rem;" href="{{ url_for('switcher', option='ml') }}">Machine Learning</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link {{ 'active' if option == 'docking' }}" style="margin-top: 2rem;" href="#">Docking</a>
+          <a class="nav-link {{ 'active' if option == 'docking' }}" style="margin-top: 2rem;" href="{{ url_for('switcher', option='docking') }}">Docking</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link {{ 'active' if option == 'mldocking' }}" style="margin-top: 2rem;" href="#">ML and Docking</a>
+          <a class="nav-link {{ 'active' if option == 'mldocking' }}" style="margin-top: 2rem;" href="{{ url_for('switcher', option='mldocking') }}">ML and Docking</a>
         </li>
       </ul>
     {% if option == "mldocking" %}
@@ -25,7 +25,7 @@
         </select>
         </div>
         <div class="form-group">
-            <div class="custom-file">
+            <div class="data-bv-file-type	custom-file">
                 <input name="ligand" type="file" class="custom-file-input" id="ligand">
                 <label class="custom-file-label" for="ligand">Choose file...</label>
             </div>
@@ -41,9 +41,9 @@
         Docking
     {% endif %}
     {% if option == 'ml' %}
-        <form style="padding: 2rem">
+        <form style="padding: 2rem" >
             <div class="form-group">
-            <select name="protein2" id="protein2" class="custom-select" required>
+            <select required name="protein2" id="protein2" class="custom-select" >
               <option selected="true" disabled="disabled">Select Protein...</option>
                 {% for item in proteins %}
                   <option value="{{item}}">{{ item }}</option>
@@ -58,7 +58,7 @@
                 <textarea class="form-control" id="textarea" rows="3"></textarea>
             </div>
             <div id="smalltextbox" class="row">
-
+              
             </div>
             <button type="button" id="submit3" class="btn btn-primary" onclick="submitAffinity(document.getElementById('textarea').value)">Submit</button>
         </form>
