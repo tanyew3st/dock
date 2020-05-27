@@ -180,13 +180,17 @@ function createTable(names) {
     document.getElementById("progress").style.width = '1%'
     document.getElementById("progress").innerHTML = '1%'
     for (let i = 0; i < names.length; i++) {
-        let el = document.createElement("th");
-        el.innerHTML = names[i]
-        document.getElementById("structures").appendChild(el)
+        if(i == 20){
+            let el = document.createElement("th");
+            el.innerHTML = names[i]
+            document.getElementById("structures").appendChild(el)
 
-        let tw = document.createElement("td")
-        tw.id = names[i]
-        document.getElementById("affinities").appendChild(tw)
+            let tw = document.createElement("td")
+            tw.id = names[i]
+            document.getElementById("affinities").appendChild(tw)
+        }
+            
+        
     }
 
     console.log(document.getElementById("strtable"));
@@ -221,20 +225,24 @@ function makeMLTable() {
     for (let [key, value] of Object.entries(this.mlarray)) {
         console.log(key)
         console.log(value[0])
-
-
-        let el = document.createElement("th");
         
+
+        let row = document.createElement("tr");
+        row.id = "tableRow"
+
+        let el = document.createElement("th")
         el.innerHTML = key
-        document.getElementById("mlModel").appendChild(el)
+        row.appendChild(el)
 
         let tw = document.createElement("td")
-        tw.id = value[0]
-        document.getElementById("mlActive").appendChild(tw)
+        tw.innerHTML = value[0].toString().substring(0,7)
+        row.appendChild(tw)
     
         let tw2 = document.createElement("td")
-        tw2.id = value[1]
-        document.getElementById("mlDecoy").appendChild(tw2)
+        tw2.innerHTML = value[1].toString().substring(0,7)
+        row.appendChild(tw2)
+
+        document.getElementById("mlBody").appendChild(row)
     }
 }
 
