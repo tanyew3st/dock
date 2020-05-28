@@ -4,37 +4,22 @@ import matplotlib.pyplot as plt
 from fpdf import FPDF
 
 class Ligand:
-     number = 0
+    number = 0
 
-     @staticmethod
-     def save(ligand, instance_path):
+    @staticmethod
+    def save(ligand, instance_path):
         num = Ligand.number
         ligand.save(os.path.join(instance_path, 'ligand', secure_filename(str(Ligand.number) + '.pdbqt')))
         Ligand.number += 1
         return '/ligand/' + str(num) + '.pdbqt'
 
-     @staticmethod
-     def makePDF(affinity, ml):
-      pdf = FPDF()
-      pdf.add_page()
-      pdf.set_font('Times','',10.0) 
-      
+    @staticmethod
+    def getSample(protein, active):
+        print(protein)
+        print(active)
+        # active either 'active' or 'decoy'
+        # protein will be 'akt1' or 'lck'
+        return ""
 
-
-      # objects = affinity.keys()
-      # y_pos = np.arange(len(objects))
-      # value = []
-      # for i in affinity:
-      # value.append(affinity[i])
-
-      # plt.bar(y_pos, value, align='center', alpha=0.5)
-      # plt.xticks(y_pos, objects)
-      # plt.ylabel('Values')
-      # plt.title('Affinity Scores')
-
-      # plt.savefig('image.png')
-
-
-      return ""
-
+        # return dictionary - structure: affinity for the first element in xslx
 

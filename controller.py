@@ -36,6 +36,12 @@ def sayHello():
     obj = {"hello": 'hello world'}
     return make_response(jsonify(obj))
 
+@app.route('/sample/<protein>/<active>')
+def getSampleScores(protein, active):
+    dict = Ligand.getSample(protein, active)
+    return make_response(jsonify(dict))
+
+
 @app.route('/run/ml/array', methods=['POST'])
 def runModels():
     print('running')
