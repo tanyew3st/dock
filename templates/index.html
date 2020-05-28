@@ -10,7 +10,7 @@
 <header class="jumbotron jumbotron-fluid mb-0" id="landing" style="size: 4000px">
     <div class="container-fluid text-center">
        <h1 class="display-3">Ensemble Docking & ML</h1>
-       <p href="#">Credits. <a class="article-link" href="www.google.com">Read the Paper</a></p>
+       <p href="#">Credits. <a class="article-link" href="https://onlinelibrary.wiley.com/doi/abs/10.1002/prot.25899" target="_blank">Read the Paper</a></p>
        <div class="dropdown">
         <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Run Models
@@ -40,7 +40,7 @@
             <p class="card-text">Write in previously docked affinity scores for the structure of a specific protein and run machine learning models to determine whether the drug candidate / ligand is likely to be in the 'active' or 'decoy' group.</p>
           </div>
           <div class="col col-md-auto">
-            <button style="margin-top: 10%" class="btn btn-primary">Run Model</button>
+            <button style="margin-top: 10%" class="btn btn-primary" onclick="{{ url_for('switcher', option='ml') }}">Run Model</button>
           </div>
         </div>
 
@@ -58,7 +58,7 @@
             <p class="card-text">Upload a .pdbqt file for a ligand and select the protein that it should dock to. Then, the program will dock the protein using Vina and run machine learning models to determine whether the drug candidate / ligand is likely to be in the 'active' or 'decoy' group.</p>
           </div>
           <div class="col col-md-auto">
-            <button style="margin-top: 10%" class="btn btn-primary">Run Model</button>
+            <button style="margin-top: 10%" onclick="{{ url_for('switcher', option='mldocking') }}" class="btn btn-primary">Run Model</button>
           </div>
         </div>
 
@@ -76,7 +76,7 @@
             <p class="card-text">Upload a .pdbqt file for a ligand and the protein will dock it to multiple structures for a given protein and return affinity scores.</p>
           </div>
           <div class="col col-md-auto">
-            <button style="margin-top: 10%" class="btn btn-primary">Run Model</button>
+            <button style="margin-top: 10%" onclick="{{ url_for('switcher', option='docking') }}" class="btn btn-primary">Run Model</button>
           </div>
         </div>
 
