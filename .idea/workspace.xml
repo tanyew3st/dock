@@ -20,26 +20,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="53f2f5b8-52dd-4cf4-8ea5-9ed9271db4fe" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/instance/ligand/0.pdbqt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/instance/ligand/1.pdbqt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/instance/ligand/10.pdbqt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/instance/ligand/2.pdbqt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/instance/ligand/3.pdbqt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/instance/ligand/4.pdbqt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/instance/ligand/5.pdbqt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/instance/ligand/6.pdbqt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/instance/ligand/7.pdbqt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/instance/ligand/8.pdbqt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/instance/ligand/9.pdbqt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/controller.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ligand.py" beforeDir="false" afterPath="$PROJECT_DIR$/ligand.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ml.py" beforeDir="false" afterPath="$PROJECT_DIR$/ml.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instance/ligand/5.pdbqt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/static/map.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/map.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/styles/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/styles/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/models.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/models.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/results.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/results.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -161,6 +146,7 @@
       <workItem from="1590640635616" duration="6260000" />
       <workItem from="1590680457214" duration="2370000" />
       <workItem from="1590693265719" duration="10279000" />
+      <workItem from="1590703886145" duration="871000" />
     </task>
     <servers />
   </component>
@@ -319,6 +305,6 @@
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/dock$hello.coverage" NAME="hello Coverage Results" MODIFIED="1590701345679" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/dock$hello.coverage" NAME="hello Coverage Results" MODIFIED="1590703902171" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

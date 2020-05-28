@@ -6,7 +6,7 @@ var protein
 var ligand
 var base
 var max
-var affinity
+var affinity = {}
 let initialTime
 let mlarray
 
@@ -114,7 +114,6 @@ function func1(ligand, protein) {
             interval = parseFloat(((1/max) * 100).toString().substring(0,5))
 
             createTable(structures)
-            affinity = new Map()
             getAffinity()
         })
 }
@@ -140,13 +139,12 @@ function getAffinity() {
         .then(res => {
             document.getElementById(structures[currentstr]).classList.remove("loading")
             updateTable(currentstr, res['affinity'])
-            this.affinity.set(structures[currentstr], res['affinity'])
+            this.affinity[structures[currentstr]] = res['affinity']
             currentstr++
             if (currentstr === max) {
                 finished = true
                 clearInterval(interval1)
                 if (localStorage.getItem("option") == "mldocking") {
-                    console.log(this.affinity)
                     machineLearn()
                 } else {
                     alert("everything is finished rn")
@@ -155,7 +153,6 @@ function getAffinity() {
                 clearInterval(interval1)
                 document.getElementById("progress").innerHTML = (100 *((currentstr) / max)).toString().substring(0, 5) + "%"
                 document.getElementById("progress").style.width = (100 * ((currentstr) / max)) + "%"
-                console.log(this.affinity)
                 let time = (performance.now() - initialTime) / 1000
                 interval1 = setInterval(function() {
                     let currentTime = document.getElementById("progress").innerHTML
@@ -165,10 +162,6 @@ function getAffinity() {
                     document.getElementById("progress").innerHTML = (newTime + "%").toString().substring(0, 5)
                     document.getElementById("progress").style.width = newTime + "%"
                     let esttime = (max * time) * (1 - newTime / 100)
-                    console.log(esttime)
-                    console.log((max * time))
-                    console.log((1 - newTime / 100))
-                    console.log((max * time) * (1 - newTime / 100))
                     let seconds = Math.round(esttime % 60)
                     if (seconds < 10) {
                         seconds = "0" + seconds.toString()
@@ -179,11 +172,9 @@ function getAffinity() {
             }
 
         })
-        console.log(obj)
 }
 
 function createTable(names) {
-    console.log(names)
     document.getElementById("progress").style.width = '1%'
     document.getElementById("progress").innerHTML = '1%'
     for (let i = 0; i < names.length; i++) {
@@ -196,7 +187,6 @@ function createTable(names) {
         document.getElementById("affinities").appendChild(tw)
     }
 
-    console.log(document.getElementById("strtable"));
 }
 
 function updateTable(structureInput, num) {
@@ -208,15 +198,11 @@ function updateTable(structureInput, num) {
 }
 
 function machinelearning() {
-    console.log(this.affinity)
-    console.log("Machine learning");
     if (this.protein === undefined) {
         this.protein = localStorage.getItem("protein")
     }
 
-    console.log("uhhh...")
     let linear = localStorage.getItem("linear")
-    console.log(JSON.stringify({"affinity": this.affinity, "protein": this.protein, "linear": linear}))
     fetch(base + '/run/ml/array', {
         method: "POST",
         body: JSON.stringify({"affinity": this.affinity, "protein": this.protein, "linear": linear})
@@ -234,10 +220,7 @@ function machinelearning() {
 }
 
 function makeMLTable() {
-    console.log(this.mlarray)
     for (let [key, value] of Object.entries(this.mlarray)) {
-        console.log(key)
-        console.log(value[0])
 
         let row = document.createElement("tr");
         row.id = "tableRow"
@@ -266,7 +249,6 @@ function getSampleScores(type, protein) {
     fetch('/sample/' + protein + '/' + type)
         .then(response => response.json())
         .then(json => {
-            console.log(json)
             getStructures(protein)
             document.getElementById("textarea").value = JSON.stringify(json)
 
@@ -282,7 +264,6 @@ function getStructures(protein) {
     document.getElementById("textarea").removeAttribute('disabled')
     document.getElementById('submit3').removeAttribute('disabled')
     document.getElementById('submit4').removeAttribute('disabled')
-    console.log('printing...')
     let url = window.location.href
     base = url.substr(0, url.indexOf('/run'));
     this.base = base
@@ -291,7 +272,6 @@ function getStructures(protein) {
     .then(response => response.json())
     .then(json => {
         localStorage.setItem("protein", protein)
-        console.log(json)
         for (structure of json) {
             if (structure !== ".DS_Store") {
                 let divel = document.createElement("div")
@@ -309,7 +289,6 @@ function getStructures(protein) {
                 divel.appendChild(labelel)
                 divel.appendChild(inputel)
                 document.getElementById("smalltextbox").appendChild(divel)
-                console.log(document.getElementById("smalltextbox"))
             }
         }
 
@@ -350,7 +329,6 @@ function machineLearn() {
 
         machinelearning()
     } else {
-        console.log(this.affinity)
         var url = window.location.href
         base = url.substr(0, url.indexOf('/'));
 
@@ -363,7 +341,6 @@ function machineLearn() {
         // this.affinity = ordered
 
         this.structures = Object.keys(this.affinity)
-        console.log(this.affinity)
         machinelearning()
     }
 }

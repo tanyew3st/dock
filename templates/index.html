@@ -2,6 +2,11 @@
 {% block title %}TITLE{% endblock %}
 
 {% block content %}
+<script>
+    $(document).ready(function() {
+        document.getElementById("nav").remove()
+    });
+</script>
 <header class="jumbotron jumbotron-fluid mb-0" id="landing" style="size: 4000px">
     <div class="container-fluid text-center">
        <h1 class="display-3">Ensemble Docking & ML</h1>
@@ -19,19 +24,20 @@
 </div>
     </div>
 </header>
+<body style="margin-bottom: 3rem">
     <div class="models-text">
       <h2 style="font-family: Arial, Helvetica, sans-serif;">Our Models</h2>
     </div>
 
     <div class="card">
       <div class="card-header">
-        File Types:
+        Input: Affinity scores for the protein's selected structures.
       </div>
       <div class="card-body">
         <div class="row">
           <div class="col">
             <h3 class="card-title">Machine Learning</h3>
-            <p class="card-text">Lorem ipsum dolor sit amet, Tanay smells bad adipiscing elit. Quisque semper ultrices euismod. Proin consequat est ac elit interdum</p>
+            <p class="card-text">Write in previously docked affinity scores for the structure of a specific protein and run machine learning models to determine whether the drug candidate / ligand is likely to be in the 'active' or 'decoy' group.</p>
           </div>
           <div class="col col-md-auto">
             <button style="margin-top: 10%" class="btn btn-primary">Run Model</button>
@@ -43,13 +49,31 @@
     </div>
     <div class="card">
       <div class="card-header">
-        File Types:
+        Input: .pdbqt file
       </div>
       <div class="card-body">
         <div class="row">
           <div class="col">
             <h3 class="card-title">Machine Learning and Docking</h3>
-            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque semper ultrices euismod. Proin consequat est ac Tanay smells bad interdum</p>
+            <p class="card-text">Upload a .pdbqt file for a ligand and select the protein that it should dock to. Then, the program will dock the protein using Vina and run machine learning models to determine whether the drug candidate / ligand is likely to be in the 'active' or 'decoy' group.</p>
+          </div>
+          <div class="col col-md-auto">
+            <button style="margin-top: 10%" class="btn btn-primary">Run Model</button>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+    <div class="card">
+      <div class="card-header">
+        Input: .pdbqt file
+      </div>
+      <div class="card-body">
+        <div class="row">
+          <div class="col">
+            <h3 class="card-title">Docking</h3>
+            <p class="card-text">Upload a .pdbqt file for a ligand and the protein will dock it to multiple structures for a given protein and return affinity scores.</p>
           </div>
           <div class="col col-md-auto">
             <button style="margin-top: 10%" class="btn btn-primary">Run Model</button>
@@ -66,8 +90,8 @@
       <div class="card-body">
         <div class="row">
           <div class="col">
-            <h3 class="card-title">Decoy</h3>
-            <p class="card-text">Lorem ipsum dolor sit amet, consectetur Tanay smells bad elit. Quisque semper ultrices euismod. Proin consequat est ac elit interdum</p>
+            <h3 class="card-title">Custom Structures</h3>
+            <p class="card-text">Lorem ipsum doler sit amet, consectetur adipiscing elit. Quisque semper ultrices euismod. Proin consequat est ac elit interdum</p>
           </div>
           <div class="col col-md-auto">
             <button style="margin-top: 10%" class="btn btn-primary">Run Model</button>
@@ -77,22 +101,5 @@
       </div>
 
     </div>
-    <div class="card">
-      <div class="card-header">
-        File Types:
-      </div>
-      <div class="card-body">
-        <div class="row">
-          <div class="col">
-            <h3 class="card-title">Custom Structure</h3>
-            <p class="card-text">Lorem ipsum Tanay smells bad sit amet, consectetur adipiscing elit. Quisque semper ultrices euismod. Proin consequat est ac elit interdum</p>
-          </div>
-          <div class="col col-md-auto">
-            <button style="margin-top: 10%" class="btn btn-primary">Run Model</button>
-          </div>
-        </div>
-
-      </div>
-
-    </div>
+</body>
 {% endblock %}
