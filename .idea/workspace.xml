@@ -21,13 +21,7 @@
   <component name="ChangeListManager">
     <list default="true" id="53f2f5b8-52dd-4cf4-8ea5-9ed9271db4fe" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/controller.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/instance/ligand/1.pdbqt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/instance/ligand/2.pdbqt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/instance/ligand/3.pdbqt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/instance/ligand/4.pdbqt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/protein.py" beforeDir="false" afterPath="$PROJECT_DIR$/protein.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/map.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/map.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/models.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/models.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -150,7 +144,7 @@
       <workItem from="1590640635616" duration="6260000" />
       <workItem from="1590680457214" duration="2370000" />
       <workItem from="1590693265719" duration="10279000" />
-      <workItem from="1590703886145" duration="1725000" />
+      <workItem from="1590703886145" duration="2511000" />
     </task>
     <servers />
   </component>
