@@ -2,6 +2,7 @@ import os
 from werkzeug.utils import secure_filename
 import matplotlib.pyplot as plt
 from fpdf import FPDF
+import pandas as pd
 
 class Ligand:
     number = 0
@@ -15,11 +16,21 @@ class Ligand:
 
     @staticmethod
     def getSample(protein, active):
-        print(protein)
-        print(active)
-        # active either 'active' or 'decoy'
-        # protein will be 'akt1' or 'lck'
-        return ""
+      print(protein)
+      print(active)
+      # active either 'active' or 'decoy'
+      # protein will be 'akt1' or 'lck'
+      if active == "active":
+         activeDf = pd.read_excel("proteins/" + protein + "/active.xlsx", index=False)
+      else:
+         activeDf = pd.read_excel("proteins/" + protein + "/decoy.xlsx", index=False)
+      
+      activeDf.drop("Unnamed: 0", axis=1, inplace=True)
 
-        # return dictionary - structure: affinity for the first element in xslx
+      first = (activeDf.iloc[0])
+      return (first.to_dict())
+
+
+
+      # return dictionary - structure: affinity for the first element in xslx
 
