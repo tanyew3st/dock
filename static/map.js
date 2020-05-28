@@ -218,6 +218,8 @@ function machinelearning() {
 }
 
 function makeMLTable() {
+    let activeP = []
+    let decoyP = []
     for (let [key, value] of Object.entries(this.mlarray)) {
 
         let row = document.createElement("tr");
@@ -227,16 +229,47 @@ function makeMLTable() {
         el.innerHTML = this.namesArray[key]
         row.appendChild(el)
 
+        
+        activeP.push(value[0] * 100)
         let tw = document.createElement("td")
-        tw.innerHTML = value[0].toString().substring(0,7)
+        tw.innerHTML = (value[0]*100).toString().substring(0,7)
         row.appendChild(tw)
     
+        
+        decoyP.push(value[1] * 100)
         let tw2 = document.createElement("td")
-        tw2.innerHTML = value[1].toString().substring(0,7)
+        tw2.innerHTML = (value[1]*100).toString().substring(0,7)
         row.appendChild(tw2)
 
         document.getElementById("mlBody").appendChild(row)
     }
+    let newRow = document.createElement("tr")
+   
+    let average = document.createElement("th")
+    average.innerHTML="Average"
+    newRow.appendChild(average)
+
+    let activePA = 0
+    let decoyPA = 0
+    for(let i = 0; i < activeP.length; i++){
+        activePA+= activeP[i]
+        decoyPA+= decoyP[i]
+    }
+    let twAvg = document.createElement("td")
+    twAvg.innerHTML = (activePA/activeP.length).toString().substring(0,7)
+    newRow.appendChild(twAvg)
+
+
+    let tw2Avg = document.createElement("td")
+    tw2Avg.innerHTML = (decoyPA/decoyP.length).toString().substring(0,7)
+    newRow.appendChild(tw2Avg)
+
+    document.getElementById("mlBody").appendChild(newRow)
+
+
+
+
+    
 }
 
 function getSampleScores(type, protein) {
