@@ -24,14 +24,16 @@
         if (option === "ml") {
           console.log('machine learning...')
           machineLearn()
-        } else if (option == "docking" || option == "mldocking")  {
+        } else if (option === "docking" || option === "mldocking")  {
           console.log('machine learning... but docking first')
           func1('{{ ligand }}', '{{ protein }}')
+            if (option === "docking") {
+                document.getElementById("mlstuff").style.display = "none"
+            }
         }
     });
 </script>
 
-<div id="frame">
 <div style="margin: 2rem 2rem">
 <!--  <div style="margin-top: .5rem; margin-left: 2rem; margin-bottom: 1rem;">-->
 <!--    <button class="btn btn-primary" onclick="func1('{{ ligand }}', '{{ protein }}')">Button</button>-->
@@ -42,6 +44,8 @@
       <div class="progress-bar" id="progress" role="progressbar"
            style="width: 100%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">100%</div>
     </div>
+    <div id="frame">
+
     <div style="overflow-x: scroll; margin-bottom: 2rem">
         <table id="strtable" style="max-width: 100%; margin-bottom: 0rem" class="table table-bordered">
           <thead>
@@ -60,7 +64,7 @@
         </table>
     </div>
     <p id="reassurance" style="margin-top: .5rem; display: none">Estimated Time Remaining: <span id="time"><span style="color: red">Please wait until the first structure is docked to see an estimate. ~ It should take no more than a few minutes.</span></span> (min:sec)</p>
-
+<div id="mlstuff" style="display: block">
     <div id="alert" class="alert alert-danger" style="display: none">Currently Running Machine Learning Models! Please wait <span class="loading"></span></div>
     <table style="table-layout: fixed; width: 100%" class='table table-bordered'>
       <thead style="table-layout: fixed">
@@ -79,6 +83,7 @@
     </table>
     <canvas style="margin: 2rem 0rem;" id="myChart"></canvas>
 
+</div>
 </div>
 </div>
 
