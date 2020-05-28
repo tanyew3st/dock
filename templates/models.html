@@ -42,15 +42,19 @@
         function validate1() {
             if (document.getElementById("protein").classList.contains("is-valid")
                 && document.getElementById("ligand").classList.contains("is-valid")) {
-                document.getElementById("submit1").disabled = false
+                document.getElementById("submit0").disabled = false
+                document.getElementById("submit").disabled = false
             } else {
-                document.getElementById("submit1").disabled = true
+                document.getElementById("submit0").disabled = true
+                document.getElementById("submit").disabled = true
             }
         }
 
         function validate2() {
             if (document.getElementById("protein2").classList.contains("is-valid")) {
                 document.getElementById("submit2").removeAttribute("disabled")
+                document.getElementById("submit5").removeAttribute("disabled")
+                document.getElementById("submit6").removeAttribute("disabled")
             }
         }
 
@@ -67,7 +71,8 @@
                 $(this).next('.custom-file-label').html(fileName);
         })
 
-        $(document).ready(function() { console.log("Hello")
+        $(document).ready(function() {
+            console.log("Hello")
             localStorage.setItem("option", "{{ option }}")
         });
 
@@ -85,7 +90,7 @@
     </ul>
     <hr>
 
-    {% if option == "mldocking" %}
+    {% if option != "ml" %}
     <form method="POST" onchange="validate1()" name="mldocking" style="padding: 2rem" action="{{ url_for('run') }}" enctype="multipart/form-data">
         <div class="form-group">
         <select onchange="validateProtein('protein')" name="protein" id="protein" class="custom-select">
@@ -100,13 +105,18 @@
             <label class="custom-file-label" for="ligand">Choose file...</label>
             <div id="file-valid1" style="visibility: hidden" class="text-danger">Must be of File Type .pdbqt</div>
         </div>
-    <button id="submit1" disabled="disabled" class="btn btn-primary" type="submit">Submit</button>
+        <div class="btn-group" role="group" aria-label="Basic example">
+            <button type="submit" disabled="disabled" id="submit" class="btn btn-secondary"
+                    onclick="localStorage.setItem('linear', true), localStorage.setItem('option', '{{ option }}')">Run Linear Models</button>
+            <button type="submit" disabled="disabled" id="submit0" class="btn btn-danger"
+                    onclick="localStorage.setItem('linear', true), localStorage.setItem('option', '{{ option }}')">Run All Models*</button>
+        </div>
     </form>
     {% endif %}
 
-    {% if option == "docking" %}
-        Docking
-    {% endif %}
+<!--    {% if option == "docking" %}-->
+<!--        Docking-->
+<!--    {% endif %}-->
     {% if option == 'ml' %}
         <form style="padding: 2rem" onchange="validate2()">
             <div class="form-group">
@@ -120,6 +130,10 @@
         <button type="button" disabled="disabled"
                 onclick="getStructures(document.getElementById('protein2').value);"
                 id="submit2" class="btn btn-primary">Find Structures</button>
+        <div style="float:right" class="btn-group" role="group" aria-label="Basic example">
+            <button type="button" disabled="disabled" id="submit5" class="btn btn-success" onclick="getSampleScores('active', document.getElementById('protein2').value)">Use Sample Active Scores</button>
+            <button type="button" disabled="disabled" id="submit6" class="btn btn-info" onclick="getSampleScores('decoy', document.getElementById('protein2').value)">Use Sample Decoy Scores</button>
+        </div>
         </form>
         <form enctype="multipart/form-data" onchange="validate3()" method="POST" style="padding: 2rem" disabled="true">
             <div class="form-group">
@@ -131,7 +145,13 @@
             <div id="smalltextbox" class="row">
               
             </div>
-            <button type="button" disabled="disabled" id="submit3" class="btn btn-primary" onclick="submitAffinity(document.getElementById('textarea').value)">Submit</button>
+            <div class="btn-group" role="group" aria-label="Basic example">
+                <button type="button" disbaled="disabled" id="submit4" class="btn btn-secondary" onclick="submitAffinity(document.getElementById('textarea').value, true)">Run Linear Models</button>
+                <button type="button" disabled="disabled" id="submit3" class="btn btn-danger" onclick="submitAffinity(document.getElementById('textarea').value, false)">Run All Models*</button>
+            </div>
+            <br>
+            <br>
+            <p>*Running all models will take more time. Linear models work well for large datasets</p>
         </form>
     {% endif %}
 {% endblock %}

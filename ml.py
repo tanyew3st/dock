@@ -97,7 +97,7 @@ class MachineLearning:
         # end product to create a new excel spreadsheet .xlsx in the output location
 
     # gets the probability using various machine learning models and sets
-    def getProbability(self, protein):
+    def getProbability(self, protein, linear):
 
         # reading the active files from the excel spreadsheet
         actives = pd.read_excel("proteins/" + protein + "/active.xlsx", index=False)
@@ -140,19 +140,20 @@ class MachineLearning:
         self.prob["knn"] = pknn[0][0:].tolist()
         #
 
-        # Support Vector Machines
-        # print("Doing Support Vector Machines")
-        # svc = SVC(C=1, gamma=0.1, probability=True, kernel="linear")
-        # svc.fit(all_vals, all_ticker)
-        # psvc = svc.predict_proba(y)
-        # self.prob["svc"] = psvc[0][0:].tolist()
-        #
-        # # Random Forest
-        # print("Doing Random Forest Classifier")
-        # rf = RandomForestClassifier(n_estimators=750)
-        # rf.fit(all_vals, all_ticker)
-        # prf = rf.predict_proba(y)
-        # self.prob["rf"] = prf[0][0:].tolist()
+        if not linear:
+            # Support Vector Machines
+            print("Doing Support Vector Machines")
+            svc = SVC(C=1, gamma=0.1, probability=True, kernel="linear")
+            svc.fit(all_vals, all_ticker)
+            psvc = svc.predict_proba(y)
+            self.prob["svc"] = psvc[0][0:].tolist()
+
+            # Random Forest
+            print("Doing Random Forest Classifier")
+            rf = RandomForestClassifier(n_estimators=750)
+            rf.fit(all_vals, all_ticker)
+            prf = rf.predict_proba(y)
+            self.prob["rf"] = prf[0][0:].tolist()
 
         print(self.prob)
 

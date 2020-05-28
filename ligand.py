@@ -16,8 +16,6 @@ class Ligand:
 
     @staticmethod
     def getSample(protein, active):
-      print(protein)
-      print(active)
       # active either 'active' or 'decoy'
       # protein will be 'akt1' or 'lck'
       if active == "active":

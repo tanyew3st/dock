@@ -15,20 +15,15 @@ let interval1
 let interval
 let esttime
 
-let something = "hello"
-
-function saveToPDF() {
-
-
+var namesArray = {
+    "knn": "K Nearest Neighbor",
+    "lr": "Logistic Regression",
+    "svm": "Support Vector Machines",
+    "rf": "Random Forest"
 }
 
 function makeGraph() {
-    let namesArray = {
-        "knn": "K Nearest Neighbor",
-        "lr": "Logistic Regression",
-        "svm": "Support Vector Machines",
-        "rf": "Random Forest"
-    }
+
     var ctx = document.getElementById("myChart").getContext("2d");
     map = this.mlarray
     var data = {}
@@ -57,7 +52,7 @@ function makeGraph() {
 
     for (let key in map) {
 
-        labels.push(namesArray[key])
+        labels.push(this.namesArray[key])
         percActive.data.push(map[key][0].toString().substring(0, 7))
         percDecoy.data.push(map[key][1].toString().substring(0, 7))
     }
@@ -96,16 +91,12 @@ function pdf() {
     })
 }
 
-function printSomething() {
-    console.log(something)
-    something = something + something
-}
 // getting the structure names
 function func1(ligand, protein) {
+    document.getElementById("reassurance").style.display = "block"
+    document.getElementById("showprogress").style.display = "block"
     var url = window.location.href
-    console.log(interval);
     base = url.substr(0, url.indexOf('/run'));
-    console.log(base);
     var o = {
         "bod": "hello world"
     }
@@ -116,10 +107,9 @@ function func1(ligand, protein) {
     fetch(base + '/structures/get/' + protein)
         .then(response => response.json())
         .then(json => {
-            console.log(json)
             finished = false
             currentstr = 0
-            structures = json
+            structures = json.sort()
             max = structures.length
             interval = parseFloat(((1/max) * 100).toString().substring(0,5))
 
@@ -130,12 +120,13 @@ function func1(ligand, protein) {
 }
 
 function getAffinity() {
-        document.getElementById(structures[currentstr]).innerHTML = "..."
+        // document.getElementById(structures[currentstr]).innerHTML = "..."
+        document.getElementById(structures[currentstr]).classList.add("loading")
+
         initialTime = performance.now()
         if (structures[currentstr] == ".DS_Store") {
             currentstr++
         }
-        console.log("working... testing structure " + structures[currentstr])
         // need to dock every structure with every protein
         let obj = {
             "protein": protein,
@@ -147,17 +138,15 @@ function getAffinity() {
             body: JSON.stringify(obj)
         }).then(response => response.json())
         .then(res => {
-            console.log(this.affinity)
-            console.log(res)
+            document.getElementById(structures[currentstr]).classList.remove("loading")
             updateTable(currentstr, res['affinity'])
             this.affinity.set(structures[currentstr], res['affinity'])
             currentstr++
             if (currentstr === max) {
                 finished = true
-                console.log("it is finished")
-                console.log(this.affinity)
                 clearInterval(interval1)
                 if (localStorage.getItem("option") == "mldocking") {
+                    console.log(this.affinity)
                     machineLearn()
                 } else {
                     alert("everything is finished rn")
@@ -180,7 +169,11 @@ function getAffinity() {
                     console.log((max * time))
                     console.log((1 - newTime / 100))
                     console.log((max * time) * (1 - newTime / 100))
-                    document.getElementById("time").innerHTML = Math.floor(esttime/60) + ":" + (Math.round(esttime % 60))
+                    let seconds = Math.round(esttime % 60)
+                    if (seconds < 10) {
+                        seconds = "0" + seconds.toString()
+                    }
+                    document.getElementById("time").innerHTML = Math.floor(esttime/60) + ":" + seconds
                 }, 5000)
                 getAffinity()
             }
@@ -190,20 +183,17 @@ function getAffinity() {
 }
 
 function createTable(names) {
+    console.log(names)
     document.getElementById("progress").style.width = '1%'
     document.getElementById("progress").innerHTML = '1%'
     for (let i = 0; i < names.length; i++) {
-        if(i == 20){
-            let el = document.createElement("th");
-            el.innerHTML = names[i]
-            document.getElementById("structures").appendChild(el)
+        let el = document.createElement("th");
+        el.innerHTML = names[i]
+        document.getElementById("structures").appendChild(el)
 
-            let tw = document.createElement("td")
-            tw.id = names[i]
-            document.getElementById("affinities").appendChild(tw)
-        }
-            
-        
+        let tw = document.createElement("td")
+        tw.id = names[i]
+        document.getElementById("affinities").appendChild(tw)
     }
 
     console.log(document.getElementById("strtable"));
@@ -218,16 +208,25 @@ function updateTable(structureInput, num) {
 }
 
 function machinelearning() {
+    console.log(this.affinity)
     console.log("Machine learning");
     if (this.protein === undefined) {
         this.protein = localStorage.getItem("protein")
     }
+
     console.log("uhhh...")
+    let linear = localStorage.getItem("linear")
+    console.log(JSON.stringify({"affinity": this.affinity, "protein": this.protein, "linear": linear}))
     fetch(base + '/run/ml/array', {
         method: "POST",
-        body: JSON.stringify({"affinity": this.affinity, "protein": this.protein})
+        body: JSON.stringify({"affinity": this.affinity, "protein": this.protein, "linear": linear})
     }).then(response => response.json())
     .then(res => {
+        document.getElementById("alert").classList.replace("alert-danger", "alert-success")
+        document.getElementById("alert").innerHTML = "Success - Data Displayed Below!"
+        setTimeout(function() {
+            document.getElementById("alert").remove()
+        }, 5000)
         this.mlarray = res
         makeGraph()
         makeMLTable()
@@ -239,13 +238,12 @@ function makeMLTable() {
     for (let [key, value] of Object.entries(this.mlarray)) {
         console.log(key)
         console.log(value[0])
-        
 
         let row = document.createElement("tr");
         row.id = "tableRow"
 
         let el = document.createElement("th")
-        el.innerHTML = key
+        el.innerHTML = this.namesArray[key]
         row.appendChild(el)
 
         let tw = document.createElement("td")
@@ -260,16 +258,35 @@ function makeMLTable() {
     }
 }
 
+function getSampleScores(type, protein) {
+    document.getElementById('submit2').setAttribute('disabled', 'disabled');
+    document.getElementById('submit5').setAttribute('disabled', 'disabled');
+    document.getElementById('submit6').setAttribute('disabled', 'disabled');
+    document.getElementById('protein2').setAttribute('disabled', 'disabled');
+    fetch('/sample/' + protein + '/' + type)
+        .then(response => response.json())
+        .then(json => {
+            console.log(json)
+            getStructures(protein)
+            document.getElementById("textarea").value = JSON.stringify(json)
+
+        })
+}
 
 
 function getStructures(protein) {
     document.getElementById('submit2').setAttribute('disabled', 'disabled');
     document.getElementById('protein2').setAttribute('disabled', 'disabled');
+    document.getElementById('submit5').setAttribute('disabled', 'disabled');
+    document.getElementById('submit6').setAttribute('disabled', 'disabled');
     document.getElementById("textarea").removeAttribute('disabled')
     document.getElementById('submit3').removeAttribute('disabled')
+    document.getElementById('submit4').removeAttribute('disabled')
     console.log('printing...')
     let url = window.location.href
     base = url.substr(0, url.indexOf('/run'));
+    this.base = base
+
     fetch(base + '/structures/get/' + protein)
     .then(response => response.json())
     .then(json => {
@@ -299,16 +316,19 @@ function getStructures(protein) {
     })
 }
 
-function submitAffinity(val) {
+function submitAffinity(val, linear) {
     localStorage.setItem("affinity", JSON.stringify(val))
+    localStorage.setItem("linear", linear)
     window.location.href = "/results"
 }
 
+function setLinear(linear) {
+    localStorage.setItem("linear", linear)
+}
 function machineLearn() {
-    console.log(this.affinity)
+    document.getElementById("alert").style.display = "block"
     if (this.affinity === undefined) {
         this.affinity = JSON.parse(JSON.parse(localStorage.getItem("affinity")))
-
         var url = window.location.href
         base = url.substr(0, url.indexOf('/results'));
 
@@ -320,8 +340,8 @@ function machineLearn() {
         this.affinity = ordered
 
         this.structures = Object.keys(this.affinity)
-
         this.createTable(this.structures)
+
         for (let i in this.affinity) {
             document.getElementById(i).innerHTML = this.affinity[i]
         }
@@ -330,18 +350,20 @@ function machineLearn() {
 
         machinelearning()
     } else {
+        console.log(this.affinity)
         var url = window.location.href
         base = url.substr(0, url.indexOf('/'));
 
-        let unordered = this.affinity
-        const ordered = {};
-        Object.keys(unordered).sort().forEach(function(key) {
-          ordered[key] = unordered[key];
-        });
-        this.affinity = ordered
+        // let unordered = this.affinity
+        // const ordered = {};
+        // Object.keys(unordered).sort().forEach(function(key) {
+        //   ordered[key] = unordered[key];
+        // });
+        //
+        // this.affinity = ordered
 
         this.structures = Object.keys(this.affinity)
-
+        console.log(this.affinity)
         machinelearning()
     }
 }
