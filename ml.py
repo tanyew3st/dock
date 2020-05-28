@@ -7,6 +7,7 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn.tree import DecisionTreeClassifier;
 from sklearn.ensemble import RandomForestClassifier;
+from sklearn.svm import LinearSVC
 from sklearn.svm import SVC
 
 # class to provide Machine Learning and create a model
@@ -138,19 +139,20 @@ class MachineLearning:
         pknn = knn.predict_proba(y)
         self.prob["knn"] = pknn[0][0:].tolist()
         #
-        # # Support Vector Machines
+
+        # Support Vector Machines
         # print("Doing Support Vector Machines")
-        # svc = SVC(C=100, gamma=0.2, probability=True)
+        # svc = SVC(C=1, gamma=0.1, probability=True, kernel="linear")
         # svc.fit(all_vals, all_ticker)
         # psvc = svc.predict_proba(y)
-        # self.prob["svc"] = psvc
+        # self.prob["svc"] = psvc[0][0:].tolist()
         #
         # # Random Forest
         # print("Doing Random Forest Classifier")
         # rf = RandomForestClassifier(n_estimators=750)
         # rf.fit(all_vals, all_ticker)
         # prf = rf.predict_proba(y)
-        # self.prob["rf"] = prf
+        # self.prob["rf"] = prf[0][0:].tolist()
 
         print(self.prob)
 

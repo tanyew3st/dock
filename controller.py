@@ -2,7 +2,7 @@ import json
 import os
 import shutil
 from ast import literal_eval
-
+import time
 import flask
 from flask import render_template, request, send_file, jsonify, make_response
 
@@ -48,6 +48,9 @@ def runModels():
 
 @app.route('/dock', methods=['POST'])
 def dock():
+    # time.sleep(2)
+    return make_response(jsonify({"affinity": -7.5}))
+    print(app.instance_path)
     data = json.loads(request.data)
     print(data)
     directory = "proteins/" + str(data['protein']) + "/Structures/" + str(data['structure'])
@@ -62,7 +65,8 @@ def dock():
         # if to get rid of .ds-store and other weird files
         if extension is not None:
             p1 = Protein(prtdir)
-    affinity = Setup.dock(p1, str(app.instance_path) + str(data['ligand'].encode('utf-8')))
+    affinity = Setup.dock(p1, str(app.instance_path) + str(data['ligand']))
+    print(str(app.instance_path) + str(data['ligand'].encode('utf-8')))
     obj = {"affinity": affinity}
     print(obj)
     return make_response(jsonify(obj))
