@@ -48,6 +48,16 @@
             }
         }
 
+        function validate2() {
+            if (document.getElementById("protein2").classList.contains("is-valid")) {
+                document.getElementById("submit2").removeAttribute("disabled")
+            }
+        }
+
+        function validate3() {
+
+        }
+
         $('body').on('change', "#ligand", function(){
                 console.log("activated...!")
                 //get the file name
@@ -68,9 +78,10 @@
         <li class="nav-item">
           <a class="nav-link {{ 'active' if option == 'mldocking' }}" style="margin-top: 2rem;" href="{{ url_for('switcher', option='mldocking') }}">ML and Docking</a>
         </li>
-      </ul>
-    {% if option == "mldocking" %}
+    </ul>
     <hr>
+
+    {% if option == "mldocking" %}
     <form method="POST" onchange="validate1()" name="mldocking" style="padding: 2rem" action="{{ url_for('run') }}" enctype="multipart/form-data">
         <div class="form-group">
         <select onchange="validateProtein('protein')" name="protein" id="protein" class="custom-select">
@@ -93,26 +104,30 @@
         Docking
     {% endif %}
     {% if option == 'ml' %}
-        <form style="padding: 2rem" >
+        <form style="padding: 2rem" onchange="validate2()">
             <div class="form-group">
-            <select required name="protein2" id="protein2" class="custom-select" >
+            <select onchange="validateProtein('protein2')" required name="protein2" id="protein2" class="custom-select" >
               <option selected="true" disabled="disabled">Select Protein...</option>
                 {% for item in proteins %}
                   <option value="{{item}}">{{ item }}</option>
                 {% endfor %}
             </select>
             </div>
-        <button type="button" onclick="getStructures(document.getElementById('protein2').value)" id="submit2" class="btn btn-primary">Find Structures</button>
+        <button type="button" disabled="disabled"
+                onclick="getStructures(document.getElementById('protein2').value);"
+                id="submit2" class="btn btn-primary">Find Structures</button>
         </form>
-        <form enctype="multipart/form-data" method="POST" style="padding: 2rem" disabled="true">
+        <form enctype="multipart/form-data" onchange="validate3()" method="POST" style="padding: 2rem" disabled="true">
             <div class="form-group">
                 <label for="textarea">Structure Object - Create a JSON Object in the Correct Order</label>
-                <textarea class="form-control" id="textarea" rows="3"></textarea>
+                <textarea disabled="disabled" class="form-control" id="textarea" rows="3"></textarea>
             </div>
+            <br>
+            <p>Or enter affinity scores individually for each structure (must submit protein to see structures)</p>
             <div id="smalltextbox" class="row">
               
             </div>
-            <button type="button" id="submit3" class="btn btn-primary" onclick="submitAffinity(document.getElementById('textarea').value)">Submit</button>
+            <button type="button" disabled="disabled" id="submit3" class="btn btn-primary" onclick="submitAffinity(document.getElementById('textarea').value)">Submit</button>
         </form>
     {% endif %}
 {% endblock %}

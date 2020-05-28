@@ -241,6 +241,10 @@ function makeMLTable() {
 
 
 function getStructures(protein) {
+    document.getElementById('submit2').setAttribute('disabled', 'disabled');
+    document.getElementById('protein2').setAttribute('disabled', 'disabled');
+    document.getElementById("textarea").removeAttribute('disabled')
+    document.getElementById('submit3').removeAttribute('disabled')
     console.log('printing...')
     let url = window.location.href
     base = url.substr(0, url.indexOf('/run'));
