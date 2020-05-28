@@ -41,7 +41,7 @@
             <p class="card-text">Write in previously docked affinity scores for the structure of a specific protein and run machine learning models to determine whether the drug candidate / ligand is likely to be in the 'active' or 'decoy' group.</p>
           </div>
           <div class="col col-md-auto">
-            <button style="margin-top: 10%" class="btn btn-primary"><a href="{{ url_for('switcher', option='ml') }}">Run Model</a></button>
+            <button style="margin-top: 10%" class="btn btn-primary"><a style="color: white" href="{{ url_for('switcher', option='ml') }}">Run Model</a></button>
           </div>
         </div>
 
@@ -59,7 +59,7 @@
             <p class="card-text">Upload a .pdbqt file for a ligand and select the protein that it should dock to. Then, the program will dock the protein using Vina and run machine learning models to determine whether the drug candidate / ligand is likely to be in the 'active' or 'decoy' group.</p>
           </div>
           <div class="col col-md-auto">
-            <button style="margin-top: 10%" class="btn btn-primary"><a href="{{ url_for('switcher', option='mldocking') }}">Run Model</a></button>
+            <button style="margin-top: 10%" class="btn btn-primary"><a style="color: white" href="{{ url_for('switcher', option='mldocking') }}">Run Model</a></button>
 
           </div>
         </div>
@@ -78,7 +78,7 @@
             <p class="card-text">Upload a .pdbqt file for a ligand and the protein will dock it to multiple structures for a given protein and return affinity scores.</p>
           </div>
           <div class="col col-md-auto">
-            <button style="margin-top: 10%" class="btn btn-primary"><a href="{{ url_for('switcher', option='docking') }}">Run Model</a></button>
+            <button style="margin-top: 10%" class="btn btn-primary"><a style="color: white;" href="{{ url_for('switcher', option='docking') }}">Run Model</a></button>
 
           </div>
         </div>
