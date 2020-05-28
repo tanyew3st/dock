@@ -123,9 +123,7 @@ function getAffinity() {
         document.getElementById(structures[currentstr]).classList.add("loading")
 
         initialTime = performance.now()
-        if (structures[currentstr] == ".DS_Store") {
-            currentstr++
-        }
+
         // need to dock every structure with every protein
         let obj = {
             "protein": protein,
@@ -147,7 +145,7 @@ function getAffinity() {
                 if (localStorage.getItem("option") == "mldocking") {
                     machineLearn()
                 } else {
-                    alert("everything is finished rn")
+
                 }
             } else {
                 clearInterval(interval1)

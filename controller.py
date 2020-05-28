@@ -17,10 +17,7 @@ app.config["DEBUG"] = True
 
 @app.route('/run/<option>')
 def switcher(option):
-    if option != 'docking':
-        return render_template('models.html', option=option, proteins=Setup.getProteinNames())
-    else:
-        return render_template('models.html', option=option)
+    return render_template('models.html', option=option, proteins=Setup.getProteinNames())
 
 @app.route('/post/ligand')
 def postLigand(ligand):
@@ -44,8 +41,6 @@ def getSampleScores(protein, active):
 
 @app.route('/run/ml/array', methods=['POST'])
 def runModels():
-    print('running')
-    print(json.loads(request.data))
     data = json.loads(request.data)
     ml = MachineLearning(data['affinity'])
     ml.getProbability(data['protein'], data['linear'])
@@ -54,12 +49,9 @@ def runModels():
 
 @app.route('/dock', methods=['POST'])
 def dock():
-    print("hello")
-    # time.sleep(1)
+    time.sleep(1)
     return make_response(jsonify({"affinity": -7.5}))
-    print(app.instance_path)
     data = json.loads(request.data)
-    print(data)
     directory = "proteins/" + str(data['protein']) + "/Structures/" + str(data['structure'])
     p1 = None
     for el in os.listdir(directory):
@@ -73,15 +65,12 @@ def dock():
         if extension is not None:
             p1 = Protein(prtdir)
     affinity = Setup.dock(p1, str(app.instance_path) + str(data['ligand']))
-    print(str(app.instance_path) + str(data['ligand'].encode('utf-8')))
     obj = {"affinity": affinity}
-    print(obj)
     return make_response(jsonify(obj))
 
 @app.route('/ml/render/page', methods=['POST'])
 def renderml():
     affinity = request.form['textarea']
-    print(affinity)
     # affinity = eval(affinity)
     return render_template("results.html", option="ml", affinity=affinity)
 
@@ -95,16 +84,13 @@ def run():
     protein = request.form['protein']
 
     data = dict(request.form)
-    print("Data" + str(data))
 
     if request.files:
         file_obj = request.files
         for f in file_obj:
             ligand = request.files.get(f)
 
-    print(ligand)
     word = Ligand.save(ligand, app.instance_path)
-    print("Word: " + word)
     return render_template("results.html", ligand=word, protein = protein)
 
 @app.route('/', methods=['GET'])
@@ -113,13 +99,10 @@ def index():
 
 @app.route('/about', methods=['GET'])
 def about():
-    print(app.instance_path)
     return render_template('about.html')
 
 @app.route('/predictions', methods=['POST'])
 def file(protein, pdbqt):
-    # print(protein)
-    # print(pdbqt)
     if request.method == 'POST':
         file_obj = request.files
         for f in file_obj:

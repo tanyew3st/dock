@@ -19,6 +19,9 @@ class Protein:
     @staticmethod
     def getStructures(name):
         structures = os.listdir('proteins/' + name + '/Structures')
+        for i in range(0, len(structures) - 1):
+            if structures[i].lower() == ".ds_store":
+                structures.remove(structures[i])
         return structures
 
     def __repr__(self):
