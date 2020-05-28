@@ -2,16 +2,25 @@
 {% block title %}Results{% endblock %}
 
 {% block content %}
+<script>
+    $(document).ready(function() { console.log("Hello")
+        let option = localStorage.getItem("option")
+        if (option === "ml") {
+          machineLearn()
+        } else if (option == "docking" || option == "mldocking")  {
+          func1('{{ ligand }}', '{{ protein }}')
+        }
+    });
+</script>
 <div id="frame">
   <div style="margin-top: .5rem; margin-left: 2rem; margin-bottom: 1rem;">
-    <button class="btn btn-primary" onclick="func1('{{ ligand }}', '{{ protein }}')">Button</button>
-    <button class="btn btn-primary" onclick="machineLearn()">Machine Learn</button>
+<!--    <button class="btn btn-primary" onclick="">Button</button>-->
+<!--    <button class="btn btn-primary" onclick="machineLearn()">Machine Learn</button>-->
   </div>
-    
-    <div style="margin: 0rem 2rem" class="progress progress-striped active">
+    <div style="margin: 2rem 2rem" class="progress progress-striped active">
       <div class="progress-bar" id="progress" role="progressbar" style="width: 42%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">25%</div>
     </div>
-    <table style="margin-left: 2rem; margin-top: 2rem;" id="strtable" class="table table-bordered" style="max-width: 100% !important;">
+    <table id="strtable" class="table table-bordered" style="margin: 2rem 2rem">
       <thead>
         <tr id="structures">
           <th scope="col">Structures</th>
@@ -23,15 +32,15 @@
         </tr>
       </tbody>
     </table>
+    <p style="margin-top: .5rem; margin-left: 2rem;">Estimated Time Remaining: <span id="time">Please wait until the first structure is docked to see an estimate. ~ It should take no more than a few minutes.</span> (min:sec)</p>
+
     <canvas id="myChart"></canvas>
-    <table id="mlresults">
+    <table style="table-layout: fixed; width: 100%" id="mlresults">
 
     </table>
+
 </div>
-<div style="margin-left: 2rem; margin-bottom: .5rem;">
-  <button type="button" onclick="pdf()">Click me</button>
-</div>
-<p style="margin-top: .5rem; margin-left: 2rem;">Estimated Time Remaining: <span id="time">Please wait until the first structure is docked.</span></p>
+
 
 
 
@@ -43,6 +52,9 @@
   </thead>
 </table>
 
+<div style="margin-left: 2rem; margin-bottom: .5rem;">
+  <button type="button" class="btn btn-primary" onclick="pdf()">Save Data to Image</button>
+</div>
 <button style="margin-right: 1rem;"type="button" onclick="makeGraph()">Make the Graph</button>
 
     

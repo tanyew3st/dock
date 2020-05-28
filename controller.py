@@ -2,7 +2,7 @@ import json
 import os
 import shutil
 from ast import literal_eval
-
+import time
 import flask
 from flask import render_template, request, send_file, jsonify, make_response
 
@@ -48,6 +48,8 @@ def runModels():
 
 @app.route('/dock', methods=['POST'])
 def dock():
+    # time.sleep(2)
+    return make_response(jsonify({"affinity": -7.5}))
     print(app.instance_path)
     data = json.loads(request.data)
     print(data)
