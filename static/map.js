@@ -53,8 +53,8 @@ function makeGraph() {
     for (let key in map) {
 
         labels.push(this.namesArray[key])
-        percActive.data.push(map[key][0].toString().substring(0, 7))
-        percDecoy.data.push(map[key][1].toString().substring(0, 7))
+        percActive.data.push((map[key][0]*100).toString().substring(0, 7))
+        percDecoy.data.push((map[key][1]*100).toString().substring(0, 7))
     }
 
     var data = {
@@ -304,18 +304,21 @@ function setLinear(linear) {
 }
 function machineLearn() {
     document.getElementById("alert").style.display = "block"
-    if (this.affinity === undefined) {
+    console.log(this.affinity)
+    if (Object.keys(this.affinity).length === 0) {
         this.affinity = JSON.parse(JSON.parse(localStorage.getItem("affinity")))
         var url = window.location.href
         base = url.substr(0, url.indexOf('/results'));
 
-        let unordered = this.affinity
-        const ordered = {};
-        Object.keys(unordered).sort().forEach(function(key) {
-          ordered[key] = unordered[key];
-        });
-        this.affinity = ordered
+        // let unordered = this.affinity
+        // const ordered = {};
+        // Object.keys(unordered).sort().forEach(function(key) {
+        //   ordered[key] = unordered[key];
+        // });
+        //
+        // this.affinity = ordered
 
+        console.log(this.affinity)
         this.structures = Object.keys(this.affinity)
         this.createTable(this.structures)
 
