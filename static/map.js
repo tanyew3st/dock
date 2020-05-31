@@ -9,6 +9,7 @@ var max
 var affinity = {}
 let initialTime
 let mlarray
+let chart1 = {}
 
 // time it takes between structures
 let interval1
@@ -196,6 +197,7 @@ function updateTable(structureInput, num) {
 }
 
 function machinelearning() {
+    console.log("Calling");
     if (this.protein === undefined) {
         this.protein = localStorage.getItem("protein")
     }
@@ -214,12 +216,86 @@ function machinelearning() {
 
         this.mlarray = res
         this.makeMLTableNew()
+        for (i in this.mlarray) {
+            if (i != "K Nearest Neighbors") {
+                console.log(i);
+                this.aucGraph(i)
+            }
+        }
         // makeGraph()
         // makeMLTable()
     })
 }
 
+
+function aucGraph(array) {
+    document.getElementById("modelName").innerHTML = array
+    document.getElementById("auc").remove()
+    c = document.createElement("canvas")
+    c.style.margin = "2rem 0rem"
+    c.id = "auc"
+    document.getElementById("mlgraphs").appendChild(c)
+
+    console.log("Making graphs...");
+    console.log(this.mlarray[array]["fpr"])
+    console.log(this.mlarray[array]["tpr"])
+    console.log(this.mlarray[array])
+    data = []
+    for (i in this.mlarray[array]["fpr"]) {
+
+        obj = {
+            x:this.mlarray[array]["fpr"][i],
+            y:this.mlarray[array]["tpr"][i]
+        }
+
+        data.push(obj)
+    }
+
+    console.log(data)
+    var ctx = document.getElementById('auc').getContext('2d');
+    var chart = new Chart(ctx, {
+        // The type of chart we want to create
+        type: 'line',
+
+        // The data for our dataset
+        data: {
+            datasets: [{
+              label: 'ROC Curve',
+              data: data,
+            }],
+          },
+
+        // Configuration options go here
+        options: {
+            scales: {
+                    xAxes: [{
+                       type: 'linear', // MANDATORY TO SHOW YOUR POINTS! (THIS IS THE IMPORTANT BIT)
+                       display: true, // mandatory
+                       scaleLabel: {
+                            display: true, // mandatory
+                            labelString: '1 - Specificity (FPR)' // optional
+                       },
+                      }],
+                     yAxes: [{ // and your y axis customization as you see fit...
+                        display: true,
+                        scaleLabel: {
+                             display: true,
+                             labelString: 'Sensitivity (TPR)'
+                        }
+                }],
+            }, onClick: function(e){
+                var activePoints = chart.getElementsAtEvent(e);
+                console.log(activePoints)
+                var selectedIndex = activePoints[0]._index;
+                let xy = this.data.datasets[0].data[selectedIndex]
+                populateTable(xy["x"], xy["y"], array, selectedIndex)
+            }
+        },
+    });
+}
+
 function makeMLTableNew() {
+    console.log("HELLO")
     console.log(this.mlarray)
 
     for (let model in this.mlarray) {
@@ -248,7 +324,21 @@ function makeMLTableNew() {
 
         console.log(tr)
         document.getElementById("mltablebody").appendChild(tr)
+        console.log("Calling the function...")
+
+        let a = document.createElement("a")
+        a.classList.add("dropdown-item")
+        a.innerHTML = model
+        a.href = "#"
+        a.onclick = function() {
+            (createGraph(model))
+        }
+        document.getElementById("modelDropdown").appendChild(a)
     }
+}
+
+function createGraph(name) {
+    this.aucGraph(name);
 }
 
 function createMlEl(threshold, prob) {
@@ -315,11 +405,26 @@ function makeMLTable() {
     newRow.appendChild(tw2Avg)
 
     document.getElementById("mlBody").appendChild(newRow)
-
-
-
-
     
+}
+
+function populateTable(fpr, tpr, name, index) {
+    let probability = this.mlarray[name]["probability"]
+    document.getElementById("1-spec").innerHTML = fpr
+    document.getElementById("sens").innerHTML = tpr
+    let thresh = this.mlarray[name]["thresholds"][index]
+    document.getElementById("thresh").innerHTML = thresh
+    let prob = this.mlarray[name]["probability"]
+    document.getElementById("model-prob").innerHTML = prob
+    document.getElementById("pred").className = ""
+
+    if (thresh <= prob) {
+        document.getElementById("pred").innerHTML = "Active"
+        document.getElementById("pred").classList.add("active-cell")
+    } else {
+        document.getElementById("pred").innerHTML = "Decoy"
+        document.getElementById("pred").classList.add("decoy-cell")
+    }
 }
 
 function getSampleScores(type, protein) {
@@ -410,7 +515,6 @@ function machineLearn() {
         }
         document.getElementById("progress").style.width = "100%"
         document.getElementById("progress").innerHTML = "100%"
-
         machinelearning()
     } else {
         var url = window.location.href

@@ -18,7 +18,8 @@
     }
 </style>
 <script>
-    $(document).ready(function() { console.log("Hello")
+    $(document).ready(function() {
+        console.log("Hello")
         let option = localStorage.getItem("option")
         console.log(option)
         if (option === "ml") {
@@ -89,6 +90,43 @@
     </table>
 </div>
 
+<li class="nav-item dropdown" style="list-style-type:none">
+    <div class="dropdown">
+    <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      Create Model Graph
+    </button>
+    <div class="dropdown-menu" id="modelDropdown" aria-labelledby="dropdownMenuButton">
+
+    </div>
+    </div>
+</li>
+
+<div id="mlgraphs">
+    <canvas style="margin: 2rem 0rem" id="auc"></canvas>
+    <table style="table-layout: fixed; width: 100%" class='table table-bordered'>
+      <thead style="table-layout: fixed">
+        <tr>
+            <th colspan="5">Custom Thresholds for <span id="modelName"></span></th>
+        </tr>
+        <tr>
+          <th>1 - Specificity (FPR)</th>
+          <th>Sensitivity (TPR)</th>
+          <th>Threshold</th>
+          <th>Model Probability</th>
+          <th>Prediction</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+            <td id="1-spec"></td>
+            <td id="sens"></td>
+            <td id="thresh"></td>
+            <td id="model-prob"></td>
+            <td id="pred"></td>
+        </tr>
+      </tbody>
+    </table>
+</div>
 
 <div id="mlstuff" style="display: none">
     <table style="table-layout: fixed; width: 100%" class='table table-bordered'>
@@ -106,6 +144,7 @@
 
       </tbody>
     </table>
+
     <canvas style="margin: 2rem 0rem;" id="myChart"></canvas>
 
 </div>

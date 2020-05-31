@@ -130,6 +130,9 @@ class MachineLearning:
         # temp["g-mean"] = best_threshold
         temp["g-mean"] = (temp["specificity"] + temp["sensitivity"]) / 2
         temp["auc"] = auc
+        temp["tpr"] = tpr.tolist()
+        temp["fpr"] = fpr.tolist()
+        temp["thresholds"] = thresholds.tolist()
 
         print("THE MAX G Value is " + str(maxg) + " and the threshold for that is " + str(best_threshold))
         return temp
