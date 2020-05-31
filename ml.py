@@ -122,12 +122,13 @@ class MachineLearning:
         maxg = 0
         best_threshold = 0
 
-        for t in range(0, len(thresholds)):
-            gmean = math.sqrt(tpr[t] * (1-fpr[t]))
-            if gmean > maxg:
-                maxg = gmean
-                best_threshold = thresholds[t]
-        temp["g-mean"] = best_threshold
+        # for t in range(0, len(thresholds)):
+        #     gmean = math.sqrt((tpr[t])*(tpr[t]) + (1-fpr[t])*(1-fpr[t]))
+        #     if gmean > maxg:
+        #         maxg = gmean
+        #         best_threshold = thresholds[t]
+        # temp["g-mean"] = best_threshold
+        temp["g-mean"] = (temp["specificity"] + temp["sensitivity"]) / 2
         temp["auc"] = auc
 
         print("THE MAX G Value is " + str(maxg) + " and the threshold for that is " + str(best_threshold))

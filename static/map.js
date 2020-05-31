@@ -236,6 +236,14 @@ function makeMLTableNew() {
 
         auc = document.createElement("td")
         auc.innerHTML = this.mlarray[model]["auc"]
+        if (this.mlarray[model]["auc"] >= 0.8) {
+            auc.classList.add("active-cell")
+        } else if (this.mlarray[model]["auc"] < 0.6) {
+            auc.classList.add("decoy-cell")
+        } else {
+            auc.classList.add("average-auc")
+        }
+
         tr.appendChild(auc)
 
         console.log(tr)
@@ -249,8 +257,10 @@ function createMlEl(threshold, prob) {
     let td = document.createElement("td")
     if (prob >= threshold) {
         td.innerHTML = "Active"
+        td.classList.add("active-cell")
     } else {
         td.innerHTML = "Decoy"
+        td.classList.add("decoy-cell")
     }
 
     return td

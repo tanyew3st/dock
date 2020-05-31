@@ -5,8 +5,18 @@
     margin-bottom: 0;
 }
 
+.decoy-cell {
+    background-color: rgba(234, 10, 10, 0.31);
 
+}
 
+.active-cell {
+    background-color: rgba(88, 234, 10, 0.31);
+}
+
+.average-auc {
+    background-color: rgba(255, 236, 0, 0.31);
+}
 .models-text{
     text-align: center;
     padding-top: 2rem;
