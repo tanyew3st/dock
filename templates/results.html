@@ -64,8 +64,33 @@
         </table>
     </div>
     <p id="reassurance" style="margin-top: .5rem; display: none">Estimated Time Remaining: <span id="time"><span style="color: red">Please wait until the first structure is docked to see an estimate. ~ It should take no more than a few minutes.</span></span> (min:sec)</p>
-<div id="mlstuff" style="display: block">
+
+
+<div id="mltable">
     <div id="alert" class="alert alert-danger" style="display: none">Currently Running Machine Learning Models! Please wait <span class="loading"></span></div>
+    <table style="table-layout: fixed; width: 100%" class='table table-bordered'>
+      <thead style="table-layout: fixed">
+        <tr>
+            <th colspan="5">Predictions Returned by ML Models</th>
+        </tr>
+        <tr>
+          <th>Model Name</th>
+          <th>Sensitivity = 0.9</th>
+          <th>Specificity = 0.1</th>
+          <th>Geometric Means (Optimized)</th>
+          <th>AUC Value</th>
+        </tr>
+      </thead>
+      <tbody id="mltablebody">
+        <tr>
+
+        </tr>
+      </tbody>
+    </table>
+</div>
+
+
+<div id="mlstuff" style="display: none">
     <table style="table-layout: fixed; width: 100%" class='table table-bordered'>
       <thead style="table-layout: fixed">
         <tr>

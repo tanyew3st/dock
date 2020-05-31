@@ -4,11 +4,14 @@ import pandas as pd
 import numpy as np
 import os
 from sklearn.linear_model import LogisticRegression
+from sklearn.metrics import roc_curve, auc
+from sklearn.model_selection import train_test_split
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn.tree import DecisionTreeClassifier;
 from sklearn.ensemble import RandomForestClassifier;
 from sklearn.svm import LinearSVC
 from sklearn.svm import SVC
+import math
 
 # class to provide Machine Learning and create a model
 class MachineLearning:
@@ -22,11 +25,15 @@ class MachineLearning:
     # probability object that contains all the probabilities for the various models
     prob = {}
 
+    actives = None
+    decoys = None
+
+    sens_spec_dict = {}
+
     # on init set the affinity array equal to the affinity scores provided by vina
     def __init__(self, testaffinity):
         self.affinity = collections.OrderedDict(sorted(testaffinity.items()))
         print(self.affinity)
-
 
     # input is the location of the folder of the pdbqt files
     # output is where it will be printed to
@@ -96,6 +103,41 @@ class MachineLearning:
         print("finished")
         # end product to create a new excel spreadsheet .xlsx in the output location
 
+    # create a dictionary maximizing sensitivity and specificity
+    def addToDict(self, tpr, fpr, thresholds, auc):
+        temp = {}
+
+        # want the first tpr = sensitivity >= 0.9 (threshold)
+        # want the first 1-fpr = specificity <= 0.1 (threshold)
+
+        for i in range(0, len(tpr)):
+            if tpr[i] >= 0.9:
+                temp["sensitivity"] = thresholds[i]
+                break
+        for i in range(0, len(fpr)):
+            if 1 - fpr[i] <= 0.1:
+                temp["specificity"] = thresholds[i]
+                break
+
+        maxg = 0
+        best_threshold = 0
+
+        for t in range(0, len(thresholds)):
+            gmean = math.sqrt(tpr[t] * (1-fpr[t]))
+            if gmean > maxg:
+                maxg = gmean
+                best_threshold = thresholds[t]
+        temp["g-mean"] = best_threshold
+        temp["auc"] = auc
+
+        print("THE MAX G Value is " + str(maxg) + " and the threshold for that is " + str(best_threshold))
+        return temp
+
+    def predict(self, probability, name):
+        print(self.sens_spec_dict[name])
+        for i in self.sens_spec_dict[name]:
+            print(i)
+
     # gets the probability using various machine learning models and sets
     def getProbability(self, protein, linear):
 
@@ -114,31 +156,82 @@ class MachineLearning:
         # creating all the values
         all_vals = pd.concat([actives, decoys], ignore_index=True)
 
-        # assigning 0 or 1 if it is active (1) or decoy (0)
-        all_ticker = np.concatenate([active_ticker, decoy_ticker])
-
-        print(all_vals)
-        # X_train, X_test, y_train, y_test = train_test_split(all_vals, all_ticker, test_size=0.33, random_state=50)
         if all_vals.isnull().values.any():
             print(pd.isnull(all_vals).any(1).nonzero()[0])
             exit(4)
 
+        # assigning 0 or 1 if it is active (1) or decoy (0)
+        all_ticker = np.concatenate([active_ticker, decoy_ticker])
+
+        X_train, X_test, y_train, y_test = train_test_split(all_vals, all_ticker, test_size=0.2, random_state=50)
+        logModel = LogisticRegression(solver='lbfgs')
+        logModel.fit(X_train, y_train)
+        y_predict_proba = logModel.predict_proba(X_test)[:,1]
+        fpr, tpr, thresholds = roc_curve(y_test, y_predict_proba, pos_label=1)
+
+        print("AUC: " + str(auc(fpr, tpr)))
+
+        self.sens_spec_dict["Logistic Regression"] = self.addToDict(tpr, fpr, thresholds, auc(fpr, tpr))
+
+        print(self.sens_spec_dict)
+
         y = pd.DataFrame(self.affinity, index=[0])
 
+        prob = logModel.predict_proba(y)
+        self.predict(prob[:,1], "Logistic Regression")
+        self.sens_spec_dict["Logistic Regression"]["probability"] = prob[0][1]
+        print(self.sens_spec_dict)
+
         # Logistic Regression
-        print("Doing Logistic Regression")
-        logModel = LogisticRegression(solver='lbfgs')
-        logModel.fit(all_vals, all_ticker)
-        plr = logModel.predict_proba(y)
-        self.prob["lr"] = plr[0][0:].tolist()
+        # print("Doing Logistic Regression")
+        # logModel = LogisticRegression(solver='lbfgs')
+        # logModel.fit(all_vals, all_ticker)
+        # plr2 = logModel.predict_proba(y)
+        # plr = logModel.predict_proba(y)[:, 1]
+        # print(plr)
+        # if plr > best_threshold:
+        #     print('active')
+        # else:
+        #     print('decoy')
+        # self.prob["lr"] = plr[0][0:].tolist()
+
+        # K Nearest Neighbor
+        y_predict_proba = logModel.predict_proba(X_test)[:, 1]
+        fpr, tpr, thresholds = roc_curve(y_test, y_predict_proba, pos_label=1)
+        auc_roc = auc(fpr, tpr)
+        print("AUC KNN: " + str(auc_roc))
+        maxg = 0
+        best_threshold = 0
+        for t in range(0, len(thresholds) - 1):
+            gmean = math.sqrt(tpr[t] * (1 - fpr[t]))
+            if gmean > maxg:
+                maxg = gmean
+                best_threshold = thresholds[t]
+        print("THE MAX G Value is " + str(maxg) + " and the threshold for that is " + str(best_threshold))
+
+        if all_vals.isnull().values.any():
+            print(pd.isnull(all_vals).any(1).nonzero()[0])
+            exit(4)
 
         # K Nearest Neighbors
         print("Doing KNN")
         knn = KNeighborsClassifier(n_neighbors=100)
         knn.fit(all_vals, all_ticker)
         pknn = knn.predict_proba(y)
-        self.prob["knn"] = pknn[0][0:].tolist()
-        #
+        plr = knn.predict_proba(y)[:, 1]
+
+        knn.fit(X_train, y_train)
+        y_predict_proba = knn.predict_proba(X_test)[:, 1]
+        fpr, tpr, thresholds = roc_curve(y_test, y_predict_proba, pos_label=1)
+
+        print("AUC: " + str(auc(fpr, tpr)))
+
+        self.sens_spec_dict["K Nearest Neighbors"] = self.addToDict(tpr, fpr, thresholds, auc(fpr, tpr))
+
+        prob = knn.predict_proba(y)
+        self.predict(prob[:, 1], "K Nearest Neighbors")
+        self.sens_spec_dict["K Nearest Neighbors"]["probability"] = prob[0][1]
+        print(self.sens_spec_dict)
 
         if not linear:
             # Support Vector Machines

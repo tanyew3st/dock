@@ -211,11 +211,51 @@ function machinelearning() {
         setTimeout(function() {
             document.getElementById("alert").remove()
         }, 5000)
+
         this.mlarray = res
-        makeGraph()
-        makeMLTable()
+        this.makeMLTableNew()
+        // makeGraph()
+        // makeMLTable()
     })
 }
+
+function makeMLTableNew() {
+    console.log(this.mlarray)
+
+    for (let model in this.mlarray) {
+        console.log(model)
+        let tr = document.createElement("tr")
+
+        let name = document.createElement("td")
+        name.innerHTML = model
+        tr.appendChild(name)
+
+        tr.appendChild(createMlEl(this.mlarray[model]["sensitivity"], this.mlarray[model]["probability"]))
+        tr.appendChild(createMlEl(this.mlarray[model]["specificity"], this.mlarray[model]["probability"]))
+        tr.appendChild(createMlEl(this.mlarray[model]["g-mean"], this.mlarray[model]["probability"]))
+
+        auc = document.createElement("td")
+        auc.innerHTML = this.mlarray[model]["auc"]
+        tr.appendChild(auc)
+
+        console.log(tr)
+        document.getElementById("mltablebody").appendChild(tr)
+    }
+}
+
+function createMlEl(threshold, prob) {
+    console.log("Probability: " + prob)
+    console.log("Threshold: " + threshold)
+    let td = document.createElement("td")
+    if (prob >= threshold) {
+        td.innerHTML = "Active"
+    } else {
+        td.innerHTML = "Decoy"
+    }
+
+    return td
+}
+
 
 function makeMLTable() {
     let activeP = []
